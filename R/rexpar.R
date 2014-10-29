@@ -1,0 +1,8 @@
+source("R/resARMod_lin2.R")
+source("R/RandomARMod_lin2.R")
+source("R/dS1_lin2.R")
+source("R/dS2_lin2.R")
+source("R/dS3_lin2.R")
+source("R/dS_lin2.R")
+source("R/oner.R")
+source("R/inv_tri.R")

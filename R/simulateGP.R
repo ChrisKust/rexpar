@@ -1,0 +1,9 @@
+simulateGP<-function(g,sigma)
+{
+  Y1<-numeric(length(g))
+  y2<-rnorm(1,0,1)
+  Y2<-rep(y2,length(g))
+  muV<-muVec(g,y2)
+  Y1<-mvrnorm(n=1,mu=muV,Sigma=sigma,tol=1e-2)
+  list(Y1=Y1,Y2=Y2)
+}

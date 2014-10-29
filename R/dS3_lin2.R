@@ -1,0 +1,28 @@
+dS3_lin2<-function(theta,y,model="linAR1")
+{
+  if(model=="linAR1")
+  {  
+    res<-resARMod_lin2(c(theta[1],theta[2]),y)
+  }
+  if(model=="nlinAR1")
+  {
+    res<-resARMod_nlin1(c(theta[1],theta[2]),y)
+  }
+  if(model=="linAR2")
+  {
+    res<-resARMod_linar2(c(theta[1],theta[2]),y)
+  }
+  r1<-res[seq(1,length(res)-2,1)]
+  r2<-res[seq(2,length(res)-1,1)]
+  r3<-res[seq(3,length(res),1)]
+  m<-min(c(length(r1),length(r2),length(r3)))
+  r1<-r1[1:m]
+  r2<-r2[1:m]
+  r3<-r3[1:m]
+  InD<-(r1>0)*(r2<0)*(r3>0)+(r1<0)*(r2>0)*(r3<0)
+  depth<-1/(length(y)-2)*sum(InD)
+  
+  
+  return(depth)
+  
+}

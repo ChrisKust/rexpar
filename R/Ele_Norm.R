@@ -1,0 +1,12 @@
+Ele_Norm<-function(Cvec,center,pv=2,nortype=1,wgt=c(1,0.5))
+{
+  if(nortype==1)
+  {
+    n<-(sum(abs(Cvec-center)^pv))^(1/pv)
+  }
+  if(nortype==2)
+  {
+    n<-(sum(wgt*(Cvec-center)^pv))^(1/pv)
+  }
+  return(n)
+}
