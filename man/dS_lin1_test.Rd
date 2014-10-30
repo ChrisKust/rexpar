@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS proposed in Leucht, Mueller and Kustosz (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_lin2_test(thetaN,alpha,y)
+dS_lin1_test(thetaN,alpha,y)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -44,11 +44,9 @@ Kustosz, Christoph
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{dS_lin2}},
+\code{\link{dS_lin1}},
 }
-\examples{
 
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }

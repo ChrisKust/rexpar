@@ -1,4 +1,4 @@
-dS_lin2_test<-function(thetaN,alpha,y)
+dS_lin1_test<-function(thetaN,alpha,y)
 {
   dS<-rexpar::dS_lin1(thetaN,y)
   CdS<-(length(y)-1)*(dS-1/2)
