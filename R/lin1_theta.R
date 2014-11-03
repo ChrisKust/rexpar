@@ -18,7 +18,7 @@ lin1_theta<-function(dat)
     }
   }
   
-  t1<-c(t1)
+  t1<-c(t1)+1
   
   
   

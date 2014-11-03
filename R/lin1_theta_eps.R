@@ -13,7 +13,7 @@ lin1_theta_eps<-function(dat,eps)
     cand_t1[(i+length(dat1))]<-(dat2[i]-dat1[i])/(dat1[i])-eps#-(dat2[i]-dat1[i])/(dat1[i]))/2
   }
   
-  t1<-cand_t1
+  t1<-cand_t1+1
   if(abs(min(diff(sort(cand_ttest))))<eps)
     print('eps to large')
   
