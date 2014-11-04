@@ -4,15 +4,15 @@ lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
   cands<-cbind(cands$t1,cands$t2)
   if(notion=="dS1")
   {
-  unlist(apply(cands,1,dS1_lin2_test,y=y,alpha=(level)))->TS
+  unlist(apply(cands,1,dS1_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS2")
   {
-    unlist(apply(cands,1,dS2_lin2_test,y=y,alpha=(level)))->TS
+    unlist(apply(cands,1,dS2_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS3")
   {
-    unlist(apply(cands,1,dS3_lin2_test,y=y,alpha=(level)))->TS
+    unlist(apply(cands,1,dS3_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS_pre")
   {
@@ -25,20 +25,20 @@ lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
       #clusterEvalQ(cl,{source("R/dS_lin2.R")})
       #,lib.loc="~/CTest/ChangeTests/locL/")})
       
-     unlist(parApply(cl,cands,1,dS1_lin2_test,y=y,alpha=(level)))->TS_temp
+     unlist(parApply(cl,cands,1,dS1_lin2_test,y=y,alpha=(1-level)))->TS_temp
      inCIs_temp<-as.vector(TS_temp[seq(2,length(TS_temp),2)])
      cands<-cands[inCIs_temp==0,]
-     unlist(parApply(cl,cands,1,dS_lin2_test,y=y,alpha=(level),ncores=1))->TS
+     unlist(parApply(cl,cands,1,dS_lin2_test,y=y,alpha=(1-level),ncores=1))->TS
      stopCluster(cl)
     }
     
     
     if(ncoresC==1)
     {
-      unlist(apply(cands,1,dS1_lin2_test,y=y,alpha=(level)))->TS_temp
+      unlist(apply(cands,1,dS1_lin2_test,y=y,alpha=(1-level)))->TS_temp
       inCIs_temp<-as.vector(TS_temp[seq(2,length(TS_temp),2)])
       cands<-cands[inCIs_temp==0,]
-      unlist(apply(cands,1,dS_lin2_test,y=y,alpha=(level),ncores=1))->TS
+      unlist(apply(cands,1,dS_lin2_test,y=y,alpha=(1-level),ncores=1))->TS
     }
   }
   if(notion=="dS")
@@ -52,14 +52,14 @@ lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
       #clusterEvalQ(cl,{source("R/dS_lin2.R")})
       #,lib.loc="~/CTest/ChangeTests/locL/")})
       
-      unlist(parApply(cl,cands,1,dS_lin2_test,y=y,alpha=(level),ncores=1))->TS
+      unlist(parApply(cl,cands,1,dS_lin2_test,y=y,alpha=(1-level),ncores=1))->TS
       stopCluster(cl)
     }
     
     
     if(ncoresC==1)
     {
-      unlist(apply(cands,1,dS_lin2_test,y=y,alpha=(level),ncores="auto"))->TS
+      unlist(apply(cands,1,dS_lin2_test,y=y,alpha=(1-level),ncores="auto"))->TS
     }
   }
   inCIs<-as.vector(TS[seq(2,length(TS),2)])
