@@ -1,9 +1,19 @@
-dS_lin2<-function(theta,y,ncores=1)
+dS_lin2<-function(theta,y,ncores=1,model="linAR1")
 {
-  
   y1<-y[2:length(y)]
   y0<-y[1:(length(y)-1)]
+  if(model=="linAR1")
+  {
   resy<-y1-theta[1]-theta[2]*y0
+  }
+  else if(model=="nlinAR1")
+  {
+  resy<-y1-theta[1]*y0^theta[2]  
+  }
+  else
+  {
+    stop("no valid model")
+  }
   Matsd<-0 
   
   Reslist<-vector("list",length(resy)-3)

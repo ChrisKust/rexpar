@@ -1,18 +1,18 @@
-\name{dS2_lin2_test}
-\alias{dS2_lin2_test}
+\name{dS2_nlin_test}
+\alias{dS2_nlin_test}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Test based on dS2 for explosive AR(1) processes with intercept
+\title{Test based on dS1 for explosive nonlinear AR(1) processes 
 }
 \description{
-The function evaluates the asymptotic test based on dS2 proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
+The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_lin2_test(thetaN,alpha,y)
+dS2_nlin_test(thetaN,alpha,y)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
-Parameter defining the Null hypothesis H0: theta = thetaN. Thereby thetaN = (thetaN0, thetaN1) as defined by the model. 
+Parameter defining the Null hypothesis H0: theta = thetaN. Thereby thetaN = (thetaN1,thetaN2) as defined by the model. 
 }
 
   \item{alpha}{
@@ -46,21 +46,13 @@ Kustosz, Christoph
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{dS2_lin2}}
+ \code{\link{dS2_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin1(1000,0.2,1.01,15,0)
-dS2_lin2_test(c(0.2,1.01),0.05,y)
-dS2_lin2_test(c(0.1,1.01),0.05,y)
+y<-RandomARMod_lin2(10,0.2,1.01,15,0)
+dS2_nlin_test(c(0.2,1.01),0.05,y)
+dS2_nlin_test(c(0.1,1.01),0.05,y)
 
-## The function is currently defined as
-function(thetaN,alpha,y)
-{
-  dS2<-dS2_lin2(thetaN,y)
-  NdS2<-NdS2<-sqrt(floor(length(y)/2)-1)*(dS2-1/4)/sqrt(3/16)
-  deci<-(NdS2<qnorm(alpha))
-  list(TS=NdS2,phi=deci)
-}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
