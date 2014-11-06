@@ -8,7 +8,7 @@ Confidence regions for nonlinar AR(1) processes with intercept based on simplici
 This function generates confidence intervals for nonlinear AR(1) processes without intercept and explosion based on simplicial depth for AR processes.
 }
 \usage{
-nlin_CI(y,level,plots,notion,ncoresC)
+nlin_CI(y,level,plots,notion,ncoresC,addPar)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,9 @@ A parameter to select the desired depth notion to evaluate. The possible choices
 }
 \item{ncoresC}{
 If the notion "dS" is selected a multicore computation is possible. Here the number of cores is defined as described in the function \code{\link{dS_lin2}}
+}
+\item{addPar}{
+A swich to decide if the resulting confidence region shall be added to a existing plot (TRUE) or is generated in a new plot window (FALSE)
 }
 }
 %\details{

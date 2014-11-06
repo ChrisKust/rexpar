@@ -6,6 +6,6 @@ Date: 2014-07-25
 Author: Kustosz, Christoph
 Maintainer: Kustosz, Christoph <kustosz@statistik.tu-dortmund.de>
 Description: The package contains simplicial depth statistics for explosive AR(1) processes
-Depends: matrixcalc, parallel, MASS
+Depends: matrixcalc, parallel, MASS, alphahull
 Suggests:
 License: GPL-2

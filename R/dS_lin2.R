@@ -8,7 +8,7 @@ dS_lin2<-function(theta,y,ncores=1,model="linAR1")
   }
   else if(model=="nlinAR1")
   {
-  resy<-y1-theta[1]*y0^theta[2]  
+  resy<-y1-y0-theta[1]*y0^theta[2]  
   }
   else
   {

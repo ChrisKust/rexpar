@@ -1,6 +1,6 @@
-nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
+nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE)
 {
-  cands<-lin2_theta_f(y)
+  cands<-nlin1_theta_f(y)
   cands<-cbind(cands$t1,cands$t2)
   if(notion=="dS1")
   {
@@ -69,7 +69,8 @@ nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
     a<-which(inCIs==0)
     plot(cands)
     points(cands[a,],col=2)
-    convex_hull_plot(cands[a,1],cands[a,2],col=2)
+    ashape(a[,1],a[,2],alpha=0.8)->ah
+    plot(ah,add=addPar,col=3)
   }
   list(par=cands,inCI=inCIs)
 }
