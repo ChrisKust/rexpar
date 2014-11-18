@@ -1,24 +1,24 @@
-est_lin1<-function(y,maxit=25,candy=FALSE,acc=0.1,plots=FALSE,eps=0.0001,unique=TRUE,notion="dS")
+est_lin1<-function(y,maxit=25,candy=FALSE,acc=0.1,plots=FALSE,eps=0.000001,unique=TRUE,notion="dS")
 {
-  LT<-lin1_theta_eps(y,eps)
+  LT<-lin1_theta_eps(y,eps)$t1
   sv<-median(LT)
-  dists<-apply(LT,1,Ele_Norm,center=sv)
+  dists<-sapply(LT,Ele_Norm,center=sv)
   cands<-LT[dists<quantile(dists,acc)]
   if(notion=="dS")
   {
-  apply(cands,1,dS_lin1)->ev
+  sapply(cands,dS_lin1,y=y)->ev
   }
   if(notion=="dS1")
   {
-    apply(cands,1,dS1_lin2,model="linAR1woI")->ev
+    sapply(cands,dS1_lin2,model="linAR1woI",y=y)->ev
   }
   if(notion=="dS2")
   {
-    apply(cands,1,dS2_lin2,model="linAR1woI")->ev
+    sapply(cands,dS2_lin2,model="linAR1woI",y=y)->ev
   }
   if(notion=="dS3")
   {
-    apply(cands,1,dS3_lin2,model="linAR1woI")->ev
+    sapply(cands,dS3_lin2,model="linAR1woI",y=y)->ev
   }
   
   se<-cands[ev==max(ev)]
@@ -28,26 +28,26 @@ est_lin1<-function(y,maxit=25,candy=FALSE,acc=0.1,plots=FALSE,eps=0.0001,unique=
   {
     itc<-itc+1
     sv<-se
-    dists<-apply(LT,1,Ele_Norm,center=sv)
+    dists<-sapply(LT,Ele_Norm,center=sv)
     cands<-LT[dists<quantile(dists,acc)]
     if(notion=="dS")
     {
-      apply(cands,1,dS_lin1)->ev
+      sapply(cands,dS_lin1,y=y)->ev
     }
     if(notion=="dS1")
     {
-      apply(cands,1,dS1_lin2,model="linAR1woI")->ev
+      sapply(cands,dS1_lin2,model="linAR1woI",y=y)->ev
     }
     if(notion=="dS2")
     {
-      apply(cands,1,dS2_lin2,model="linAR1woI")->ev
+      sapply(cands,dS2_lin2,model="linAR1woI",y=y)->ev
     }
     if(notion=="dS3")
     {
-      apply(cands,1,dS3_lin2,model="linAR1woI")->ev
+      sapply(cands,dS3_lin2,model="linAR1woI",y=y)->ev
     }
     se<-cands[ev==max(ev)]
-    if(sv==se)
+    if(sv[1]==se[1])
     {break}
     
   }
