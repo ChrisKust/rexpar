@@ -8,7 +8,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence intervals for linear AR(1) processes without intercept and explosion based on simplicial depth for AR processes.
 }
 \usage{
-lin1_CI(y,level,plots)
+lin1_CI(y,level,plots,notion)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,13 @@ A value in (0,1) defining the level of the confidence regions to evaluate
 }
 \item{plots}{
 A swich to turn on and off plots of the resulting region. Use (TRUE) to turn on plots and (FALSE) (default) to suppress plotting
+}
+\item{notion}{
+Here the applied test statistic for the calculation of confidence intervals is specified. Available are\cr
+"dS" = full simplicial depth\cr
+"dS1" = reduced notion without overlapping of residuals\cr
+"dS2" = reduced notion based on large distance residuals\cr
+"dS3" = reduced notion with overlapping residuals\cr
 }
 }
 %\details{
@@ -45,8 +52,8 @@ Kustosz, Christoph
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{dS1_lin2_test}},\code{\link{dS2_lin2_test}},\code{\link{dS3_lin2_test}},\code{\link{dS_lin2_test}},\code{\link{lin2_theta_f}},\code{\link{convex_hull_plot}}
-}
+\code{\link{dS1_lin1_test}},\code{\link{dS2_lin1_test}},\code{\link{dS3_lin1_test}},\code{\link{dS_lin1_test}},\code{\link{lin1_theta}}}
+
 \examples{
 y<-RandomARMod_lin2(100,0,1.001,15,0)
 lin1_CI(y,0.05)

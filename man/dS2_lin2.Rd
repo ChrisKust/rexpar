@@ -21,6 +21,7 @@ y = (y_0,...,y_N), oberserved process to evaluate dS2 in
   \item{model}{
 here the model for the calculation of the underlying residuals is specified. currently the following
 models are available\cr
+"linAR1woI" = linear AR(1) model without intercept\cr
 "linAR1" = linear AR(1) model with intercept\cr
 "linAR2" = linear AR(2) model without intercept\cr
 "nlinAR1" = linear AR(1) model without intercept but with power paremeter\cr
