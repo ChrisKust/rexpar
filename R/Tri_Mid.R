@@ -15,7 +15,7 @@ Tri_Mid<-function(y,perc=1,candy=FALSE)
   if(candy==TRUE)
   {#generate indices
     iX<-seq(1,length(d1),1)
-    p1<-combn(seq(1,length(d1),1),m=3)
+    p1<-combn(iX,m=3)
     apply(p1,2,mind,Mat=d1)->v1
     apply(p1,2,mind,Mat=d2)->v2
     sol<-cbind(v1,v2)
