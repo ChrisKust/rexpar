@@ -1,6 +1,13 @@
-est_lin2<-function(y,maxit=25,candy=FALSE,perc=1,acc=0.1,plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2)
+est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2)
 {
+  if(candy_eps==FALSE)
+  {  
   LTs<-Tri_Mid(y,perc,candy)
+  }
+  if(candy_eps==TRUE)
+  {
+    LTs<-Tri_eps(y,perc,eps=0.0000001) 
+  }
   LT<-lin2_theta_f(y)
   sv<-c(median(LT$t1),median(LT$t2))
   dists<-apply(LTs,1,Ele_Norm,center=sv,nortype=normtype,pv=pv,wgt=wgt)
