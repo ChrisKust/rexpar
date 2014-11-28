@@ -56,7 +56,7 @@ dS_lin2<-function(theta,y,ncores=1,model="linAR1")
   
   Matsd<-Matsd+(resy[length(resy)-2]>0)*(resy[length(resy)-1]<0)*(resy[length(resy)]>0)+(resy[length(resy)-2]<0)*(resy[length(resy)-1]>0)*(resy[length(resy)]<0)
   
-  sd<-(1/choose(length(resy)-1,3))*Matsd
+  sd<-(1/choose(length(resy),3))*Matsd
   
   return(sd)
   
