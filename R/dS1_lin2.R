@@ -9,7 +9,8 @@ dS1_lin2<-function(theta,y,model="linAR1")
     r1<-r1[1:m]
     r2<-r2[1:m]
     InD<-(r1>0)*(r2<0)+(r1<0)*(r2>0)
-    depth<-1/(floor(length(y)/2))*sum(InD)
+    #depth<-1/(floor((length(y))/2))*sum(InD)
+    depth<-1/(m)*sum(InD)
   }
   else
   {  
@@ -33,7 +34,8 @@ dS1_lin2<-function(theta,y,model="linAR1")
   r2<-r2[1:m]
   r3<-r3[1:m]
   InD<-(r1>0)*(r2<0)*(r3>0)+(r1<0)*(r2>0)*(r3<0)
-  depth<-1/(floor(length(y)/3))*sum(InD)
+  #depth<-1/(floor((length(y))/3))*sum(InD)
+  depth<-1/(m)*sum(InD)
   }
   
   return(depth)
