@@ -6,9 +6,11 @@ predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
   if(restrict==T)
   {
     theta_min<-min(cands[(length(y)-1)*(depth-1/2)>=-1/2*qchisq(1-alpha,df=1)+1/2])
+    print(theta_min)
     theta_max<-max(cands[(length(y)-1)*(depth-1/2)>=-1/2*qchisq(1-alpha,df=1)+1/2])
+    print(theta_max)
   }
-  else
+  if(restrict==F)
   {
     theta_min<-min(cands)
     theta_max<-max(cands)
@@ -44,4 +46,4 @@ predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
 
 
 
-predict_lin1(y,alpha=0.05,restric=F,NSim=100)->rr
+#predict_lin1(y,alpha=0.05,restric=F,NSim=100)->rr
