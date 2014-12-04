@@ -1,7 +1,7 @@
 Package: rexpar
 Type: Package
 Title: Simplicial depht for explosive AR processes
-Version: 0.992
+Version: 0.993
 Date: 2014-07-25
 Author: Kustosz, Christoph
 Maintainer: Kustosz, Christoph <kustosz@statistik.tu-dortmund.de>

@@ -1,7 +1,7 @@
-draw_from_depth<-function(depth,testvec,lower,upper)
+draw_from_depth<-function(depthI,testvec,lower,upper)
 {
-  dd<-depth[(testvec>=lower) && (testvec <= upper)]
-  cands<-testvec[(testvec>=lower) && (testvec <= upper)]
+  dd<-depthI[(testvec>=lower) & (testvec <= upper)]
+  cands<-testvec[(testvec>=lower) & (testvec <= upper)]
   u<-runif(1)
   cands_sI<-sort(cands,index.return=T)
   depth_s<-dd[cands_sI$ix]
@@ -11,6 +11,5 @@ draw_from_depth<-function(depth,testvec,lower,upper)
   d2_s<-d2[cands_sI$ix]*(c(0,cands_s[2:length(cands_s)]-cands_s[1:(length(cands_s)-1)]))
   ind<-seq(1,length(cands_s),1)
   theta_t<-cands_s[min(ind[cumsum(d2_s)>=u])]
-  print(theta_t)
   return(theta_t)
 }
