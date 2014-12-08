@@ -2,7 +2,7 @@ predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
 {
   cands<-lin1_theta_eps(y,0.000000001)$t1
   unlist(lapply(cands,rexpar::dS_lin1,y=y))->depth
-  plot(cands,depth)
+  #plot(cands,depth)
   if(restrict==T)
   {
     theta_min<-min(cands[(length(y)-1)*(depth-1/2)>=-1/2*qchisq(1-alpha,df=1)+1/2])

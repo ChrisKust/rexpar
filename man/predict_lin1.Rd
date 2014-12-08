@@ -35,10 +35,10 @@ A switch, which allow to activate a restriction for parameter simulations used i
 \value{
 \item{estimation_time }{The value for CritTime }
 \item{estimation_lenght}{The value of CritLen}
-\item{mean_CT}{Mean estimate of the critical time of arrival at CritLen}
-\item{med_CT}{Median estimate of the critical time of arrival at CritLen}
-\item{mean_CL}{Mean estimate of the length at CritTime}
-\item{med_CL}{Median estimate of the length at CritTime}
+\item{mean_CT}{Mean estimate of the critical lenght of arrival at CritTime}
+\item{med_CT}{Median estimate of the critical lenght of arrival at CritTime}
+\item{mean_CL}{Mean estimate of the critival time length at CritLen}
+\item{med_CL}{Median estimate of the critical time at CritLen}
 \item{confintCT}{1-alpha prediction interval for the estimate of the critical time}
 \item{confintCL}{1-alpha prediction interval for the estimate of the citical length}
 \item{alpha}{1-Level of the confidence intervals}

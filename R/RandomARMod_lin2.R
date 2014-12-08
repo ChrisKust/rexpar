@@ -22,7 +22,7 @@ RandomARMod_lin2<-function(nobs,intercept=0,arp,start=0,cont=0)
   if(cont==2)
   {
     alpha<-10
-    beta<--3.661513
+    beta<--3.665129
     u<-runif(nobs)
     e<-beta-alpha*log((-log(u)))
     for(i in 2:length(y))
