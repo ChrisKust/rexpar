@@ -3,8 +3,8 @@ dS2_lin2<-function(theta,y,model="linAR1")
   if(model=="linAR1woI")
   {
     res<-resARMod_lin2(c(0,theta),y)
-    r1<-res[seq(1,floor(length(res)/2),2)]
-    r2<-res[seq(floor(length(res)/2)+1,length(res),2)]
+    r1<-res[seq(1,floor(length(res)/2),1)]
+    r2<-res[seq(floor(length(res)/2)+1,length(res),1)]
     m<-min(c(length(r1),length(r2)))
     r1<-r1[1:m]
     r2<-r2[m:1]
