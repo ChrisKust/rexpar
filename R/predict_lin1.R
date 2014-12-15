@@ -13,7 +13,7 @@ predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
     theta_min<-min(cands)
     theta_max<-max(cands)
   }  
-  abline(v=c(theta_min,theta_max),lty=2,col=2)
+  #abline(v=c(theta_min,theta_max),lty=2,col=2)
   ResMat<-matrix(nrow=(length(y)+3*length(y)),ncol=NSim)
   for(i in 1:NSim)
   {
