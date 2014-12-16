@@ -7,7 +7,7 @@
   The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS1_lin1_test(thetaN,alpha,y)
+  dS1_lin1_test(thetaN,alpha,y,exact)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -21,6 +21,9 @@
   
   \item{y}{
     Observed series y=(y0,...,yN) for which the parameter test has to be executed. 
+  }
+    \item{exact}{
+    Switch (TRUE/FALSE) to decide, weather the exact distribution (TRUE) or the approximate normal distribution (FALSE) should be used for the calculation of critical values. 
   }
   
 }

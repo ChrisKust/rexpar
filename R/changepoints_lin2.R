@@ -84,7 +84,26 @@ if(method==2)
   changepoints[changeind==1]<-TRUE
   changepoints[changeind==0]<-FALSE
 }
-list(candidates=cands,changepoints=changepoints)
+totjumps<-cands[changeind==1]
+clus<-follow_ups(totjumps,mincper=0.75,steps=sw)
+cjumps<-clus$jumps
+if(sum(cjumps)>0)
+{
+  c_temp<-clus$clusters
+  rjj<-numeric(max(clus$clusters))
+  for(j in 1:max(clus$clusters))
+  {	
+    rjj[j]<-median(cjumps[c_temp==j])
+  }
+}
+else 
+{
+  rjj<-0
+  c_temp<-0	
+}
+
+
+list(candidates=cands,changepoints=changepoints,rjumps=rjj)
 }
 
 
