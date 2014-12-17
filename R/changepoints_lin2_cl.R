@@ -14,6 +14,7 @@ if(method==1)
   #clusterEvalQ(cluster,{library(parallel)})
 for(i in 1:length(cands))
 {
+  print(i)
   lin2_CI_cl(y[(cands[i]-bw):cands[i]],alpha,notion="dS_pre",cluster=cluster)->ASp1
   lin2_CI_cl(y[cands[i]:(cands[i]+bw)],alpha,notion="dS_pre",cluster=cluster)->ASp2
   ASp1$par[is.na(ASp1$inCI)==T]<-c(0,0)
@@ -38,7 +39,7 @@ for(i in 1:length(cands))
   convex_hull_plot(ASp1$par[ASp1$inCI==0,1],ASp1$par[ASp1$inCI==0,2],col=1)
   convex_hull_plot(ASp2$par[ASp2$inCI==0,1],ASp2$par[ASp2$inCI==0,2],col=2)
   }
-  convex_hull_intersect(cbind(ASp1$par[ASp1$inCI==0,1],ASp1$par[ASp1$inCI==0,2]),cbind(ASp2$par[ASp2$inCI==0,1],ASp2$par[ASp2$inCI==0,2]),y1=y[(cands[i]-bw):cands[i]],y2=y[cands[i]:(cands[i]+bw)])$sumint->changeind[i]
+  try(convex_hull_intersect(cbind(ASp1$par[ASp1$inCI==0,1],ASp1$par[ASp1$inCI==0,2]),cbind(ASp2$par[ASp2$inCI==0,1],ASp2$par[ASp2$inCI==0,2]),y1=y[(cands[i]-bw):cands[i]],y2=y[cands[i]:(cands[i]+bw)])$sumint,silent=T)->changeind[i]
 }
 
 changepoints<-numeric(length(changeind))
@@ -86,7 +87,26 @@ if(method==2)
   changepoints[changeind==1]<-TRUE
   changepoints[changeind==0]<-FALSE
 }
-list(candidates=cands,changepoints=changepoints)
+totjumps<-cands[changeind==1]
+clus<-follow_ups(totjumps,mincper=0.75,steps=sw)
+cjumps<-clus$jumps
+if(sum(cjumps)>0)
+{
+  c_temp<-clus$clusters
+  rjj<-numeric(max(clus$clusters))
+  for(j in 1:max(clus$clusters))
+  {  
+    rjj[j]<-median(cjumps[c_temp==j])
+  }
+}
+else 
+{
+  rjj<-0
+  c_temp<-0	
+}
+
+
+list(candidates=cands,changepoints=changepoints,rjumps=rjj)
 }
 
 
