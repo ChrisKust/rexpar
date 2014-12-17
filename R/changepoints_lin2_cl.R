@@ -44,6 +44,7 @@ for(i in 1:length(cands))
 changepoints<-numeric(length(changeind))
 changepoints[changeind==0]<-TRUE
 changepoints[changeind>0]<-FALSE
+totjumps<-cands[changeind==0]
 }
 
 if(method==2)
@@ -85,8 +86,9 @@ if(method==2)
   changepoints<-numeric(length(changeind))
   changepoints[changeind==1]<-TRUE
   changepoints[changeind==0]<-FALSE
+  totjumps<-cands[changeind==1]
 }
-totjumps<-cands[changeind==1]
+
 clus<-follow_ups(totjumps,mincper=0.75,steps=sw)
 cjumps<-clus$jumps
 if(sum(cjumps)>0)
