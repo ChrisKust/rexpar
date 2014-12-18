@@ -8,7 +8,7 @@ Changepoint detection for linear AR(1) model with intercept (cluster version)
 This function detects change points for paramter changes of a linear AR(1) model with intercept based on simplicial depth. This is a version which uses a preset cluster which hast to be passed as argument when calling the function.
 }
 \usage{
-changepoints_lin2_cl(y,level,bw,sw,plots,method,cluster)
+changepoints_lin2_cl(y,level,bw,sw,plots,method,cluster,mincper,mincp)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,6 +32,12 @@ This parameter determines the method to detect change points. If method=1 is sel
 }
 \item{cluster}{
 Initialised cluster for parallel computing.
+}
+\item{mincper}{
+Percentage to define relevant changepoint clusters based on the length of the 'mincp' longest detected cluster.
+}
+\item{mincp}{
+The 'mincp' longest cluster is used to define a treshold for detected clusters which are consiedered for final breakpoint estimates. This implies, that (if enough clusters exist), the number also defines the minimal amount of detected breakpoints. 
 }
 }
 %\details{

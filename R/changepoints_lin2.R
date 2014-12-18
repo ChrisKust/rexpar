@@ -1,4 +1,4 @@
-changepoints_lin2<-function(y,level,bw,sw,plots=FALSE,method=1,ncoresCP=1)
+changepoints_lin2<-function(y,level,bw,sw,plots=FALSE,method=1,ncoresCP=1,mincper=1,mincp=1)
 {
 alpha<-(1-level)
 cands<-seq(bw+1,length(y)-bw,sw)
@@ -85,7 +85,7 @@ if(method==2)
   changepoints[changeind==0]<-FALSE
 }
 totjumps<-cands[changeind==1]
-clus<-follow_ups(totjumps,mincper=0.75,steps=sw)
+clus<-follow_ups(totjumps,mincper=mincper,steps=sw,mincp=mincp)
 cjumps<-clus$jumps
 if(sum(cjumps)>0)
 {

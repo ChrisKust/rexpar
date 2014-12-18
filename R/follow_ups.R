@@ -1,4 +1,4 @@
-follow_ups<-function(dat,mincper=0.75,steps=1)
+follow_ups<-function(dat,mincper=0.75,steps=1,mincp=1)
 {
   i<-1
   indi<-numeric(length(dat))
@@ -23,7 +23,7 @@ follow_ups<-function(dat,mincper=0.75,steps=1)
   
   
   jps<-dat
-  minc<-sort(table(indi),decreasing=T)[1]*mincper
+  minc<-sort(table(indi),decreasing=T)[mincp]*mincper
   
   for(j in 1:i)
   {

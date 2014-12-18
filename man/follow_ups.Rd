@@ -8,7 +8,7 @@ Postprocessing for changepoint detection
 The function collects subsequent marked candidate points in the changepoints_lin2 function to calculate final estimates of the change points. 
 }
 \usage{
-follow_ups(dat, mincper, steps)
+follow_ups(dat, mincper, steps,mincp)
 }
 \arguments{
   \item{dat}{
@@ -19,6 +19,9 @@ A value for a minimal percentage of the size of the largest marked cluster to li
 }
   \item{steps}{
 Steps in which the candidates are evaluated. 
+}
+\item{mincp}{
+This value defines, which cluster, sorted by length, is relevant for the mincper-treshold. I.e. Just clusters with a lenght of at least 'mincper' of the 'mincp' longest cluster are considered as final estimates. 
 }
 }
 \details{
