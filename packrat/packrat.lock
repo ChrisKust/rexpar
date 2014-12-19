@@ -1,0 +1,51 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.1.8
+RVersion: 3.1.2
+Repos: CRAN=http://cran.rstudio.com,
+    CRANextra=http://www.stats.ox.ac.uk/pub/RWin
+
+Package: MASS
+Source: CRAN
+Version: 7.3-35
+Hash: 2a7641e407ce2a484d5a587a4e30a9aa
+
+Package: alphahull
+Source: CRAN
+Version: 1.0
+Hash: 10ef5d80152d94dde83d21f76351059a
+Requires: sgeostat, splancs, tripack
+
+Package: matrixcalc
+Source: CRAN
+Version: 1.0-3
+Hash: ec1c706e4c8667a8e98c66fb91d9c147
+
+Package: packrat
+Source: github
+Version: 0.4.1.8
+Hash: ee57b7e7ba891d23079b12f1ff5106d0db0594e5
+GithubRepo: packrat
+GithubUsername: rstudio
+GithubRef: v0.98.1000
+GithubSha1: ee57b7e7ba891d23079b12f1ff5106d0db0594e5
+
+Package: sgeostat
+Source: CRAN
+Version: 1.0-25
+Hash: cdc9393d7376c0d93367521f1ba6b286
+
+Package: sp
+Source: CRAN
+Version: 1.0-16
+Hash: 1ec8e2e48ab1a6a12ba2b9754a860ed4
+
+Package: splancs
+Source: CRAN
+Version: 2.01-36
+Hash: 74336f5b061d6f32ca838a2457c5294f
+Requires: sp
+
+Package: tripack
+Source: CRAN
+Version: 1.3-6
+Hash: ded393e2fc14418defee45710ba53f46
