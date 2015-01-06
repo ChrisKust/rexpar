@@ -1,18 +1,25 @@
 lin2_CI_cl<-function(y,level,plots="off",notion="dS1",cluster)
 {
   cands<-lin2_theta_f(y)
-  cands<-cbind(cands$t1,cands$t2)
+  cands1<-cbind(cands$t1,cands$t2)+0.0000000001
+  cands2<-cbind(cands$t1,cands$t2)+0.0000000001
+  cands3<-cbind(cands$t1,cands$t2)-0.0000000001
+  cands4<-cbind(cands$t1,cands$t2)-0.0000000001
+  cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
+  cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
+  cands<-rbind(cands1,cands2,cands3,cands4,cands5,cands6)
+  
   if(notion=="dS1")
   {
-  unlist(apply(cands,1,dS1_lin2_test,y=y,alpha=(1-level)))->TS
+  unlist(parApply(cl,cands,1,dS1_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS2")
   {
-    unlist(apply(cands,1,dS2_lin2_test,y=y,alpha=(1-level)))->TS
+    unlist(parApply(cl,cands,1,dS2_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS3")
   {
-    unlist(apply(cands,1,dS3_lin2_test,y=y,alpha=(1-level)))->TS
+    unlist(parApply(cl,cands,1,dS3_lin2_test,y=y,alpha=(1-level)))->TS
   }
   if(notion=="dS_pre")
   {

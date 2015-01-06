@@ -6,7 +6,7 @@ est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=F
   }
   if(candy_eps==TRUE)
   {
-    LTs<-Tri_Eps_dist(y,perc,eps=0.00001) 
+    LTs<-Tri_Eps_dist(y,perc=0.3,eps=0.00001) 
   }
   LT<-lin2_theta_f(y)
   sv<-c(median(LT$t1),median(LT$t2))
