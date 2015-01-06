@@ -8,7 +8,7 @@ dS2_lin2<-function(theta,y,model="linAR1")
     m<-min(c(length(r1),length(r2)))
     r1<-r1[1:m]
     r2<-r2[m:1]
-    InD<-(r1>0)*(r2<0)+(r1<0)*(r2>0)
+    InD<-(r1>=0)*(r2<=0)+(r1<=0)*(r2>=0)-(r1==0)*(r2==0)
     depth<-1/(m)*sum(InD)
   }
   else
@@ -32,7 +32,7 @@ dS2_lin2<-function(theta,y,model="linAR1")
   r1<-r1[1:m]
   r2<-r2[1:m]
   r3<-r3[m:1]
-  InD<-(r1>0)*(r2<0)*(r3>0)+(r1<0)*(r2>0)*(r3<0)
+  InD<-(r1>=0)*(r2<=0)*(r3>=0)+(r1<=0)*(r2>=0)*(r3<=0)-(r1==0)*(r2==0)*(r3==0)
   depth<-1/(m)*sum(InD)
   }
   
