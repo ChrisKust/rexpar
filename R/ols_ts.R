@@ -1,0 +1,9 @@
+ols_ts<-function(y,thetaT)
+{
+  y1<-y[1:(length(y)-1)]
+  y2<-y[2:length(y)]
+  Ests<-rexpar::ols_expl(y)
+  Ttheta_0<-((Ests$theta0-thetaT[2])*sqrt(length(y)*sum(y1^2)-(sum(y1)^2)))/(sqrt(sum(y1^2)*Ests$sigma2))
+  Ttheta_1<-(Ests$theta1-thetaT[1])*sqrt(length(y)*sum(y1^2)-(sum(y1)^2))/(sqrt(length(y)*Ests$sigma2))
+  list(Ttheta0=Ttheta_0,Ttheta1=Ttheta_1)
+}

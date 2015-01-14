@@ -1,0 +1,9 @@
+ols_test<-function(theta0,y,alpha)
+{
+  ts<-rexpar::ols_ts(y,theta0)
+  ts<-c(ts$Ttheta0,ts$Ttheta1)
+  Ests<-rexpar::ols_expl(y)
+  qts<-t(ts)%*%ginv(diag(rep(sqrt(Ests$sigma2),2)))%*%ts
+  phi<-(qts>qchisq(1-alpha,df=2))
+  list(phi=phi)
+}
