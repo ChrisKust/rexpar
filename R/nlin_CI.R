@@ -1,4 +1,4 @@
-nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE)
+nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE,spar=0.8)
 {
   cands<-nlin1_theta_f(y)
   cands<-cbind(cands$t1,cands$t2)
@@ -67,9 +67,9 @@ nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE)
   if(plots==TRUE)
   {
     a<-which(inCIs==0)
-    plot(cands)
+    #plot(cands)
     points(cands[a,],col=2)
-    ashape(a[,1],a[,2],alpha=0.8)->ah
+    ashape(cands[a,1],cands[a,2],alpha=spar)->ah
     plot(ah,add=addPar,col=3)
   }
   list(par=cands,inCI=inCIs)
