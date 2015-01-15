@@ -29,6 +29,9 @@ If the notion "dS" is selected a multicore computation is possible. Here the num
 }
 \item{addPar}{
 A swich to decide if the resulting confidence region shall be added to a existing plot (TRUE) or is generated in a new plot window (FALSE)
+
+\item{spar}
+{Smoothing parameter for alpha hull construction in plots}
 }
 }
 %\details{

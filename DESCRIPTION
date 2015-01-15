@@ -2,7 +2,7 @@ Package: rexpar
 Type: Package
 Title: Simplicial depht for explosive AR processes
 Version: 0.996
-Date: 2014-07-25
+Date: 2015-01-15
 Author: Kustosz, Christoph
 Maintainer: "Kustosz, Christoph" <kustosz@statistik.tu-dortmund.de>
 Description: The package contains simplicial depth statistics for explosive AR(1) processes
