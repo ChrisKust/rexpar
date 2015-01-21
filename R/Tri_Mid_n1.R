@@ -10,7 +10,7 @@ Tri_Mid_n1<-function(y,perc=1,candy=FALSE)
   ll<-ll[il1,]
   which(ll[,2]<l2u & ll[,2]>l2l)->il2
   ll<-ll[il2,]
-  print(dim(ll))
+  #print(dim(ll))
   d1<-ll[,1]
   d2<-ll[,2]
   if(candy==TRUE)
@@ -21,10 +21,10 @@ Tri_Mid_n1<-function(y,perc=1,candy=FALSE)
     apply(p1,2,mind,Mat=d2)->v2
     sol<-cbind(v1,v2)
   }
-  if(candy==TRUE)
+  if(candy==FALSE)
   {
     sol<-ll
   }
-  print(dim(sol))
+  #print(dim(sol))
   return(sol)
 }
