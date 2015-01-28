@@ -52,5 +52,11 @@ RandomARMod_nlin1<-function(nobs,arp,power=1,start=0,cont=0)
     
   }
   
+  if(cont==7)
+  {
+    for(i in 2:length(y))
+      y[i]<-y[i-1]+arp*y[i-1]^power
+  }
+  
   return(y)
 }
