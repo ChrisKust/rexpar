@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS2 proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_lin2_test(thetaN,alpha,y)
+dS2_lin2_test(thetaN,alpha,y,exact=F)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,7 +22,9 @@ Value in (0,1) defining the level of the test.
   \item{y}{
 Observed series y=(y0,...,yN) for which the parameter test has to be executed. 
 }
-
+\item{exact}{
+This switch allows the usage of an exact distribition of the test statistics using the sample size. 
+}
 }
 %\details{
 %%  ~~ If necessary, more details than the description above ~~
