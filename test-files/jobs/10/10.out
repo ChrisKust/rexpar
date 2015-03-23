@@ -1,0 +1,27 @@
+Loading registry: C:/Users/kustosz/Documents/R/rexpar_package/rexpar/test-files/registry.RData
+Loading conf: 
+2015-03-17 14:39:59: Starting job on node KUSTOSZ.
+Auto-mailer settings: start=none, done=none, error=none.
+Setting work dir: C:/Users/kustosz/Documents/R/rexpar_package/rexpar
+########## Executing jid=10 ##########
+Timestamp: 2015-03-17 14:39:59
+BatchJobs job:
+  Job id: 10
+  Fun id: 8424b5458c8e5664656c6b6a4e43a2fb
+  Fun formals: 
+  Name: NA
+  Seed: 113640414
+  Pars: <unnamed>=10
+Setting seed: 113640414
+Result:
+List of 2
+ $ TS : num -1.65
+ $ phi: logi TRUE
+NULL
+Writing result file: C:/Users/kustosz/Documents/R/rexpar_package/rexpar/test-files/jobs/10/10-result.RData
+2015-03-17 14:40:00: All done.
+Setting work back to: C:/Users/kustosz/Documents/R/rexpar_package/rexpar
+Memory usage according to gc:
+         used (Mb) gc trigger (Mb) max used (Mb)
+Ncells 581086 31.1     984024 52.6   609002 32.6
+Vcells 896292  6.9    1757946 13.5   909490  7.0
