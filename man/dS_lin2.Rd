@@ -7,7 +7,7 @@
 This function calculates simplicial depth for explosive AR(1) processes as defined in Leucht, Kustosz and Mueller (2014). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
-dS_lin2(theta,y,ncores,model)
+dS_lin2(theta,y,ncores=1,model,cpow=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,8 +23,7 @@ Number of cores for parallel computation. If no value is selected the method set
   \item{model}{
 Allows the selection of the linear AR(1) model with intercept by "linAR1", the nonlinear AR model without intercept by "nlinAR1" or the linear AR(1) model with intercept and fixed power cpow "linARc". The swich therfore changes the definition of the residuals used in the calculation.
 }
-\item{cpow}
-{
+\item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 }

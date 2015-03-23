@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS1_lin2_test(thetaN,alpha,y,exact=F)
+dS1_lin2_test(thetaN,alpha,y,exact=F,cpow=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,9 +25,8 @@ Observed series y=(y0,...,yN) for which the parameter test has to be executed.
 \item{exact}{
 This switch allows the usage of an exact distribition of the test statistics using the sample size. 
 }
-\item{cpow}
-{
-fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+\item{cpow}{
+fixed and known power parameter for the \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^cpow + E_n} model
 }
 
 }

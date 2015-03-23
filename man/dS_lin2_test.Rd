@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS proposed in Leucht, Mueller and Kustosz (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_lin2_test(thetaN,alpha,y,ncores)
+dS_lin2_test(thetaN,alpha,y,ncores,cpow=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,8 +25,7 @@ Observed series y=(y0,...,yN) for which the parameter test has to be executed.
   \item{ncores}{
 Defines the number of cores to use for parallel computation of the simplicial depth statistic. If no value is definied the standard value of 1 is passed and no parallel methods are applied.
 }
-\item{cpow}
-{
+\item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 

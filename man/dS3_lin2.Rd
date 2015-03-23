@@ -10,7 +10,7 @@ processes, when overlapping residuals in sequences of 3 are evaluated. Thereby
 the parameter \eqn{\theta} and the process y are fixed. The assumed model given by the argument model. 
 }
 \usage{
-dS3_lin2(theta,y,model)
+dS3_lin2(theta,y,model,cpow=1)
 }
 \arguments{
   \item{theta}{
@@ -28,8 +28,7 @@ models are available\cr
 "nlinAR1" = linear AR(1) model without intercept but with power paremeter\cr
 "linARc" = linear AR(1) model with intercept and fixed and known power parameter cpow\cr
 }
-\item{cpow}
-{
+\item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 }

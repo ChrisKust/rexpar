@@ -2,11 +2,11 @@ dS3_lin2_test<-function(thetaN,alpha,y,exact=F,cpow=1)
 {
   if(cpow==1)
   {
-    dS1<-rexpar::dS3_lin2(thetaN,y)
+    dS3<-rexpar::dS3_lin2(thetaN,y)
   }
   if(cpow!=1)
   {
-    dS1<-rexpar::dS3_lin2(thetaN,y,cpow=cpow,model="linARc")
+    dS3<-rexpar::dS3_lin2(thetaN,y,cpow=cpow,model="linARc")
   }
   NdS3<-sqrt((length(y)-1)-2)*(dS3-1/4)/sqrt(5/16)
   if(exact==T)
