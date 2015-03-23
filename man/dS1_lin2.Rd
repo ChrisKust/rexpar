@@ -26,6 +26,11 @@ models are available\cr
 "linAR1" = linear AR(1) model with intercept\cr
 "linAR2" = linear AR(2) model without intercept\cr
 "nlinAR1" = linear AR(1) model without intercept but with power paremeter\cr
+"linARc" = linear AR(1) model with intercept and fixed and knwon power cpar\cr
+}
+\item{cpow}
+{
+fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 }
 %\details{

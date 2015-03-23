@@ -25,6 +25,10 @@ Observed series y=(y0,...,yN) for which the parameter test has to be executed.
 \item{exact}{
 This switch allows the usage of an exact distribition of the test statistics using the sample size. 
 }
+\item{cpow}
+{
+fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+}
 
 }
 %\details{

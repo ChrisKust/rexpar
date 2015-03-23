@@ -21,7 +21,11 @@ Observed proces y=(y0,...,yN) for which simplicial depth has to be evaluated.
 Number of cores for parallel computation. If no value is selected the method sets the cores to 1 and no parallel comutation is applied. If the value is set to 'auto', the function detects the available number of cores and uses the maximal number minus 1. The function produces errors, if more cores than available or a wrong argument is inserted.
 }
   \item{model}{
-Allows the selection of the linear AR(1) model with intercept by "linAR1" or the nonlinear AR model without intercept by "nlinAR1". The swich therfore changes the definition of the residuals used in the calculation.
+Allows the selection of the linear AR(1) model with intercept by "linAR1", the nonlinear AR model without intercept by "nlinAR1" or the linear AR(1) model with intercept and fixed power cpow "linARc". The swich therfore changes the definition of the residuals used in the calculation.
+}
+\item{cpow}
+{
+fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 }
 

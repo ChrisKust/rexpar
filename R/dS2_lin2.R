@@ -1,4 +1,4 @@
-dS2_lin2<-function(theta,y,model="linAR1")
+dS2_lin2<-function(theta,y,model="linAR1",cpow=1)
 {
   if(model=="linAR1woI")
   {
@@ -24,6 +24,12 @@ dS2_lin2<-function(theta,y,model="linAR1")
   if(model=="linAR2")
   {
     res<-rexpar::resARMod_linar2(c(theta[1],theta[2]),y)
+  }
+  if(model=="linARc")
+  {
+    y1<-y[-length(y)]
+    y2<-y[-1]
+    res<-y2-theta[1]-theta[2]*y1^cpow
   }
   r1<-res[seq(1,floor((length(res)-1)/2),1)]
   r2<-rep(res[floor((length(res)+1)/2)],floor((length(res)-1)/2))

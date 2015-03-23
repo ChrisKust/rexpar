@@ -25,6 +25,10 @@ Observed series y=(y0,...,yN) for which the parameter test has to be executed.
   \item{ncores}{
 Defines the number of cores to use for parallel computation of the simplicial depth statistic. If no value is definied the standard value of 1 is passed and no parallel methods are applied.
 }
+\item{cpow}
+{
+fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+}
 
 }
 %\details{

@@ -1,7 +1,7 @@
-dS_lin2<-function(theta,y,ncores=1,model="linAR1")
+dS_lin2<-function(theta,y,ncores=1,model="linAR1",cpow=1)
 {
-  y1<-y[2:length(y)]
-  y0<-y[1:(length(y)-1)]
+  y1<-y[-1]
+  y0<-y[-length(y)]
   if(model=="linAR1")
   {
   resy<-y1-theta[1]-theta[2]*y0
@@ -9,6 +9,10 @@ dS_lin2<-function(theta,y,ncores=1,model="linAR1")
   else if(model=="nlinAR1")
   {
   resy<-y1-y0-theta[1]*y0^theta[2]  
+  }
+  else if(model=="linARc")
+  {
+    res<-y1-theta[1]-theta[2]*y0^cpow
   }
   else
   {
