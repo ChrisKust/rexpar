@@ -1,5 +1,5 @@
-dS_lin2<-function(theta,y,ncores=1,model="linAR1",cpow=1)
-{
+dS_lin2 <- function(theta, y, ncores = 1, model = c("linAR1", "nlinAR1", "linARc"), cpow = 1) {
+  model <- match.arg(model)
   y1<-y[-1]
   y0<-y[-length(y)]
   if(model=="linAR1")
@@ -12,12 +12,9 @@ dS_lin2<-function(theta,y,ncores=1,model="linAR1",cpow=1)
   }
   else if(model=="linARc")
   {
-    res<-y1-theta[1]-theta[2]*y0^cpow
+  resy <- y1 - theta[1] - theta[2] * y0^cpow
   }
-  else
-  {
-    stop("no valid model")
-  }
+
   Matsd<-0 
   
   Reslist<-vector("list",length(resy)-3)
