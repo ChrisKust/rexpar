@@ -1,5 +1,6 @@
 dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"), cpow = 1) {
   model <- match.arg(model)
+  
   if (model == "linAR1woI") {
     if (missing(res)) {
       res <- rexpar::resARMod_lin2(c(0, theta), y)
