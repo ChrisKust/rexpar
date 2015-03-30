@@ -1,21 +1,18 @@
-dS2_lin2_test<-function(thetaN,alpha,y,exact=F,cpow=1)
-{
-  if(cpow==1)
-  {
-    dS2<-rexpar::dS2_lin2(thetaN,y)
+dS2_lin2_test <- function(dS2, thetaN, alpha, y, exact = FALSE, cpow = 1) {
+  if (missing(dS2)) {
+    if (cpow == 1) {
+      dS2 <- rexpar::dS2_lin2(thetaN, y)
+    }
+    if (cpow != 1) {
+      dS2 <- rexpar::dS2_lin2(thetaN, y, cpow = cpow, model = "linARc")
+    }
   }
-  if(cpow!=1)
-  {
-    dS2<-rexpar::dS2_lin2(thetaN,y,cpow=cpow,model="linARc")
+  NdS2 <- sqrt(floor((length(y) - 1) / 2) - 1) * (dS2 - 1/4) / sqrt(3/16)
+  if (exact == TRUE) {
+    deci <- ((dS2 * (floor((length(y) - 1) / 2) - 1)) <
+               qbinom(alpha, size = (floor((length(y) - 1) / 2) - 1), prob = 1/4))
+  } else {
+    deci <- (NdS2 < qnorm(alpha))
   }
-  NdS2<-NdS2<-sqrt(floor((length(y)-1)/2)-1)*(dS2-1/4)/sqrt(3/16)
-  if(exact==T)
-  {
-    deci<-((dS2*(floor((length(y)-1)/2)-1))<qbinom(alpha,size=(floor((length(y)-1)/2)-1),prob=1/4))
-  }
-  else
-  {
-  deci<-(NdS2<qnorm(alpha))
-  }
-  list(TS=NdS2,phi=deci)
+  list(TS = NdS2, phi = deci)
 }
