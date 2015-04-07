@@ -1,22 +1,18 @@
-dS3_lin2_test<-function(thetaN,alpha,y,exact=F,cpow=1)
-{
-  if(cpow==1)
-  {
-    dS3<-rexpar::dS3_lin2(thetaN,y)
+dS3_lin2_test <- function(dS3, thetaN, alpha, y, exact = FALSE, cpow = 1) {
+  if (missing(dS3)) {
+    if (cpow == 1) {
+      dS3 <- rexpar::dS3_lin2(thetaN, y)
+    }
+    if (cpow != 1) {
+      dS3 <- rexpar::dS3_lin2(thetaN, y, cpow = cpow, model = "linARc")
+    }
   }
-  if(cpow!=1)
-  {
-    dS3<-rexpar::dS3_lin2(thetaN,y,cpow=cpow,model="linARc")
+  NdS3 <- sqrt((length(y) - 1) - 2) * (dS3 - 1/4) / sqrt(5/16)
+  if (exact == TRUE) {
+    q <- quantile(exact_lim_dS3lin(N = length(y), R = 1000), prob = alpha)
+    deci <- (((length(y) - 1) - 2) * dS3 < q)
+  } else {
+    deci <- (NdS3 < qnorm(alpha))
   }
-  NdS3<-sqrt((length(y)-1)-2)*(dS3-1/4)/sqrt(5/16)
-  if(exact==T)
-  {
-    q<-quantile(exact_lim_dS3lin(N=length(y),R=1000), prob=alpha)
-    deci<-(((length(y)-1)-2)*dS3<q)
-  }
-  else
-  {
-  deci<-(NdS3<qnorm(alpha))
-  }
-  list(TS=NdS3,phi=deci)
+  list(TS = NdS3, phi = deci)
 }
