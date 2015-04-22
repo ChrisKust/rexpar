@@ -28,7 +28,7 @@ dS1_lin2<-function(theta,y,model="linAR1",cpow=1)
   }
   if(model=="linARc")
   {
-    y1<-y[-lentgh(y)]
+    y1<-y[-length(y)]
     y2<-y[-1]
     res<-y2-theta[1]-theta[2]*y1^cpow
   }

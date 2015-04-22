@@ -4,7 +4,7 @@ dS3_nlin2_test <- function(dS3, thetaN, alpha, y, exact = FALSE) {
   }
   NdS3 <- sqrt((length(y) - 1) - 3) * (dS3 - 1/8) / sqrt(15/64)
   if (exact == TRUE) {
-    q <- quantile(exact_lim_dS3nlin(N = length(y), R = 1000), prob = alpha)
+    q <- quantile(exact_lim_dS3nlin(N = length(y), Reps = 1000), prob = alpha)
     deci <- (((length(y) - 1) - 3) * dS3 < q)
   } else {
     deci <- (NdS3 < qnorm(alpha))

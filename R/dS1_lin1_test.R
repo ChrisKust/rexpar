@@ -1,6 +1,6 @@
-dS1_lin1_test<-function(thetaN,alpha,y,exact=T)
+dS1_lin1_test<-function(thetaN,alpha,y,exact=F)
 {
-  dS1<-rexpar::dS1_lin2(thetaN,y,model="linAR1woI")
+  dS1<-rexpar::dS1_lin2(theta=thetaN,y=y,model="linAR1woI")
   NdS1<-sqrt(floor((length(y)-1)/2))*(dS1-1/2)/sqrt(1/4)
   if(exact==F)
   {  

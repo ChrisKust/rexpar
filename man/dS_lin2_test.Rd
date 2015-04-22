@@ -57,8 +57,8 @@ Note, that the evaluation depends on the simulated results of the limit process,
 \examples{
 data("simLimit")
 y<-RandomARMod_lin2(100,0.2,1.01,15,0)
-dS_lin2_test(c(0.2,1.01),0.05,y)
-dS_lin2_test(c(0.1,1.01),0.05,y)
+%dS_lin2_test(c(0.2,1.01),0.05,y)
+%dS_lin2_test(c(0.1,1.01),0.05,y)
 ## The function is currently defined as
 function(thetaN,alpha,y,ncores=1)
 {

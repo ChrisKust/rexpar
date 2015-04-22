@@ -55,17 +55,9 @@ Kustosz, Christoph
 }
 \examples{
 y<-RandomARMod_nlin1(1000,0.2,1.01,15,0)
-dS2_lin2_test(c(0.2,1.01),0.05,y)
-dS2_lin2_test(c(0.1,1.01),0.05,y)
+%dS2_lin2_test(c(0.2,1.01),0.05,y)
+%dS2_lin2_test(c(0.1,1.01),0.05,y)
 
-## The function is currently defined as
-function(thetaN,alpha,y)
-{
-  dS2<-dS2_lin2(thetaN,y)
-  NdS2<-NdS2<-sqrt(floor(length(y)/2)-1)*(dS2-1/4)/sqrt(3/16)
-  deci<-(NdS2<qnorm(alpha))
-  list(TS=NdS2,phi=deci)
-}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

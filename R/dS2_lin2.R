@@ -14,7 +14,7 @@ dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", 
     depth <- 1/(m) * sum(InD)
   } else {
     if (missing(res)) {
-      if (model=="linAR1") {  
+      if (model == "linAR1") {  
         res <- rexpar::resARMod_lin2(c(theta[1], theta[2]), y)
       }
       if (model == "nlinAR1") {

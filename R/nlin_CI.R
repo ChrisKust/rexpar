@@ -3,12 +3,13 @@ nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE,spar=0
   cands<-nlin1_theta_f(y)
   cands0<-cbind(cands$t1,cands$t2)
   cands1<-cbind(cands$t1,cands$t2)+0.0000000001
-  cands2<-cbind(cands$t1,cands$t2)+0.0000000001
+  #cands2<-cbind(cands$t1,cands$t2)+0.0000000001
   cands3<-cbind(cands$t1,cands$t2)-0.0000000001
-  cands4<-cbind(cands$t1,cands$t2)-0.0000000001
-  cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
-  cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
-  cands<-rbind(cands0,cands1,cands2,cands3,cands4,cands5,cands6)
+  #cands4<-cbind(cands$t1,cands$t2)-0.0000000001
+  #cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
+  #cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
+  #cands<-rbind(cands0,cands1,cands2,cands3,cands4,cands5,cands6)
+  cands<-rbind(cands0,cands1,cands3)
   
   if(notion=="dS1")
   {
@@ -67,7 +68,7 @@ nlin_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,addPar=FALSE,spar=0
     
     if(ncoresC==1)
     {
-      unlist(apply(cands,1,dS_nlin_test,y=y,alpha=(1-level),ncores="auto"))->TS
+      unlist(apply(cands,1,dS_nlin_test,y=y,alpha=(1-level),ncores=1))->TS
     }
   }
   inCIs<-as.vector(TS[seq(2,length(TS),2)])

@@ -53,7 +53,7 @@
   }
 \examples{
   y<-RandomARMod_lin2(1000,0,1.01,15,0)
-  dS3_lin2_test(1.01,0.05,y)
+  dS3_lin1_test(1.01,0.05,y)
   
   ## The function is currently defined as
 }
