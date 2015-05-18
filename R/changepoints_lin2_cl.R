@@ -14,8 +14,8 @@ if(method==1)
   #clusterEvalQ(cluster,{library(parallel)})
 for(i in 1:length(cands))
 {
-  lin2_CI_cl(y[(cands[i]-bw):cands[i]],alpha,notion="dS",cluster=cluster)->ASp1
-  lin2_CI_cl(y[cands[i]:(cands[i]+bw)],alpha,notion="dS",cluster=cluster)->ASp2
+  lin2_CI_cl(y[(cands[i]-bw):cands[i]],alpha,notion="dS_pre",cluster=cluster)->ASp1
+  lin2_CI_cl(y[cands[i]:(cands[i]+bw)],alpha,notion="dS_pre",cluster=cluster)->ASp2
   ASp1$par[is.na(ASp1$inCI)==T]<-c(0,0)
   ASp1$inCI[is.na(ASp1$inCI)==T]<-1
   ASp2$par[is.na(ASp2$inCI)==T]<-c(0,0)
