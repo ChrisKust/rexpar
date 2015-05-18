@@ -7,7 +7,7 @@ Changepoint detection for linear AR(1) model without intercept
 This function detects change points for paramter changes of a linear AR(1) model without intercept based on simplicial depth
 }
 \usage{
-changepoints_lin1(y,level,bw,sw,method)
+changepoints_lin1(y,level,bw,sw,method,mincper,mincp)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,12 @@ A stepwidth to reduce the candidate points in which the change points are evalua
 
 \item{method}{
 This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not within the non respective confidence intervals.
+}
+\item{mincper}{
+Percentage to define relevant changepoint clusters based on the length of the 'mincp' longest detected cluster.
+}
+\item{mincp}{
+The 'mincp' longest cluster is used to define a treshold for detected clusters which are consiedered for final breakpoint estimates. This implies, that (if enough clusters exist), the number also defines the minima
 }
 
 }
