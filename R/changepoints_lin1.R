@@ -10,10 +10,7 @@ changepoints_lin1<-function(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1
     {
       lin1_CI(y[(cands[i]-bw):cands[i]],alpha,notion="dS")->ASp1
       lin1_CI(y[cands[i]:(cands[i]+bw)],alpha,notion="dS")->ASp2
-      print(i)
-    print(c(min(ASp1$par[ASp1$inCI==0]),max(ASp1$par[ASp1$inCI==0])))
-    print(c(min(ASp2$par[ASp2$inCI==0]),max(ASp2$par[ASp2$inCI==0])))
-    print("next")
+
     
           
      1-(max(ASp1$par[ASp1$inCI==0])>(min(ASp2$par[ASp2$inCI==0])))-(min(ASp1$par[ASp1$inCI==0])<(max(ASp2$par[ASp2$inCI==0])))->changeind[i]
