@@ -17,6 +17,9 @@ Parameter theta for which simplicial depth has to be evaluated.
   \item{y}{
 Observed proces y=(y0,...,yN) for which simplicial depth has to be evaluated.
 }
+  \item{mod}{
+Switch to enable full tangential depth derivative (multiplication with y_{n-1}) in the test statistic (TRUE)
+}
 
 }
 

@@ -22,6 +22,9 @@ Value in (0,1) defining the level of the test.
   \item{y}{
 Observed series y=(y0,...,yN) for which the parameter test has to be executed. 
 }
+  \item{mod}{
+Switch to enable full tangential depth derivative (multiplication with y_{n-1}) in the test statistic (TRUE)
+}
 
 
 }
