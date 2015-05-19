@@ -6,7 +6,7 @@ changeind<-numeric(length(cands))
 if(plots==TRUE)
 {  
 par(mfrow=c(1,1))
-plot(0,0,xlab=expression(theta[1]),ylab=expression(theta[2]),main="dS3",xlim=c(-1,1),ylim=c(0.9,1.1))#,xlim=c(min(c(ASp1$par[ASp1$inCI==0,1],ASp2$par[ASp2$inCI==0,1])),max(c(ASp1$par[ASp1$inCI==0,1],ASp2$par[ASp2$inCI==0,1]))),ylim=c(min(c(ASp1$par[ASp1$inCI==0,2],ASp2$par[ASp2$inCI==0,2])),max(c(ASp1$par[ASp1$inCI==0,2],ASp2$par[ASp2$inCI==0,2]))))
+plot(0,0,xlab=expression(theta[1]),ylab=expression(theta[2]),main="",xlim=c(-1,1),ylim=c(0.9,1.1))#,xlim=c(min(c(ASp1$par[ASp1$inCI==0,1],ASp2$par[ASp2$inCI==0,1])),max(c(ASp1$par[ASp1$inCI==0,1],ASp2$par[ASp2$inCI==0,1]))),ylim=c(min(c(ASp1$par[ASp1$inCI==0,2],ASp2$par[ASp2$inCI==0,2])),max(c(ASp1$par[ASp1$inCI==0,2],ASp2$par[ASp2$inCI==0,2]))))
 }
 if(method==1)
 {
@@ -55,8 +55,8 @@ if(method==2)
   est_lin2(y[cands[i]:(cands[i]+bw)],notion=dS_lin2,perc=1)$estimate->E2
   if(plots==TRUE)
   {  
-  lin2_CI_cl(y[(cands[i]-bw):cands[i]],(1-alpha),notion="dS",cluster=cluster)->ASp1
-  lin2_CI_cl(y[cands[i]:(cands[i]+bw)],(1-alpha),notion="dS",cluster=cluster)->ASp2
+  lin2_CI_cl(y[(cands[i]-bw):cands[i]],(1-alpha),notion="dS_pre",cluster=cluster)->ASp1
+  lin2_CI_cl(y[cands[i]:(cands[i]+bw)],(1-alpha),notion="dS_pre",cluster=cluster)->ASp2
   lx1<-min(c(ASp1$par[ASp1$inCI==0,1],ASp2$par[ASp2$inCI==0,1]),na.rm=T)
   if(lx1==-Inf || is.na(lx1)==T)
   {lx1<--10}
