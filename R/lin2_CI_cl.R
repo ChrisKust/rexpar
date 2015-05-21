@@ -2,14 +2,14 @@ lin2_CI_cl<-function(y,level,plots="off",notion="dS1",cluster)
 {
   cands<-lin2_theta_f(y)
   cands0<-cbind(cands$t1,cands$t2)
-  cands1<-cbind(cands$t1,cands$t2)+0.0000000001
-  cands2<-cbind(cands$t1,cands$t2)+0.0000000001
-  cands3<-cbind(cands$t1,cands$t2)-0.0000000001
-  cands4<-cbind(cands$t1,cands$t2)-0.0000000001
-  cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
-  cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
-  cands<-rbind(cands0,cands1,cands2,cands3,cands4,cands5,cands6)
-  #cands<-cands0
+  #cands1<-cbind(cands$t1,cands$t2)+0.0000000001
+  #cands2<-cbind(cands$t1,cands$t2)+0.0000000001
+  #cands3<-cbind(cands$t1,cands$t2)-0.0000000001
+  #cands4<-cbind(cands$t1,cands$t2)-0.0000000001
+  #cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
+  #cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
+  #cands<-rbind(cands0,cands1,cands2,cands3,cands4,cands5,cands6)
+  cands<-cands0
   
   if(notion=="dS1")
   {

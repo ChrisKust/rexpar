@@ -39,9 +39,9 @@ for(i in 1:length(cands))
   convex_hull_intersect(cbind(ASp1$par[ASp1$inCI==0,1],ASp1$par[ASp1$inCI==0,2]),cbind(ASp2$par[ASp2$inCI==0,1],ASp2$par[ASp2$inCI==0,2]),y1=y[(cands[i]-bw):cands[i]],y2=y[cands[i]:(cands[i]+bw)])$sumint->changeind[i]
 }
 
-changepoints<-numeric(length(changeind))
 changepoints[changeind==0]<-TRUE
 changepoints[changeind>0]<-FALSE
+totjumps<-cands[changeind==0]
 }
 
 if(method==2)
@@ -83,8 +83,9 @@ if(method==2)
   changepoints<-numeric(length(changeind))
   changepoints[changeind==1]<-TRUE
   changepoints[changeind==0]<-FALSE
+  totjumps<-cands[changeind==1]
 }
-totjumps<-cands[changeind==1]
+
 clus<-follow_ups(totjumps,mincper=mincper,steps=sw,mincp=mincp)
 cjumps<-clus$jumps
 if(sum(cjumps)>0)

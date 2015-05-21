@@ -8,8 +8,8 @@ changepoints_lin1<-function(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1
   {
     for(i in 1:length(cands))
     {
-      lin1_CI(y[(cands[i]-bw):cands[i]],alpha,notion="dS")->ASp1
-      lin1_CI(y[cands[i]:(cands[i]+bw)],alpha,notion="dS")->ASp2
+      lin1_CI(y[(cands[i]-bw):cands[i]],(1-alpha),notion="dS")->ASp1
+      lin1_CI(y[cands[i]:(cands[i]+bw)],(1-alpha),notion="dS")->ASp2
 
     
           
@@ -36,7 +36,7 @@ changepoints_lin1<-function(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1
     changepoints<-numeric(length(changeind))
     changepoints[changeind==1]<-TRUE
     changepoints[changeind==0]<-FALSE
-    totjumps<-cands[changeind==0]
+    totjumps<-cands[changeind==1]
   }
   
   clus<-follow_ups(totjumps,mincper=mincper,steps=sw,mincp=mincp)
