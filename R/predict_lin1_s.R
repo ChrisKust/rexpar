@@ -1,4 +1,4 @@
-predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
+predict_lin1_s<-function(y,CritLen,CritTime,NSim,alpha,restrict=F,start)
 {
   simL_fac<-30
   cands<-lin1_theta_eps(y,0.000000001)$t1
@@ -19,7 +19,7 @@ predict_lin1<-function(y,CritLen,CritTime,NSim,alpha,restrict=F)
   for(i in 1:NSim)
   {
     y_t<-numeric(length(y)+simL_fac*length(y))
-    y_t[length(y)]<-y[length(y)]
+    y_t[length(y)]<-start
     theta_t<-draw_from_depth(depthI=depth,testvec=cands,lower=theta_min,upper=theta_max)
     y_o<-y[1:(length(y)-1)]
     y_p<-y[2:length(y)]
