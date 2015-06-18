@@ -1,4 +1,4 @@
-est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2)
+est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2,optim_rude=FALSE)
 {
   if(candy_eps==FALSE)
   {  
@@ -10,6 +10,18 @@ est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=F
   }
   LT<-lin2_theta_f(y)
   sv<-c(median(LT$t1),median(LT$t2))
+  
+  if(optim_rude==TRUE)
+  {
+    print(sv)
+    optim(c(sv[1],sv[2]),fn=notion,model="linAR1",y=y,control=list(fnscale=-1))->sol
+    se<-sol$par
+    ev<-sol$value
+    itc<-sol$counts
+  }
+  else
+  {
+    
   dists<-apply(LTs,1,Ele_Norm,center=sv,nortype=normtype,pv=pv,wgt=wgt)
   cands1<-LTs[,1][dists<quantile(dists,acc)]
   cands2<-LTs[,2][dists<quantile(dists,acc)]
@@ -53,7 +65,7 @@ est_lin2<-function(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,plots=F
   {
     se<-c(mean(se[,1]),mean(se[,2]))
   }
-  
+  }
   list(estimate=se,value=max(ev),numit=itc)
 }
 
