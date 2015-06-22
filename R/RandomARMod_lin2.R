@@ -1,11 +1,11 @@
-RandomARMod_lin2<-function(nobs,intercept=0,arp,start=0,cont=0)
+RandomARMod_lin2<-function(nobs,intercept=0,arp,start=0,cont=0,sd=0.2)
 {
   y<-numeric(nobs)
   y[1]<-start
   if(cont==0)
   {
     for(i in 2:length(y))
-      y[i]<-arp*y[i-1]+intercept+0.2*rnorm(1)
+      y[i]<-arp*y[i-1]+intercept+sd*rnorm(1)
   }
   
   if(cont==1)
