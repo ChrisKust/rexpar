@@ -1,6 +1,12 @@
-lin1_CI<-function(y,level,plots=FALSE,notion="dS")
+lin1_CI<-function(y,level,plots=FALSE,notion="dS",eps=NULL)
 {
+  if(is.null(eps))
+  {
   cands<-lin1_theta(y)$t1
+  }
+  else
+  {cands<-lin1_theta_eps(y,eps)$t1}
+  
   if(notion=="dS1")
   {
     unlist(lapply(cands,dS1_lin1_test,y=y,alpha=(1-level)))->TS

@@ -1,16 +1,16 @@
-RandomARMod_nlin2<-function(nobs,intercept=0,arp,power,start=0,cont=0)
+RandomARMod_nlin2<-function(nobs,intercept=0,arp,power,start=0,cont=0,sd=0.1)
 {
   y<-numeric(nobs)
   y[1]<-start
   if(cont==0)
   {
     for(i in 2:length(y))
-      y[i]<-y[i-1]+arp*y[i-1]^power+intercept+0.2*rnorm(1)
+      y[i]<-y[i-1]+arp*y[i-1]^power+intercept+sd*rnorm(1)
   }
   
   if(cont==1)
   {
-    u1<-rnorm(nobs)*0.2
+    u1<-rnorm(nobs)*sd
     u2<-(5+rnorm(nobs)*1)
     p1<-rpois(nobs,5/100)
     e<-u1+p1*u2

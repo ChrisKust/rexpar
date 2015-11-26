@@ -1,7 +1,10 @@
-lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
+lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1,mid=FALSE)
 {
+  if(mid==FALSE)
+  {  
   cands<-lin2_theta_f(y)
-  cands0<-cbind(cands$t1,cands$t2)
+  cands0<-cbind(cands$t1,cands$t2)+0.00000000000000000000000001
+  cands1<-cbind(cands$t1,cands$t2)-0.00000000000000000000000001
   #cands1<-cbind(cands$t1,cands$t2)+0.0000000001
   #cands2<-cbind(cands$t1,cands$t2)+0.0000000001
   #cands3<-cbind(cands$t1,cands$t2)-0.0000000001
@@ -9,7 +12,12 @@ lin2_CI<-function(y,level,plots=FALSE,notion="dS1",ncoresC=1)
   #cands5<-cbind(cands$t1+0.0000000001,cands$t2-0.0000000001)
   #cands6<-cbind(cands$t1-0.0000000001,cands$t2+0.0000000001)
  #cands<-rbind(cands0,cands1,cands2,cands3,cands4,cands5,cands6)
- cands<-rbind(cands0) 
+ cands<-rbind(cands0,cands1) 
+  }
+  if(mid==TRUE)
+  {
+    cands<-Tri_Mid(y)
+  }
  
   if(notion=="dS1")
   {

@@ -1,7 +1,7 @@
 lin2_CI_cl<-function(y,level,plots="off",notion="dS1",cluster)
 {
   cands<-lin2_theta_f(y)
-  cands0<-cbind(cands$t1,cands$t2)
+  cands0<-cbind(cands$t1,cands$t2)+0.00000000000000000001
   #cands1<-cbind(cands$t1,cands$t2)+0.0000000001
   #cands2<-cbind(cands$t1,cands$t2)+0.0000000001
   #cands3<-cbind(cands$t1,cands$t2)-0.0000000001
