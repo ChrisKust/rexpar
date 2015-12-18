@@ -28,7 +28,7 @@ predict_lin1_extra<-function(y,CritLen,CritTime,NSim,alpha,restrict=F,start,dmax
     Res<-y_p-theta_t*y_o
     Res_norm<-Res[Res<quantile(Res,0.95)]
     Res_max<-Res[Res>quantile(Res,0.99)]
-    jumpoc<-rbinom(simL_fac*length(y),size=1,p=lambda_j)
+    jumpoc<-rbinom(simL_fac*length(y),size=1,prob=lambda_j)
     Res_t<-jumpoc*sample(Res_max,simL_fac*length(y),replace=T)*res_rescale+(1-jumpoc)*sample(Res_norm,simL_fac*length(y),replace=T)
     
     for(j in (length(y)+1):(length(y_t)))

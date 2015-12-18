@@ -23,25 +23,25 @@ Swich to allow plots of the limit.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The function approximates the exact limit distibution of the simplified depth notion, taking the dependency into account.
 }
 \value{
 The function returns a sample of length Reps consisting of simulated values of the limit distribution. 
 }
 \references{
-Diss??
+Kustosz, C. (2015). Depth Based Estimators and Tests for Autoregressive Processes with Application. Working Paper, TU Dortmund.
 }
 \author{
 Kustosz, Christoph}
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 exact_lim_dS3lin(10,10,plot=TRUE)
 }

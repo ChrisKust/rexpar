@@ -15,7 +15,7 @@ RandomARMod_nlin1<-function(nobs,arp,power=1,start=0,cont=0,sd=0.2)
     p1<-rpois(nobs,5/100)
     e<-u1+p1*u2
     for(i in 2:length(y))
-      y[i]<-y[i-1]+arp*y[i-1]^power+e[i]- 0.007127848 # +0.01 #median korrektur und verfälschung!
+      y[i]<-y[i-1]+arp*y[i-1]^power+e[i]- 0.007127848
     
   }
   

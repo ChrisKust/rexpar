@@ -46,7 +46,7 @@ The 'mincp' longest cluster is used to define a treshold for detected clusters w
 %% ...
 }
 \references{
-Kustosz, C. (2014). Implementation of simplicial depth for AR processes under non standard conditions. Working Paper, TU Dortmund.
+Kustosz, C. (2015). Depth Based Estimators and Tests for Autoregressive Processes with Application. Working Paper, TU Dortmund.
 }
 \author{
 Kustosz, Christoph

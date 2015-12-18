@@ -16,32 +16,34 @@ ols_expl(y)
 Observed process
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 \item{theta0}{Estimated intercept}
 \item{theta1}{Estimated ar parameter}
 \item{sigma2}{Estimated variance based on the estimated residuals}
 }
 \references{
-Wang and Yu, 2013
+Wang X. and Yu, J. (2013). Limit theory for an explosive autoregressive process.
+Working Paper, No 08-2013. Singapore Management University, School of Economics.
+Kustosz, C. (2015). Depth Based Estimators and Tests for Autoregressive Processes with Application. Working Paper, TU Dortmund.
 }
 \author{
 Kustosz, Christoph
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-}
+%}
+%\examples{
+%}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+%\keyword{ ~kwd1 }
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

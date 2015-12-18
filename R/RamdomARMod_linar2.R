@@ -16,7 +16,7 @@ RandomARMod_linar2<-function(nobs,arp1,arp2,start=c(0,0),cont=0)
     p1<-rpois(nobs,5/100)
     e<-u1+p1*u2
     for(i in 3:length(y))
-      y[i]<-arp1*y[i-1]+arp2*y[i-2]+e[i]- 0.007127848 # +0.01 #median korrektur und verfälschung!
+      y[i]<-arp1*y[i-1]+arp2*y[i-2]+e[i]- 0.007127848 
     
   }
   

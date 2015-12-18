@@ -13,7 +13,7 @@ Tri_Eps_dist<-function(y,perc=1,eps=0.1)
   d1<-ll[,1]
   d2<-ll[,2]
 
-    ### ersetzen durch Ele_Norm und 2 nächste kandidaten!
+
     apply(cbind(d1,d2),2,eps_ind_dist,Mat=cbind(d1,d2),eps=eps)->v1
     apply(cbind(d1,d2),2,eps_ind_dist,Mat=cbind(d1,d2),eps=(-1)*eps)->v2
     sol<-rbind(v1,v2)

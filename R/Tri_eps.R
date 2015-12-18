@@ -13,7 +13,7 @@ Tri_Eps<-function(y,perc=1,eps=0.1)
   d1<-ll[,1]
   d2<-ll[,2]
 
-    p1<-combn(seq(1,length(d1),1),m=3) ### ersetzen durch Ele_Norm und 2 nächste kandidaten!
+    p1<-combn(seq(1,length(d1),1),m=3) 
     apply(p1,2,eps_ind,Mat=cbind(d1,d2),eps=eps)->v1
     apply(p1,2,eps_ind,Mat=cbind(d1,d2),eps=(-1)*eps)->v2
     sol<-cbind(v1,v2)
