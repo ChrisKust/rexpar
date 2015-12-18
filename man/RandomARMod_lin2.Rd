@@ -10,7 +10,7 @@ value. Further the errors can be specified by 4 predefined examples. The main eq
 is given by \deqn{y_n = theta_1 * y_{n-1} + theta_0 + e_n,} \eqn{y_0} fixed.
 }
 \usage{
-RandomARMod_lin2(nobs,intercept,arp,start,cont)
+RandomARMod_lin2(nobs,intercept=0,arp,start=0,cont=0,sd=0.2)
 }
 \arguments{
   \item{nobs}{
@@ -29,9 +29,9 @@ starting value of the process y_0
   \item{cont}{
 error distribution defined by value in (0,1,2,3,4).
 
-0 : e_n is i.i.d. N(0,0.1) distributed
+0 : e_n is i.i.d. N(0,sd) distributed
 
-1 : e_n is i.i.d. N(0,0.1) distributed, but in Pois(5/100) drawn points in time N(5,1) errors are added
+1 : e_n is i.i.d. N(0,sd) distributed, but in Pois(5/100) drawn points in time N(5,1) errors are added
 
 2 : e_n is i.i.d. Gumbel distributed with parameters 10 and -3.3661513
 
@@ -39,6 +39,7 @@ error distribution defined by value in (0,1,2,3,4).
 
 4 : e_n is i.i.d. Gamma distributed with paramters 1 and 1. Further the errors are centered by -0.6932 to satisfy a med(E_n)=0 condition
 }
+\item{sd}{Standard deviation of the normally distributed errors, if cont in \{0,1 \} is selected.}
 }
 \details{
 All error distributions are chosen to satistify med(E_n)=0. 
