@@ -29,4 +29,3 @@ lines(hh$mids+0.4,hh$counts/R,type="h",col=2)
 return(dSs)
 }
 
-exact_lim_dS3lin(6,10000,plot=TRUE)->ddd
