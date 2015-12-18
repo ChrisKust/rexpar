@@ -7,7 +7,7 @@ Changepoint detection for linear AR(1) model without intercept
 This function detects change points for paramter changes of a linear AR(1) model without intercept based on simplicial depth
 }
 \usage{
-changepoints_lin1(y,level,bw,sw,method,mincper,mincp)
+changepoints_lin1(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,7 +23,7 @@ A bandwidth defining the sample size for subsamples which are evaluated in the a
 \item{sw}{
 A stepwidth to reduce the candidate points in which the change points are evaluated
 }
-
+\item{plots}{A swicht, allowing to activate plots while the calculation run. The plots show the confidence regrions for the actually considered windows.}
 \item{method}{
 This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not within the non respective confidence intervals.
 }
