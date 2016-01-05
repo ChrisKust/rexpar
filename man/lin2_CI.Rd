@@ -8,7 +8,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence regions for linear AR(1) processes with intercept and explosion based on simplified and full simplicial depth for AR processes.
 }
 \usage{
-lin2_CI(y,level,plots,notion,ncoresC)
+lin2_CI(y,level,plots=FALSE,notion="dS1",ncoresC=1,mid=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,6 +27,10 @@ A parameter to select the desired depth notion to evaluate. The possible choices
 \item{ncoresC}{
 If the notion "dS" is selected a multicore computation is possible. Here the number of cores is defined as described in the function \code{\link{dS_lin2}}
 }
+\item{mid}{
+This switch allow to use central points from data generated candidates based on the paramters defining the
+roots of the resuiduals
+}
 }
 %\details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -34,8 +38,8 @@ If the notion "dS" is selected a multicore computation is possible. Here the num
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{par }{A two dimensional matrix with the evaluated points to calculate the confidence region by evaluation of the depth tests}
-\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not}
+\item{par}{A two dimensional matrix with the evaluated points to calculate the confidence region by evaluation of the depth tests}
+\item{inCI}{A binary vector indicating, if a parameter in par is in the confidence interval or not}
 %% ...
 }
 \references{

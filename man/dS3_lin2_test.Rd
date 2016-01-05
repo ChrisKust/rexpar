@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS3 proposed in Kustosz and Mueller (2014x). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
 }
 \usage{
-dS3_lin2_test(thetaN,alpha,y,exact=F,cpow=1)
+dS3_lin2_test(thetaN,alpha,y,exact=FALSE,cpow=1,dS3)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,6 +28,10 @@ This switch allows the usage of an exact distribition of the test statistics usi
 \item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
+
+\item{dS3}{
+Here an evaluated dS3 statistic can be inserted instead of a vector y. Then just the test statistic is
+calculated and the test is evaluated directly}
 }
 %\details{
 %%  ~~ If necessary, more details than the description above ~~

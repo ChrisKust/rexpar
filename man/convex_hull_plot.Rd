@@ -8,7 +8,7 @@ Convex hull plot for two dimensional data
 The function generates a plot of the convex hull from two dimensional scatter data
 }
 \usage{
-convex_hull_plot(x,y,col)
+convex_hull_plot(x,y,col=1,lwd=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,9 @@ The x-axis coordinates of the scatter data
   }
   \item{col}{
   The color for the lines defining the convex hull in the plot
+  }
+    \item{lwd}{
+  The line width of the convex hull
   }
 }
 %\details{

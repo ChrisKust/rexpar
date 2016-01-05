@@ -1,4 +1,4 @@
-dS_lin2 <- function(theta, resy, y, ncores = 1, model = c("linAR1", "nlinAR1", "linARc"), cpow = 1) {
+dS_lin2 <- function(theta, resy, y, ncores = 1, model = c("linAR1","linAR1woI","nlinAR1","linAR2","linARc"), cpow = 1) {
   model <- match.arg(model)
   
   ## if no residuals given compute them using one of the specified models:

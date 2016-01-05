@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS proposed in Leucht, Mueller and Kustosz (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_lin1_test(thetaN,alpha,y)
+dS_lin1_test(thetaN,alpha,y,mod=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

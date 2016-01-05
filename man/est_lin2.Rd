@@ -9,7 +9,8 @@ This function implements an algortihm to estimate a linear AR(1) model with inte
 explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueller and Wendler (2014).
 }
 \usage{
-est_lin2(y,maxit,candy,candy_eps,perc,acc,plots,normtype,pv,wgt,unique,notion)
+est_lin2(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,
+plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2,optim_rude=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -48,6 +49,10 @@ A switch (TRUE/FALSE) defining, if a unique maximum shall be the result if multi
 }
 \item{notion}{
 Here the function which is used for depth calculation is defined. The following notions are allowed: "dS1_lin2", "dS2_lin2", "dS3_lin2", "dS_lin2"
+}
+\item{optim_rude}{
+This switch allows a rude optimisation by a Nelder-Mead algorithm. WARNING: This may be very inaccurate due to a
+stepwise constant optimisation function
 }
 }
 %\details{

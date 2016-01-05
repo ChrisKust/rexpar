@@ -10,11 +10,16 @@ processes, when overlapping residuals in sequences of 3 are evaluated. Thereby
 the parameter \eqn{\theta} and the process y are fixed. The assumed model given by the argument model. 
 }
 \usage{
-dS3_lin2(theta,y,model,cpow=1)
+dS3_lin2(theta,res,y,model=c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"),cpow=1)
 }
 \arguments{
   \item{theta}{
 theta = (theta0,theta1), parameter vector to evaluate dS3, 
+}
+
+  \item{res}{
+Here the evaluated residuals can be inserted, instead of a parameter theta and data y. Then the statistic 
+is evaluated based on these residuals by calculation of their signs
 }
   \item{y}{
 y = (y_0,...,y_N), oberserved process to evaluate dS3 in 

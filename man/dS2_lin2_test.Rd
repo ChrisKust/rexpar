@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on dS2 proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_lin2_test(thetaN,alpha,y,exact=F,cpow=1)
+dS2_lin2_test(thetaN,alpha,y,exact=FALSE,cpow=1,dS2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,6 +27,11 @@ This switch allows the usage of an exact distribition of the test statistics usi
 }
 \item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+}
+
+\item{dS2}{
+Instead of parameters to calculate depth, here the dS2 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
 }
 }
 %\details{

@@ -7,12 +7,17 @@
 This function calculates simplicial depth for explosive AR(1) processes as defined in Leucht, Kustosz and Mueller (2014). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
-dS_lin2(theta,y,ncores=1,model,cpow=1)
+dS_lin2(theta,resy,y,ncores=1,
+model=c("linAR1","linAR1woI","nlinAR1","linAR2","linARc"),cpow=1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
 Parameter theta = (theta0,theta1) for which simplicial depth has to be evaluated. 
+}
+
+  \item{resy}{
+Here residuals of an arbitrary model with two parameter can be inserted, instead of defining a parameter theta and y, to evaluate depth directly on the signs of these residuals
 }
   \item{y}{
 Observed proces y=(y0,...,yN) for which simplicial depth has to be evaluated.

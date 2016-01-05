@@ -9,7 +9,8 @@ This function implements an algortihm to estimate a non-linear AR(1) model and
 explosion by simplicial depth or one of the proposed simplified notions in Kustosz and Mueller (2014).
 }
 \usage{
-est_nlin1(y,maxit,candy,perc,acc,plots,normtype,pv,wgt,unique,notion)
+est_nlin1(y,maxit=25,candy=FALSE,perc=0.1,acc=0.1,plots=FALSE,
+normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2,optim_rude=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -45,6 +46,10 @@ A switch (TRUE/FALSE) defining, if a unique maximum shall be the result if multi
 }
 \item{notion}{
 Here the function which is used for depth calculation is defined. The following notionn are allowed: "dS1_lin2", "dS2_lin2", "dS3_lin2", "dS_lin2". Thereby model = nlinAR1 is used.
+}
+\item{optim_rude}{
+This switch allows a rude optimisation by a Nelder-Mead algorithm. This may be more accurate due to the shape of the 
+non-linear empirical depth function
 }
 }
 %\details{

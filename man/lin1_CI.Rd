@@ -8,7 +8,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence intervals for linear AR(1) processes without intercept and explosion based on simplicial depth for AR processes.
 }
 \usage{
-lin1_CI(y,level,plots,notion)
+lin1_CI(y,level,plots=FALSE,notion="dS",eps=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,6 +27,9 @@ Here the applied test statistic for the calculation of confidence intervals is s
 "dS1" = reduced notion without overlapping of residuals\cr
 "dS2" = reduced notion based on large distance residuals\cr
 "dS3" = reduced notion with overlapping residuals\cr
+}
+\item{eps}{
+This allows to define a shifting of the candidate paramters by a constant eps to avoid evaluations on candidates defined by roots of the residuals. 
 }
 }
 %\details{
