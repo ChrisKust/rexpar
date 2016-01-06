@@ -5,7 +5,7 @@ dS2_nlin2<-function(theta,y)
   res<-(y2-y1-theta[3]-theta[1]*y1^theta[2])
 
     r1<-res[seq(1,floor((length(res)-1)/2),2)]
-    r1<-res[seq(2,floor((length(res)-1)/2),2)]
+    r2<-res[seq(2,floor((length(res)-1)/2),2)]
     r3<-res[seq((length(res)-floor((length(res)-1)/2)+1),length(res),2)]
     r4<-res[seq((length(res)-floor((length(res)-1)/2)),length(res),2)]
     m<-min(c(length(r1),length(r2),length(r3)))
