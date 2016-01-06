@@ -1,15 +1,15 @@
-\name{exact_lim_dS3lin}
-\alias{exact_lim_dS3lin}
+\name{exact_lim_dS3nlin}
+\alias{exact_lim_dS3nlin}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Approximation of the exact distribution of dS3 for two parameters
+Approximation of the exact distribution of dS3 for three parameters
 }
 \description{
-This function approximates the exact distribution for dS3 in a two parameter model by 
+This function approximates the exact distribution for dS3 in a three parameter model by 
 random draws of the residual signs. 
 }
 \usage{
-exact_lim_dS3lin(N, Reps, plot = FALSE)
+exact_lim_dS3nlin(N, Reps, plot = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,19 +23,20 @@ Number of simulations used to approximate the distribution
 Switch to allow a plot of the resulting approximation in a histogram
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+This function can be used to calculate an exact test in case of dS3 for three parameter models}
 \value{
-The function returns a simulated sample from the approximated exact distribution
+The function returns a simulated sample from the approximated exact
+distribution
 }
 \references{
 Kustosz, Diss...}
 \author{
 Kustosz, Christoph
 }
-\note{
-The function is used, when the dS3_lin2 test is applied with exact=TRUE}
+%\note{
+%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -43,7 +44,7 @@ The function is used, when the dS3_lin2 test is applied with exact=TRUE}
  \code{\link{dS3_lin2}},  \code{\link{exact_lim_dS3nlin}}
 }
 \examples{
-sim<-exact_lim_dS3lin(20,100)
+sim<-exact_lim_dS3nlin(20,100)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

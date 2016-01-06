@@ -1,4 +1,4 @@
-exact_lim_dS3lin<-function(N,Reps,plot=F)
+exact_lim_dS3lin<-function(N,Reps,plot=FALSE)
 {
 R<-Reps
 dSs<-numeric(R)
@@ -19,7 +19,7 @@ if(plot==T)
 {
 par(mfrow=c(1,1))
 hist(dSs,plot=F,breaks=seq(min(dSs)-1,max(dSs),1))->h
-plot(h$mids,h$counts/R,type="h",,xlim=c(min(dSs),max(dSs)),ylim=c(0,1),xlab="value",ylab="rel. freq.")
+plot(h$mids,h$counts/R,type="h",xlim=c(min(dSs),max(dSs)),ylim=c(0,1),xlab="value",ylab="rel. freq.")
 #h$counts/R
 rr<-rbinom(R,size=floor(N-2),prob=(1/4))
 floor(N/3)
