@@ -76,7 +76,7 @@ y<-c(y1,y2)
 \dontrun{
 par(ask=T)
 
-changepoints_lin2(y,0.99,25,10,plots=FALSE,method=1,ncoresCP=4)->CP
+changepoints_lin1(y,0.99,25,10,plots=FALSE,method=1,ncoresCP=4)->CP
 
 plot(y,type="l")
 abline(v=CP$candidates[CP$changepoints==TRUE],col=2)
