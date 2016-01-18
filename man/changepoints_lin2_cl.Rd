@@ -2,10 +2,13 @@
 \alias{changepoints_lin2_cl}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Changepoint detection for linear AR(1) model with intercept (cluster version)
+Changepoint detection for a linear AR(1) model with intercept (cluster version)
 }
 \description{
-This function detects change points for paramter changes of a linear AR(1) model with intercept based on simplicial depth. This is a version which uses a preset cluster which hast to be passed as argument when calling the function.
+This function detects change points for parameter changes of a linear AR(1) model with intercept based on simplicial depth. The model is
+defined by \eqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimators and confidence 
+intervals based on simplicial depth as proposed by Kustosz (2016).
+This is a version which uses a preset cluster which hast to be passed as argument when calling the function.
 }
 \usage{
 changepoints_lin2_cl(y,level,bw,sw,plots,method,cluster,mincper,mincp)
@@ -51,7 +54,7 @@ The 'mincp' longest cluster is used to define a treshold for detected clusters w
 %% ...
 }
 \references{
-Kustosz, C. (2014). Implementation of simplicial depth for AR processes under non standard conditions. Working Paper, TU Dortmund.
+Kustosz, C. P. (2016). Depth based estimators and tests for auto-regressive processes with application. Ph.D. Thesis, TU Dortmund.
 }
 \author{
 Kustosz, Christoph
