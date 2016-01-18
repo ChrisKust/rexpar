@@ -2,10 +2,12 @@
 \alias{changepoints_lin2}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Changepoint detection for linear AR(1) model with intercept
+Change-point detection for a linear AR(1) model with intercept
 }
 \description{
-This function detects change points for paramter changes of a linear AR(1) model with intercept based on simplicial depth
+This function detects change points for parameter changes of a linear AR(1) model with intercept based on simplicial depth. The model is
+defined by \eqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimators and confidence 
+intervals based on simplicial depth as proposed by Kustosz (2016).
 }
 \usage{
 changepoints_lin2(y,level,bw,sw,plots,method,ncoresCP,mincper,mincp)
@@ -13,16 +15,16 @@ changepoints_lin2(y,level,bw,sw,plots,method,ncoresCP,mincper,mincp)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
-An observed AR(1) proces with intercept
+An observed AR(1) process with intercept
 }
 \item{level}{
 The level for which the confidence intervals for the phase change detection have to be calculated
 }
 \item{bw}{
-A bandwidth defining the sample size for subsamples which are evaluated in the algorithm
+A bandwidth defining the sample size for sub-samples which are evaluated in the algorithm
 }
 \item{sw}{
-A stepwidth to reduce the candidate points in which the change points are evaluated
+A step-width to reduce the candidate points in which the change points are evaluated
 }
 \item{plots}{
 A switch (TRUE and FALSE) to determine, if plots shall be produced for each tested candidate
@@ -34,10 +36,10 @@ This parameter determines the method to detect change points. If method=1 is sel
 Number of CPU cores for parallel computing.
 }
 \item{mincper}{
-Percentage to define relevant changepoint clusters based on the length of the 'mincp' longest detected cluster.
+Percentage to define relevant change-point clusters based on the length of the 'mincp' longest detected cluster.
 }
 \item{mincp}{
-The 'mincp' longest cluster is used to define a treshold for detected clusters which are consiedered for final breakpoint estimates. This implies, that (if enough clusters exist), the number also defines the minima
+The 'mincp' longest cluster is used to define a threshold for detected clusters which are considered for final break-point estimates. This implies, that (if enough clusters exist), the number also defines the minima
 }
 }
 %\details{
@@ -46,7 +48,7 @@ The 'mincp' longest cluster is used to define a treshold for detected clusters w
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{candidates}{A vector of observation indecees in which the algorithm tested for change points}
+\item{candidates}{A vector of observation indices in which the algorithm tested for change points}
 \item{changepoints}{A vector indicating, if a change point was detected in the respective candidate}
 %% ...
 }

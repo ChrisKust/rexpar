@@ -1,10 +1,12 @@
 \name{changepoints_lin1}
 \alias{changepoints_lin1}
 \title{
-Changepoint detection for linear AR(1) model without intercept
+Change-point detection for a linear AR(1) model without intercept
 }
 \description{
-This function detects change points for paramter changes of a linear AR(1) model without intercept based on simplicial depth
+This function detects change points for parameter changes of a linear AR(1) model without intercept based on simplicial depth. The model is
+defined by \eqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimation and confidence interval 
+construction based on simplicial depth as proposed in Kustosz (2016).
 }
 \usage{
 changepoints_lin1(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1)
@@ -12,26 +14,26 @@ changepoints_lin1(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
-An observed AR(1) proces without intercept
+An observed AR(1) process without intercept
 }
 \item{level}{
 The level for which the confidence intervals for the phase change detection have to be calculated
 }
 \item{bw}{
-A bandwidth defining the sample size for subsamples which are evaluated in the algorithm
+A bandwidth defining the sample size for sub-samples which are evaluated in the algorithm
 }
 \item{sw}{
-A stepwidth to reduce the candidate points in which the change points are evaluated
+A step-width to reduce the candidate points in which the change points are evaluated
 }
-\item{plots}{A swicht, allowing to activate plots while the calculation run. The plots show the confidence regrions for the actually considered windows.}
+\item{plots}{A switch, allowing to activate plots while the calculation run. The plots show the confidence regions for the actually considered windows.}
 \item{method}{
 This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not within the non respective confidence intervals.
 }
 \item{mincper}{
-Percentage to define relevant changepoint clusters based on the length of the 'mincp' longest detected cluster.
+Percentage to define relevant change-point clusters based on the length of the 'mincp' longest detected cluster.
 }
 \item{mincp}{
-The 'mincp' longest cluster is used to define a treshold for detected clusters which are consiedered for final breakpoint estimates. This implies, that (if enough clusters exist), the number also defines the minima
+The 'mincp' longest cluster is used to define a threshold for detected clusters which are considered for final break-point estimates. This implies, that (if enough clusters exist), the number also defines the minima
 }
 
 }
@@ -41,12 +43,12 @@ The 'mincp' longest cluster is used to define a treshold for detected clusters w
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-\item{candidates}{A vector of observation indecees in which the algorithm tested for change points}
+\item{candidates}{A vector of observation indices in which the algorithm tested for change points}
 \item{changepoints}{A vector indicating, if a change point was detected in the respective candidate}
 %% ...
 }
 \references{
-Kustosz, C. (2015). Depth Based Estimators and Tests for Autoregressive Processes with Application. Working Paper, TU Dortmund.
+Kustosz, C. P. (2016). Depth based estimators and tests for auto-regressive processes with application. Ph.D. Thesis, TU Dortmund.
 }
 \author{
 Kustosz, Christoph
