@@ -54,7 +54,9 @@ par(mfrow=c(2,2))
 plot(thetas,dS)
 
 #generate random parameters 
-replicate(10000,draw_from_depth(dS, thetas,lower=min(thetas[dS>0]),upper=max(thetas[dS>0]))) -> rand_theta
+tmi <- min(thetas[dS>0])
+tma <- max(thetas[dS>0])
+replicate(10000,draw_from_depth(dS, thetas,lower=tmi,upper=tma)) -> rand_theta
 
 #plot 'discrete' distribution on grid and empirical distribution
 plot(table(rand_theta)/length(rand_theta),type="h")
@@ -70,7 +72,7 @@ rt <- sample(rand_theta,1)
 res <- resARMod_lin2(c(0,rt),y)
 sd_est <- sd(res) 
 yy[i,] <- RandomARMod_lin2(100,0,rt,y[1],sd=sd_est)
-if(i%%10==0)
+if(floor(i/10)==i/10)
 {
 lines(yy[i,],col=i)
 }

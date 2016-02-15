@@ -29,7 +29,7 @@ Fixed and known power parameter for the \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^
 
 }
 \details{
-The theoretical details can be found in Kustosz, Müller and Wendler (2016). The computational 
+The theoretical details can be found in Kustosz, Muller and Wendler (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -41,7 +41,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Müller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Muller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }

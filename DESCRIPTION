@@ -4,7 +4,7 @@ Title: Simplicial Depht for Explosive Autoregressive Processes
 Version: 0.999
 Date: 2015-12-18
 Author: Kustosz, Christoph; Szugat, Sebastian
-Maintainer: Kustosz, Christoph <kustosz@statistik.tu-dortmund.de>
+Maintainer: "Kustosz, Christoph" <kustosz@statistik.tu-dortmund.de>
 Description: This package contains simplicial depth statistics for explosive AR(1) processes. It implements robust statistics, estimators, tests and confidence intervals. Further changepoint detection and prediction methods for simple processes are available.
 Depends: matrixcalc, parallel, MASS, alphahull
 Suggests: 

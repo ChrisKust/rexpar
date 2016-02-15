@@ -38,19 +38,12 @@ models are available\cr
 "linARc" = linear AR(1) model with intercept and fixed and knwon power cpow \deqn{Y_n = \theta_1 Y_{n-1}^{cpow} + \theta_0 + E_n}
 }
 
-  \item{model}{
-here the model for the calculation of the underlying residuals is specified. currently the following
-models are available\cr
-"linAR1" = linear AR(1) model with intercept\cr
-"nlinAR1" = linear AR(1) model without intercept but with power paremeter\cr
-"linARc" = linear AR(1) model with intercept and fixed power parameter cpow\cr
-}
 \item{cpow}{
 fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
 }
 }
 \details{
-The theoretical details can be found in Kustosz, Müller and Wendler (2016). The computational 
+The theoretical details can be found in Kustosz, Muller and Wendler (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -60,7 +53,7 @@ Result is a real number which gives the depth of theta based on the obervation y
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Müller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Muller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }

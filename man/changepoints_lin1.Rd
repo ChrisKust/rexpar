@@ -54,7 +54,6 @@ Kustosz, Christoph
 
 \seealso{
   \code{\link{RandomARMod_lin2}}, \code{\link{lin1_CI}},  \code{\link{est_lin1}},  \code{\link{dS_lin1}},  \code{\link{dS_lin1_test}}}
-}
 \examples{
 int1<-0
 int2<-0.2
