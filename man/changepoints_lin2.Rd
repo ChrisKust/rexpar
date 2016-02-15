@@ -1,36 +1,34 @@
 \name{changepoints_lin2}
 \alias{changepoints_lin2}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Change-point detection for a linear AR(1) model with intercept
 }
 \description{
 This function detects change points for parameter changes of a linear AR(1) model with intercept based on simplicial depth. The model is
-defined by \eqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimators and confidence 
-intervals based on simplicial depth as proposed by Kustosz (2016).
+defined by \deqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimators and confidence intervals based on simplicial depth as proposed by Kustosz (2016). Further, a preselection of candidates by a simplified depth notion is used. 
 }
 \usage{
 changepoints_lin2(y,level,bw,sw,plots,method,ncoresCP,mincper,mincp)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{y}{
-An observed AR(1) process with intercept
+An observed AR(1) process with intercept.
 }
 \item{level}{
-The level for which the confidence intervals for the phase change detection have to be calculated
+The level for which the confidence intervals for the phase change detection are calculated.
 }
 \item{bw}{
-A bandwidth defining the sample size for sub-samples which are evaluated in the algorithm
+A bandwidth defining the sample size for sub-samples which are evaluated in the algorithm.
 }
 \item{sw}{
-A step-width to reduce the candidate points in which the change points are evaluated
+A step-width to reduce the candidate points in which the change points are evaluated.
 }
 \item{plots}{
-A switch (TRUE and FALSE) to determine, if plots shall be produced for each tested candidate
+A switch (TRUE and FALSE) to determine, if plots shall be produced for each tested candidate.
 }
 \item{method}{
-This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not within the non respective confidence intervals.
+This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }
 \item{ncoresCP}{
 Number of CPU cores for parallel computing.
@@ -39,33 +37,26 @@ Number of CPU cores for parallel computing.
 Percentage to define relevant change-point clusters based on the length of the 'mincp' longest detected cluster.
 }
 \item{mincp}{
-The 'mincp' longest cluster is used to define a threshold for detected clusters which are considered for final break-point estimates. This implies, that (if enough clusters exist), the number also defines the minima
+The 'mincp' longest cluster is used to define a threshold for detected clusters which are considered for final break-point estimates. This implies, that (if enough clusters exist), the number also defines the minimal number of changes, detected by the algorithm.
 }
 }
-%\details{
-%%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+For details see Kustosz (2016).
+}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-\item{candidates}{A vector of observation indices in which the algorithm tested for change points}
-\item{changepoints}{A vector indicating, if a change point was detected in the respective candidate}
-%% ...
+\item{candidates}{A vector of observation indices in which the algorithm tested for change points.}
+\item{changepoints}{A vector indicating, if a change point was detected in the respective candidate.}
 }
 \references{
-Kustosz, C. P. (2016). Depth based estimators and tests for auto-regressive processes with application. Ph.D. Thesis, TU Dortmund.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
 Kustosz, Christoph
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
-  \code{\link{RandomARMod_lin2}}, \code{\link{lin2_CI}},   \code{\link{convex_hull_plot}},   \code{\link{convex_hull_intersect}},  \code{\link{est_lin2}},  \code{\link{dS_lin2}},  \code{\link{dS_lin2_test}},  \code{\link{dS1_lin2_test}}
+  \code{\link{RandomARMod_lin2}}, \code{\link{lin2_CI}},   \code{\link{convex_hull_plot}},   \code{\link{convex_hull_intersect}},  \code{\link{est_lin2}},  \code{\link{dS_lin2}},  \code{\link{dS_lin2_test}},\code{\link{dS1_lin2_test}}
 }
 \examples{
 int1<-0.1
