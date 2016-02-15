@@ -32,6 +32,7 @@ explosion. Journal of Time Series Analysis. In press.\cr
 Kustosz C., Muller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
+\u137
 Kustosz C. and Muller Ch. H. (2014). Analysis of crack growth with robust distribution-
 free estimators and tests for nonstationary autoregressive processes. Statistical
 Papers 55, 125-140.
