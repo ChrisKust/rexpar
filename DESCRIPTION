@@ -1,7 +1,7 @@
 Package: rexpar
 Type: Package
 Title: Simplicial Depht for Explosive Autoregressive Processes
-Version: 0.997
+Version: 0.999
 Date: 2015-12-18
 Author: Kustosz, Christoph; Szugat, Sebastian
 Maintainer: Kustosz, Christoph <kustosz@statistik.tu-dortmund.de>

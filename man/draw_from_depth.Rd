@@ -1,53 +1,81 @@
 \name{draw_from_depth}
 \alias{draw_from_depth}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{ Random number generation based on empirical simplicial depth
 }
 \description{
-This function transforms a given empirical simplicial depth result to a distribution function and generates random numbers from this distribution by inversion. 
+This function transforms a given empirical simplicial depth to a distribution function and generates random numbers from this distribution by inversion as proposed in Kustosz (2016).
 }
 \usage{
 draw_from_depth(depthI, testvec, lower, upper)
 }
 \arguments{
   \item{depthI}{
-Values of an empirical depth calculation
+Values of an empirical depth calculation.
 }
   \item{testvec}{
 Parameters of the empirical depth vector defined by depthI.
 }
   \item{lower}{
-A lower candidate value to restrict the depth on an interval [lower,upper]
+A lower candidate value to restrict the depth on an interval \eqn{[lower,upper]}.
 }
   \item{upper}{
-A upper candidate value to restrict the depth on an interval [lower,upper]
+A upper candidate value to restrict the depth on an interval \eqn{[lower,upper]}.
 }
 }
-
+\details{
+For details see Kustosz (2016).
+}
 \value{
 The function returns a simulated parameter theta. 
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
 }
 \references{
-Diss
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
-Kustosz, Christoph
+Christoph Kustosz and Sebastian Szugat
 }
 
 \seealso{
  \code{\link{predict_lin1}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+#generate random process
+set.seed(234)
+y<-RandomARMod_lin2(100,0,1.01,15,0)
+
+#evaluate depth on grid
+thetas <- seq(0.97,1.05,0.001)
+dS <- unlist(lapply(thetas,dS_lin1,y=y))
+
+#plot emprirical depth
+par(mfrow=c(2,2))
+plot(thetas,dS)
+
+#generate random parameters 
+replicate(10000,draw_from_depth(dS, thetas,lower=min(thetas[dS>0]),upper=max(thetas[dS>0]))) -> rand_theta
+
+#plot 'discrete' distribution on grid and empirical distribution
+plot(table(rand_theta)/length(rand_theta),type="h")
+plot(ecdf(rand_theta))
+
+#plot process and generate trajectories with estimated variance
+#we now assume normally distributed errors with mean 0 for simulations
+plot(y,type="l")
+yy <- matrix(ncol=100,nrow=100)
+for(i in 1:100)
+{
+rt <- sample(rand_theta,1)
+res <- resARMod_lin2(c(0,rt),y)
+sd_est <- sd(res) 
+yy[i,] <- RandomARMod_lin2(100,0,rt,y[1],sd=sd_est)
+if(i%%10==0)
+{
+lines(yy[i,],col=i)
+}
+mean_f <- apply(yy,2,mean)
+lines(mean_f,col=2,lwd=2)
+}
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

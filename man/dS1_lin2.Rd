@@ -1,45 +1,50 @@
 \name{dS1_lin2}
 \alias{dS1_lin2}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 dS1 for AR(1) with intercept
 }
 \description{
-This function calculates the simplified version of simplicial depth for explosive AR(1) 
+This function calculates a simplified version of simplicial depth for explosive AR(1) 
 processes, when non overlapping residuals in sequences of 3 are evaluated. Thereby
-the parameter theta and the process y are fixed. The assumed model given by the argument model.
+the parameter \eqn{\theta_1} and the process y are fixed. The assumed model given by the argument of the parameter model. 
 }
 \usage{
 dS1_lin2(theta,y,model,cpow=1)
 }
 \arguments{
   \item{theta}{
-theta = (theta0,theta1), parameter vector to evaluate dS1, 
+\eqn{\theta}, parameter (vector) to evaluate dS1 in.
 }
   \item{y}{
-y = (y_0,...,y_N), oberserved process to evaluate dS1 in 
+\eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in. 
 }
   \item{model}{
-here the model for the calculation of the underlying residuals is specified. currently the following
+Here the model for the calculation of the underlying residuals is specified. currently the following
 models are available\cr
-"linAR1woI" = linear AR(1) model without intercept\cr
-"linAR1" = linear AR(1) model with intercept\cr
-"linAR2" = linear AR(2) model without intercept\cr
-"nlinAR1" = linear AR(1) model without intercept but with power parameter\cr
-"linARc" = linear AR(1) model with intercept and fixed and knwon power cpar
+"linAR1woI" = linear AR(1) model without intercept          \deqn{Y_n = \theta_1 Y_{n-1} + E_n}
+"linAR1" = linear AR(1) model with intercept                 \deqn{Y_n = \theta_1 Y_{n-1} \theta_0 + E_n}
+"linAR2" = linear AR(2) model without intercept               \deqn{Y_n = \theta_1 Y_{n-1} + \theta_2 Y_{n-2} + E_n}
+"nlinAR1" = linear AR(1) model without intercept but with power parameter\deqn{Y_n = Y_{n-1} + \theta_1 Y_{n-1}^{\theta_3} + E_n}
+"linARc" = linear AR(1) model with intercept and fixed and knwon power cpow \deqn{Y_n = \theta_1 Y_{n-1}^{cpow} + \theta_0 + E_n}
 }
 \item{cpow}{
-fixed and known power parameter for the yn = theta2*yn^cpow + theta1 model
+fixed and known power parameter for the \eqn{Y_n = \theta_1 Y_{n-1}^{cpow} + \theta_0 + E_n}.
 }
 }
-%\details{
-%}
+\details{
+The theoretical details can be found in Kustosz, Müller and Wendler (2016). The computational 
+details are in Kustosz (2016).
+}
 \value{
-Result is a real number which gives the depth of theta based on the obervation y
+The result is a real number which gives the depth of \eqn{\theta} based on the obervation vector y.
 }
 \references{
-Kustosz, Mueller and Wendler (2014). Simplified Simplicial Depth for Regression and
-Autoregressive Growth Processes. Submitted.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., Müller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
+\cr
 }
 \author{
 Kustosz, Christoph
@@ -56,28 +61,5 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 y<-RandomARMod_lin2(100,0.2,1.01,15,0)
 theta<-c(0.2,1.01)
 dS1_lin2(theta,y)
-
-
-## The function is currently defined as
-function(theta,y)
-{
-  res=resARMod_lin2(c(theta[2],theta[1]),y)
-  r1=res[seq(1,length(res),3)]
-  r2=res[seq(2,length(res),3)]
-  r3=res[seq(3,length(res),3)]
-  m=min(c(length(r1),length(r2),length(r3)))
-  r1=r1[1:m]
-  r2=r2[1:m]
-  r3=r3[1:m]
-  InD=(r1>0)*(r2<0)*(r3>0)+(r1<0)*(r2>0)*(r3<0)
-  depth<-1/(floor(length(y)/3))*sum(InD)
-  
-  
-  return(depth)
-  
 }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
