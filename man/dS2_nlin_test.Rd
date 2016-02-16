@@ -1,6 +1,5 @@
 \name{dS2_nlin_test}
 \alias{dS2_nlin_test}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Test based on dS1 for explosive nonlinear AR(1) processes 
 }
 \description{
@@ -9,10 +8,9 @@ The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kust
 \usage{
 dS2_nlin_test(thetaN,alpha,y,exact=F)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
-Parameter defining the Null hypothesis H0: theta = thetaN. Thereby thetaN = (thetaN1,thetaN2) as defined by the model. 
+Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0)} as defined by the model. 
 }
 
   \item{alpha}{
@@ -20,32 +18,32 @@ Value in (0,1) defining the level of the test.
 }
 
   \item{y}{
-Observed series y=(y0,...,yN) for which the parameter test has to be executed. 
+Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
 }
 \item{exact}{
 This switch allows the usage of an exact distribition of the test statistics using the sample size. 
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016). The computational 
+details are in Kustosz (2016).
+}
 \value{
 
-\item{TS}{Returns the value of the rescaled and centred test statistic}
-\item{phi}{Retuns the test decision, phi = 1 means reject H0, and phi = 0 means do not reject H0}
+\item{TS}{Returns the value of the rescaled and centred test statistic.}
+\item{phi}{Retuns the test decision, phi = 1 means reject H0, and phi = 0 means do not reject H0.}
 }
 \references{
-Kustosz, Mueller and Wendler (2014). Simplified Simplicial Depth for Regression and
-Autoregressive Growth Processes. Submitted.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
+\cr
 }
 \author{
 Kustosz, Christoph
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
  \code{\link{dS2_lin2}}
@@ -56,7 +54,3 @@ dS2_nlin_test(c(0.2,1.01),0.05,y)
 dS2_nlin_test(c(0.1,1.01),0.05,y)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

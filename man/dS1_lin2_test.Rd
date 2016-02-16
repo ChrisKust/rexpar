@@ -3,7 +3,7 @@
 \title{Test based on dS1 for explosive AR(1) processes with intercept
 }
 \description{
-The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
+The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, M\"{u}ller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
 dS1_lin2_test(thetaN,alpha,y,exact=F,cpow=1)
@@ -29,7 +29,7 @@ Fixed and known power parameter for the \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^
 
 }
 \details{
-The theoretical details can be found in Kustosz, Muller and Wendler (2016). The computational 
+The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -41,7 +41,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Muller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }
