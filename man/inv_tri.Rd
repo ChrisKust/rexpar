@@ -1,6 +1,5 @@
 \name{inv_tri}
 \alias{inv_tri}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Inverted triagonal matrix
 }
@@ -14,17 +13,20 @@ inv_tri(Matrix)
 }
 \arguments{
   \item{Matrix}{
-Matrix is a matrix from witch the elements below the counterdiagonals have to be identified
+Matrix is a matrix from witch the elements below the counterdiagonals have to be identified.
 }
 }
-%\details{
-%}
+\details{
+Details on the usage in the calculation be found in Kustosz (2016).
+}
 \value{
-the output is a matrix with boolean values of size of Matrix, which determine, if the elements are 
+The output is a matrix with boolean values of size of Matrix, which determine, if the elements are 
 below the counterdiagonal or not.
 }
 \references{
-Kustosz, C. (2014). Implementation of simplicial depth for AR processes under non standard conditions. Working Paper, TU Dortmund.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
 Kustosz, Christoph
@@ -45,7 +47,4 @@ M[inv_tri(M)==TRUE]<-0
 M
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
