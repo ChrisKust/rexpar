@@ -1,18 +1,16 @@
 \name{dS_lin2_test}
 \alias{dS_lin2_test}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Test based on dS for explosive AR(1) processes with intercept
 }
 \description{
-The function evaluates the asymptotic test based on dS proposed in Leucht, Mueller and Kustosz (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
+The function evaluates the asymptotic test based on dS proposed in Kustosz, Leucht and M\"{u}ller (2016). It returns the test statistic and the decision. The default model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^{cpow} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
 dS_lin2_test(thetaN,alpha,y,ncores=1,cpow=1,dS)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
-Parameter defining the Null hypothesis H0: theta = thetaN. Thereby thetaN = (thetaN0, thetaN1) as defined by the model. 
+Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta} is defined by the model. 
 }
 
   \item{alpha}{
@@ -20,41 +18,44 @@ Value in (0,1) defining the level of the test.
 }
 
   \item{y}{
-Observed series y=(y0,...,yN) for which the parameter test has to be executed. 
+Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
 }
   \item{ncores}{
 Defines the number of cores to use for parallel computation of the simplicial depth statistic. If no value is definied the standard value of 1 is passed and no parallel methods are applied.
 }
 \item{cpow}{
-fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+Fixed and known power parameter for the \eqn{Y_n = \theta_2\cdot Y_{n-1}^{cpow} + \theta_0} model.
 }
 
 \item{dS}{
 Here an evaluated depth statistic dS can be defined, instead of evaluation of data y, to calculate the test
-statistic for dS directly
+statistic for dS directly.
 }
 
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+The theoretical details can be found in Kustosz, Leucht and M\"{u}ller (2016). The computational 
+details are in Kustosz (2016).
+}
 \value{
 
-\item{TS}{Returns the value of the rescaled and centred test statistic}
-\item{phi}{Retuns the test decision, phi = 1 means reject H0, and phi = 0 means do not reject H0}
+\item{TS}{Returns the value of the rescaled and centred test statistic.}
+\item{phi}{Retuns the test decision, phi = 1 means reject H0, and phi = 0 means do not reject H0.}
 }
 \references{
-Kustosz and Mueller (2014). Tests based on simplicial depth for AR(1) models with
-explosion. Submitted.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+explosion. Journal of Time Series Analysis. In press.\cr
+\cr
 }
 \author{
-Kustosz, Christoph
+Christoph Kustosz and Sebastian Szugat
 }
 \note{
 Note, that the evaluation depends on the simulated results of the limit process, which are included in the rexpar package.
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{dS_lin2}},
@@ -62,18 +63,8 @@ Note, that the evaluation depends on the simulated results of the limit process,
 \examples{
 data("simLimit")
 y<-RandomARMod_lin2(100,0.2,1.01,15,0)
-%dS_lin2_test(c(0.2,1.01),0.05,y)
-%dS_lin2_test(c(0.1,1.01),0.05,y)
-## The function is currently defined as
-function(thetaN,alpha,y,ncores=1)
-{
-  dS<-dS_lin2(thetaN,y,ncores)
-  CdS<-(length(y)-1)*(dS-1/4)
-  deci<-(CdS<quantile(simLimit[,1],alpha))
-  list(TS=CdS,phi=deci)
+dS_lin2_test(c(0.2,1.01),0.05,y)
+dS_lin2_test(c(0.1,1.01),0.05,y)
+
 }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

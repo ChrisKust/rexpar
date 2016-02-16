@@ -1,50 +1,63 @@
 \name{dS_lin2}
 \alias{dS_lin2}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Simplicial depth for explosive AR(1) processes
 }
 \description{
-This function calculates simplicial depth for explosive AR(1) processes as defined in Leucht, Kustosz and Mueller (2014). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
+This function calculates simplicial depth for explosive AR(1) processes as defined in Kustosz, M\"{u}ller and Leucht (2016). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
 dS_lin2(theta,resy,y,ncores=1,
 model=c("linAR1","linAR1woI","nlinAR1","linAR2","linARc"),cpow=1)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-Parameter theta = (theta0,theta1) for which simplicial depth has to be evaluated. 
+Parameter \eqn{\theta} for which simplicial depth has to be evaluated. Thereby the dimension of the parameter is defined by the selected model.
 }
 
   \item{resy}{
-Here residuals of an arbitrary model with two parameter can be inserted, instead of defining a parameter theta and y, to evaluate depth directly on the signs of these residuals
+Here residuals of an arbitrary model with two parameter can be inserted, instead of defining a parameter theta and y, to evaluate depth directly on the signs of these residuals.
 }
   \item{y}{
-Observed proces y=(y0,...,yN) for which simplicial depth has to be evaluated.
+Observed proces \eqn{y=(y_0,...,y_N)} for which simplicial depth has to be evaluated.
 }
   \item{ncores}{
 Number of cores for parallel computation. If no value is selected the method sets the cores to 1 and no parallel comutation is applied. If the value is set to 'auto', the function detects the available number of cores and uses the maximal number minus 1. The function produces errors, if more cores than available or a wrong argument is inserted.
 }
-  \item{model}{
-Allows the selection of the linear AR(1) model with intercept by "linAR1", the nonlinear AR model without intercept by "nlinAR1" or the linear AR(1) model with intercept and fixed power cpow "linARc". The swich therfore changes the definition of the residuals used in the calculation.
+   \item{model}{
+Here the model for the calculation of the underlying residuals is specified. currently the following
+models are available\cr
+"linAR1woI" = linear AR(1) model without intercept          \deqn{Y_n = \theta_1 Y_{n-1} + E_n}
+"linAR1" = linear AR(1) model with intercept                 \deqn{Y_n = \theta_1 Y_{n-1} \theta_0 + E_n}
+"linAR2" = linear AR(2) model without intercept               \deqn{Y_n = \theta_1 Y_{n-1} + \theta_2 Y_{n-2} + E_n}
+"nlinAR1" = linear AR(1) model without intercept but with power parameter\deqn{Y_n = Y_{n-1} + \theta_1 Y_{n-1}^{\theta_3} + E_n}
+"linARc" = linear AR(1) model with intercept and fixed and knwon power cpow \deqn{Y_n = \theta_1 Y_{n-1}^{cpow} + \theta_0 + E_n}
 }
 \item{cpow}{
-fixed and known power parameter for the y(n) = theta2*y(n)^cpow + theta1 model
+Fixed and known power parameter for the \eqn{Y_n = \theta_1*Y_{n-1}^{cpow} + \theta_0} model.
 }
+}
+
+\details{
+The theoretical details can be found in Kustosz, Leucht and M\"{u}ller (2016). The computational 
+details are in Kustosz (2016).
 }
 
 \value{
 The function returns the simplicial depth of the parameter theta for an observed process y.
 }
 \references{
-Leucht, Kustosz and Mueller (2014). Tests based on simplicial depth for AR(1) models with
-explosion. Submitted.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+explosion. Journal of Time Series Analysis. In press.\cr
+\cr
 }
 \author{
-Kustosz, Christoph
+Christoph Kustosz and Sebastian Szugat
 }
 \note{
-The function depends on internal functions.
+The function depends on several internal functions.
 }
 
 
@@ -59,7 +72,4 @@ theta<-c(0.2,1.01)
 dS_lin2(theta,y)
 }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

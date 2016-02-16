@@ -34,7 +34,7 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
 \cr
 Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
 free estimators and tests for nonstationary autoregressive processes. Statistical
-Papers 55, 125-140.
+Papers 55, 125-140.\cr
 }
 
 %\keyword{ package }
