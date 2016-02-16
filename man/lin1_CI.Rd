@@ -1,6 +1,5 @@
 \name{lin1_CI}
 \alias{lin1_CI}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Confidence regions for linar AR(1) processes with intercept based on simplicial depth
 }
@@ -10,19 +9,18 @@ This function generates confidence intervals for linear AR(1) processes without 
 \usage{
 lin1_CI(y,level,plots=FALSE,notion="dS",eps=NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
-A observed series from an linear AR(1) process with intercept
+A observed series from an linear AR(1) process with intercept.
 }
 \item{level}{
-A value in (0,1) defining the level of the confidence regions to evaluate
+A value in (0,1) defining the level of the confidence regions to evaluate.
 }
 \item{plots}{
-A swich to turn on and off plots of the resulting region. Use (TRUE) to turn on plots and (FALSE) (default) to suppress plotting
+A swich to turn on and off plots of the resulting region. Use (TRUE) to turn on plots and (FALSE) (default) to suppress plotting.
 }
 \item{notion}{
-Here the applied test statistic for the calculation of confidence intervals is specified. Available are\cr
+Here the applied test statistic for the calculation of confidence intervals is specified. The available notions are\cr
 "dS" = full simplicial depth\cr
 "dS1" = reduced notion without overlapping of residuals\cr
 "dS2" = reduced notion based on large distance residuals\cr
@@ -32,27 +30,26 @@ Here the applied test statistic for the calculation of confidence intervals is s
 This allows to define a shifting of the candidate paramters by a constant eps to avoid evaluations on candidates defined by roots of the residuals. 
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+The theoretical background can be found in Kustosz, M\"{u}ller and Wendler (2016) and Kustosz and M\"{u}ller (2014). Details on the implementation can be found in Kustosz (2016).
+}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-\item{par }{A vector evaluated points to calculate the confidence region by evaluation of the depth tests}
-\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not}
-%% ...
+\item{par }{A vector evaluated points to calculate the confidence region by evaluation of the depth tests.}
+\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not.}
 }
 \references{
-Kustosz and Mueller (2014). ...Stat. Pap. 
-}
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
+\cr
+Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
+free estimators and tests for nonstationary autoregressive processes. Statistical
+Papers 55, 125-140.\cr}
 \author{
 Kustosz, Christoph
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{dS1_lin1_test}},\code{\link{dS2_lin1_test}},\code{\link{dS3_lin1_test}},\code{\link{dS_lin1_test}},\code{\link{lin1_theta}}}
@@ -62,12 +59,3 @@ y<-RandomARMod_lin2(100,0,1.001,15,0)
 lin1_CI(y,0.05)
 }
 
-
-%## The function is currently defined as
-%function (x) 
-%{
-%  }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
