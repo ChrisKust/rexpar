@@ -26,7 +26,15 @@ Data from an AR(1) Model without intercept
 \item{t2}{Candidate values for theta2}
 }
 \references{
-Kustosz, C. and Mueller Ch. H.(2014). ...
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
+Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
+\cr
+Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
+free estimators and tests for nonstationary autoregressive processes. Statistical
+Papers 55, 125-140.\cr
 }
 \author{
 Kustosz, Christoph
