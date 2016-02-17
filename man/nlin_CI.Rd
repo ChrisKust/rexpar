@@ -41,6 +41,7 @@ The theoretical details can be found in Kustosz, M\"{u}eller and Wendler (2016) 
 \item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not.}
 
 }
+\note{The plot functionality depends on the 'alphahull' package which is under ACM license. If this package is not avaliable, the plots are suppressed.}
 \references{
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
