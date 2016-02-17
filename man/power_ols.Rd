@@ -1,65 +1,55 @@
 \name{power_ols}
 \alias{power_ols}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Power of an OLS test for explosive AR processes
 }
 \description{
-This function simulates the power of an OLS test for explosive AR processes discussed in Wang and Yu (2013)
+This function simulates the power of an OLS test for explosive AR processes discussed in Wang and Yu (2013).
 }
 \usage{
 power_ols(thetas, N, R, sv, cont, theta0, alpha)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetas}{
-Parameter with which processes are simulated to evaluate the power in.
+Parameter \eqn{\theta_k = (\theta_{0,k},\theta_{1,k})} with which processes are simulated to evaluate the power in.
 }
   \item{N}{
-Size of the simulated processes
+Size of the simulated processes.
 }
   \item{R}{
-  Number of repetitions of the simulated processes
+  Number of repetitions in the simulation study.
 }
   \item{sv}{
-Starting value for the simulated processes
+Starting value \eqn{y_0} for the simulated processes.
 }
   \item{cont}{
-Contamination distribution as defined by RandomARMod_lin2
+Contamination distribution as defined by RandomARMod_lin2.
 }
   \item{theta0}{
-Parameter to define the Null-Hypothesis of the considered two-sided test
+Parameter to define the Null-Hypothesis \eqn{H0: \theta = \theta^0} of the considered two-sided test.
 }
   \item{alpha}{
-Level of the test
+Level \eqn{\alpha} of the test
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+The theoretical details can be found in Wang and Yu (2013). Remarks on the implementation are in Kustosz (2016).
+}
 \value{
-The output is a simulated value of the power function for the test in H0: theta = theta0 evaluated in thetas.
+The output is a simulated value of the power function for the test in \eqn{H0: \theta = \theta^0} evaluated in thetas.
+}
+
+\seealso{
+\code{\link{ols_expl}},\code{\link{ols_test}},\code{\link{ols_ts}}
 }
 \references{
 Wang X. and Yu, J. (2013). Limit theory for an explosive autoregressive process.
-Working Paper, No 08-2013. Singapore Management University, School of Economics.
-Kustosz, C. (2015). Depth Based Estimators and Tests for Autoregressive Processes with Application. Working Paper, TU Dortmund.
+Working Paper, No 08-2013. Singapore Management University, School of Economics.\cr
+\cr
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
 Kustosz, Christoph}
-%\note{
-%%  ~~further notes~~
-%}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-%\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-%}
-%\examples{
-
-%}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

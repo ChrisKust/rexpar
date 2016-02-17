@@ -35,6 +35,9 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
 Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
 free estimators and tests for nonstationary autoregressive processes. Statistical
 Papers 55, 125-140.\cr
+Wang X. and Yu, J. (2013). Limit theory for an explosive autoregressive process.
+Working Paper, No 08-2013. Singapore Management University, School of Economics.\cr
+\cr
 }
 
 %\keyword{ package }

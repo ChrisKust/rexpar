@@ -1,6 +1,5 @@
 \name{ols_ts}
 \alias{ols_ts}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 OLS test statisitic for explosive AR(1) processes
 }

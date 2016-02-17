@@ -1,13 +1,12 @@
 \name{resARMod_linar2}
 \alias{resARMod_linar2}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-resARMod_nlin1
+Residuals of a AR(2) process without intercept
 }
 \description{
 The function calculates the residuals of an AR(2) process
 without intercept for given parameter and data based on
-\deqn{r_n = y_n - theta_1 y_{n-1} - theta_2 y_{n-2}}
+\deqn{r_n = y_n - \theta_1 y_{n-1} - \theta_2 y_{n-2}}
 }
 \usage{
 resARMod_linar2(theta,dat)
@@ -15,24 +14,26 @@ resARMod_linar2(theta,dat)
 
 \arguments{
   \item{theta}{
-  parameter vector consisting of (theta_1,theta_2)
+  Parameter vector \eqn{\theta= (\theta_1,\theta_2)}.
 }
   \item{dat}{
-  one dimensional observation vector $y=(y_0,...,y_N)$
+  One dimensional observation vector \eqn{y=(y_0,...,y_N)}.
 }
 }
 \value{
-The output is a vector with $N$ elements defined by $r = (r_1,...,r_N)$
+The output is a vector with N elements defined by \eqn{r = (r_1,...,r_N)}.
 
 }
+
 \references{
-Kustosz, C. (2014). Implementation of simplicial depth for AR processes under non standard conditions. Working Paper, TU Dortmund.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
 Kustosz, Christoph
 }
-%\note{
-%}
+
 \seealso{
 \code{\link{RandomARMod_linar2}},\code{\link{dS_lin2}},\code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}}
 }
@@ -57,7 +58,4 @@ hist(res)
 
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{residuals }
-%\keyword{autoregression}% __ONLY ONE__ keyword per line
+

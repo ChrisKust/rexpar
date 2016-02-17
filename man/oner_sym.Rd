@@ -1,39 +1,36 @@
 
 \name{oner_sym}
 \alias{oner_sym}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{Main evaluation of symmetrised dS 
+\title{Main evaluation of a symmetrised simplicial depth statistic dS
 }
 \description{
-This function is a central part of the calculation of dS in the symmetrised version. It is necessary to calculate the matrix based inner loops
+This function is a central part of the calculation of dS in the symmetrised version. It is necessary to calculate the matrix based inner loops.
 }
 \usage{
 oner_sym(resid)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{resid}{A vector of residuals \eqn{(r_k,...,r_{k+m})} for which the inner loop has to be evaluated
+  \item{resid}{A vector of residuals \eqn{(r_k,...,r_{k+m})} for which the inner loop has to be evaluated.
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
+\details{
+The details on the calculation can be found in Kustosz (2016).
+}
 \value{
-The function returns the sum of all indicators, when the first residual of the input vector is fixed and the inner sums run over all remaining residuals
+The function returns the sum of all indicators, when the first residual of the input vector is fixed and the inner sums run over all remaining residuals.
 }
 \references{
-Kustosz, C. (2014). Implementation of simplicial depth for AR processes under non standard conditions. Working Paper, TU Dortmund.
-Leucht, Kustosz and Mueller (2014). Tests based on simplicial depth for AR(1) models with
-explosion. Submitted.
+Kustosz, C. (2016). Depth based estimators and tests for
+autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
+\cr
 }
 \author{
 Kustosz, Christoph
 }
 \note{
-The funcion is used in the symmetrised dS calculation routine.
+The funcion is used in the symmetrised dS calculation routine. 
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}, \code{\link{inv_tri}}
@@ -42,7 +39,3 @@ The funcion is used in the symmetrised dS calculation routine.
 res<-c(1,2,3,4,5)
 oner_sym(res)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
