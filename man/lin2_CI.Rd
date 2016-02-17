@@ -36,7 +36,7 @@ The theoretical details can be found in Kustosz, M\"{u}eller and Wendler (2016) 
 
 \item{par}{A matrix with the evaluated points to calculate the confidence region by evaluation of the depth tests.}
 \item{inCI}{A binary vector indicating, if a parameter in par is in the confidence interval or not.}
-%% ...
+
 }
 \references{
 Kustosz, C. (2016). Depth based estimators and tests for
