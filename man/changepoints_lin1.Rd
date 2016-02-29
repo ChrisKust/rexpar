@@ -10,7 +10,6 @@ defined by \deqn{Y_n = \theta_{1} \cdot Y_{n-1} + E_n} with \eqn{med(E_n)=0}. Th
 \usage{
 changepoints_lin1(y,level,bw,sw,plots=FALSE,method=1,mincper=1,mincp=1)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
 An observed AR(1) process without intercept.
@@ -26,7 +25,7 @@ A step-width to reduce the candidate points in which the change points are evalu
 }
 \item{plots}{A switch, activating plots while the calculations are preformed. The plots show the confidence regions for the actually considered windows.}
 \item{method}{
-This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not inside of the non respective confidence intervals.
+This parameter determines the method to detect change points. If \code{method=1} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method=2} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }
 \item{mincper}{
 Percentage to define relevant change-point clusters based on the length of the 'mincp' longest detected cluster.
@@ -55,22 +54,22 @@ Kustosz, Christoph
 \seealso{
   \code{\link{RandomARMod_lin2}}, \code{\link{lin1_CI}},  \code{\link{est_lin1}},  \code{\link{dS_lin1}},  \code{\link{dS_lin1_test}}}
 \examples{
-int1<-0
-int2<-0.2
-arp1<-1.001
-arp2<-1.004
+int1 <- 0
+int2 <- 0.2
+arp1 <- 1.001
+arp2 <- 1.004
 
 
-y1<-RandomARMod_lin2(50,int1,arp1,15,3)
-y2<-RandomARMod_lin2(50,int2,arp2,y1[length(y1)],3)
-y<-c(y1,y2)
+y1 <- RandomARMod_lin2(50, int1, arp1, 15, 3)
+y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 3)
+y <- c(y1, y2)
 
 \dontrun{
 par(ask=T)
 
-changepoints_lin1(y,0.99,25,10,plots=FALSE,method=1)->CP
+CP <- changepoints_lin1(y, 0.99, 25, 10, plots=FALSE, method=1)
 
-plot(y,type="l")
-abline(v=CP$candidates[CP$changepoints==TRUE],col=2)
+plot(y, type="l")
+abline(v=CP$candidates[CP$changepoints], col=2)
 }
 }

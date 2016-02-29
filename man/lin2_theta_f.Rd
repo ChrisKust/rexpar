@@ -1,6 +1,5 @@
 \name{lin2_theta_f}
 \alias{lin2_theta_f}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Candidate point evaluation for simplicial depth in the linear model
 }

@@ -31,7 +31,7 @@ This switch allows the usage of an exact distribition of the test statistics usi
 
 }
 \details{
-The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016). The computational 
+The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -43,7 +43,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Mueller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }

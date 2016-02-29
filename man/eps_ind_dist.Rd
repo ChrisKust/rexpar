@@ -34,26 +34,7 @@ autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr
 \author{
 Kustosz, Christoph
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{Tri_Mid}}, \code{\link{Tri_Mid_n1}}
 }
-%\examples{
-%##---- Should be DIRECTLY executable !! ----
-%##-- ==>  Define data, use random,
-%##--	or do  help(data=index)  for the standard data sets.
-
-%## The function is currently defined as
-%function (x) 
-%{
-%  }
-%}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

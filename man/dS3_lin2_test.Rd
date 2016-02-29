@@ -3,7 +3,7 @@
 \title{Test based on dS3 for explosive AR(1) processes with intercept
 }
 \description{
-The function evaluates the asymptotic test based on dS3 proposed in Kustosz, M\"{u}ller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
+The function evaluates the asymptotic test based on dS3 proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
 }
 \usage{
 dS3_lin2_test(thetaN,alpha,y,exact=FALSE,cpow=1,dS3)
@@ -32,7 +32,7 @@ Here an evaluated dS3 statistic can be inserted instead of a vector y. Then just
 calculated and the test is evaluated directly.}
 }
 \details{
-The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016). The computational 
+The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -44,7 +44,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Mueller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }

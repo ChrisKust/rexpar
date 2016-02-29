@@ -5,7 +5,7 @@ Estimation for non-linear AR(1) models by simplicial depth
 }
 \description{
 This function implements an algortihm to estimate a non-linear AR(1) model and
-explosion by simplicial depth or one of the proposed simplified notions in Kustosz, M\"{u}ller and Wendler (2016).
+explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueller and Wendler (2016).
 }
 \usage{
 est_nlin1(y,maxit=25,candy=FALSE,perc=0.1,acc=0.1,plots=FALSE,
@@ -63,7 +63,7 @@ The function returns a list with
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Mueller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
 }

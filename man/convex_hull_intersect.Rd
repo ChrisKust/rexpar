@@ -58,8 +58,7 @@ This function is an auxiliary function to compare the confidence regions in orde
 \code{\link{chull}},\code{\link{straight_intersect}},\code{\link{dS_lin2_test}},\code{\link{dS1_lin2_test}},\code{\link{dS2_lin2_test}},\code{\link{dS3_lin2_test}}
 }
 \examples{
-po1<-rbind(c(1,1),c(2,4),c(1,2),c(2,3))
-po2<-rbind(c(1,3),c(2,1.5),c(1.5,2),c(1.2,2))
-convex_hull_intersect(po1,po2,plots=TRUE)
-
+po1 <- rbind(c(1, 1), c(2, 4), c(1, 2), c(2, 3))
+po2 <- rbind(c(1, 3), c(2, 1.5), c(1.5, 2), c(1.2, 2))
+convex_hull_intersect(po1, po2, plots=TRUE)
 }

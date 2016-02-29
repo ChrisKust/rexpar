@@ -3,7 +3,7 @@
 \title{Simplicial depth for explosive AR(1) processes
 }
 \description{
-This function calculates simplicial depth for explosive AR(1) processes as defined in Kustosz, M\"{u}ller and Leucht (2016). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
+This function calculates simplicial depth for explosive AR(1) processes as defined in Kustosz, Mueller and Leucht (2016). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
 dS_lin2(theta,resy,y,ncores=1,
@@ -38,7 +38,7 @@ Fixed and known power parameter for the \eqn{Y_n = \theta_1*Y_{n-1}^{cpow} + \th
 }
 
 \details{
-The theoretical details can be found in Kustosz, Leucht and M\"{u}ller (2016). The computational 
+The theoretical details can be found in Kustosz, Leucht and Mueller (2016). The computational 
 details are in Kustosz (2016).
 }
 
@@ -49,7 +49,7 @@ The function returns the simplicial depth of the parameter theta for an observed
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+Kustosz C., Leucht A. and Mueller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
 explosion. Journal of Time Series Analysis. In press.\cr
 \cr
 }

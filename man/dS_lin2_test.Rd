@@ -3,7 +3,7 @@
 \title{Test based on dS for explosive AR(1) processes with intercept
 }
 \description{
-The function evaluates the asymptotic test based on dS proposed in Kustosz, Leucht and M\"{u}ller (2016). It returns the test statistic and the decision. The default model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^{cpow} + E_n} with \eqn{med(E_n)=0}.
+The function evaluates the asymptotic test based on dS proposed in Kustosz, Leucht and Mueller (2016). It returns the test statistic and the decision. The default model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^{cpow} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
 dS_lin2_test(thetaN,alpha,y,ncores=1,cpow=1,dS)
@@ -34,7 +34,7 @@ statistic for dS directly.
 
 }
 \details{
-The theoretical details can be found in Kustosz, Leucht and M\"{u}ller (2016). The computational 
+The theoretical details can be found in Kustosz, Leucht and Mueller (2016). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -46,7 +46,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+Kustosz C., Leucht A. and Mueller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
 explosion. Journal of Time Series Analysis. In press.\cr
 \cr
 }

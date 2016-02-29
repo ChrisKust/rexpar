@@ -18,7 +18,7 @@ Observed data \eqn{y = (y_0,...,y_N)} for which dS is evaluated.
 }
 }
 \details{
-The theoretical details can be found in Kustosz, Leucht and M\"{u}ller (2016). The computational 
+The theoretical details can be found in Kustosz, Leucht and Mueller (2016). The computational 
 details are in Kustosz (2016).
 }
 
@@ -29,7 +29,7 @@ The function returns dS for given theta and y.
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+Kustosz C., Leucht A. and Mueller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
 explosion. Journal of Time Series Analysis. In press.\cr
 \cr
 }

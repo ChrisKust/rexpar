@@ -41,9 +41,9 @@ This in an auxiliary function to generate plots of the confidence regions based 
 \code{\link{lin2_CI}},\code{\link{convex_hull_intersect}}
 }
 \examples{
-x<-rnorm(10)
-y<-rnorm(10)
-plot(x,y)
-convex_hull_plot(x,y,col=2)
+x <- rnorm(10)
+y <- rnorm(10)
+plot(x, y)
+convex_hull_plot(x, y, col=2)
 }
 

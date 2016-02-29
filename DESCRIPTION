@@ -1,6 +1,6 @@
 Package: rexpar
 Type: Package
-Title: Simplicial Depht for Explosive Autoregressive Processes
+Title: Simplicial Depth for Explosive Autoregressive Processes
 Version: 1.0
 Date: 2016-02-17
 Author: Kustosz, Christoph; Szugat, Sebastian
@@ -15,5 +15,6 @@ Depends:
     MASS
 Suggests:
     alphahull
-License: GPL-2
-RoxygenNote: 5.0.1
+License: 
+    GPL-2
+

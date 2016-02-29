@@ -3,7 +3,7 @@
 \title{Test based on dS for explosive AR(1) processes without intercept
 }
 \description{
-The function evaluates the asymptotic test based on dS proposed in Kustosz and M\"{u}ller (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
+The function evaluates the asymptotic test based on dS proposed in Kustosz and Mueller (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
 dS_lin1_test(thetaN,alpha,y,mod=FALSE)
@@ -28,7 +28,7 @@ Switch to enable full tangential depth derivative (multiplication with \eqn{y_{n
 
 }
 \details{
-The theoretical details can be found in Kustosz and M\"{u}ller (2014). The computational 
+The theoretical details can be found in Kustosz and Mueller (2014). The computational 
 details are in Kustosz (2016).
 }
 \value{
@@ -40,7 +40,7 @@ details are in Kustosz (2016).
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
+Kustosz C. and Mueller Ch. H. (2014). Analysis of crack growth with robust distribution-
 free estimators and tests for nonstationary autoregressive processes. Statistical
 Papers 55, 125-140.\cr
 }

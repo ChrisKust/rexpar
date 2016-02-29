@@ -5,7 +5,7 @@
 }
 \description{
   This function implements an algortihm to estimate a linear AR(1) model without intercept and
-  explosion by simplicial depth or one of the proposed simplified notions in Kustosz, M\"{u}eller and Wendler (2016).
+  explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueeller and Wendler (2016).
 }
 \usage{
   est_lin1(y,maxit,candy,acc,plots,eps,unique,notion)
@@ -38,7 +38,7 @@
 }
 }
 \details{
-The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016) and Kustosz and M\"{u}ller (2014). The computational details are in Kustosz (2016).
+The theoretical details can be found in Kustosz, Mueller and Wendler (2016) and Kustosz and Mueller (2014). The computational details are in Kustosz (2016).
 }
 \value{
   The function returns a list with
@@ -50,10 +50,10 @@ The theoretical details can be found in Kustosz, M\"{u}ller and Wendler (2016) a
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., M\"{u}ller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
+Kustosz C., Mueller Ch. H. and Wendler M. (2016). Simplified Simplicial Depth for Regression and
 Autoregressive Growth Processes. Journal of Statistical Planning and Inference. In press.\cr
 \cr
-Kustosz C. and M\"{u}ller Ch. H. (2014). Analysis of crack growth with robust distribution-
+Kustosz C. and Mueller Ch. H. (2014). Analysis of crack growth with robust distribution-
 free estimators and tests for nonstationary autoregressive processes. Statistical
 Papers 55, 125-140.\cr
 }

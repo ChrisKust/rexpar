@@ -4,7 +4,7 @@
 Simulated quantiles of the limit for simplicial depth based on alternating residuals for models with two parameters
 }
 \description{
-Approximated quantiles of the limit process for simplicial depth based on alternating residuals in case of two dimensional parameters. The statistic is proposed in Kustosz, Leucht and M\"{u}ller (2016), where the limit distribution is derived, also. 
+Approximated quantiles of the limit process for simplicial depth based on alternating residuals in case of two dimensional parameters. The statistic is proposed in Kustosz, Leucht and Mueller (2016), where the limit distribution is derived, also. 
 }
 \usage{
 SimQuants
@@ -21,7 +21,7 @@ The resulting value is a matrix including probabilities in the first column and 
 Kustosz, C. (2016). Depth based estimators and tests for
 autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr 
 \cr
-Kustosz C., Leucht A. and M\"{u}ller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
+Kustosz C., Leucht A. and Mueller Ch. H. (2016). Tests based on simplicial depth for AR(1) models with
 explosion. Journal of Time Series Analysis. In press.\cr
 \cr
 }

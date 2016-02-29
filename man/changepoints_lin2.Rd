@@ -28,7 +28,7 @@ A step-width to reduce the candidate points in which the change points are evalu
 A switch (TRUE and FALSE) to determine, if plots shall be produced for each tested candidate.
 }
 \item{method}{
-This parameter determines the method to detect change points. If method=1 is selected a candidate is marked as change, if the confidence intervals do not overlap. For method=2 the change point is marked, if the estimates are not inside of the non respective confidence intervals.
+This parameter determines the method to detect change points. If \code{method=1} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method=2} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }
 \item{ncoresCP}{
 Number of CPU cores for parallel computing.
@@ -59,25 +59,22 @@ Kustosz, Christoph
   \code{\link{RandomARMod_lin2}}, \code{\link{lin2_CI}},   \code{\link{convex_hull_plot}},   \code{\link{convex_hull_intersect}},  \code{\link{est_lin2}},  \code{\link{dS_lin2}},  \code{\link{dS_lin2_test}},\code{\link{dS1_lin2_test}}
 }
 \examples{
-int1<-0.1
-int2<-0.2
-arp1<-1.001
-arp2<-1.004
+int1 <- 0.1
+int2 <- 0.2
+arp1 <- 1.001
+arp2 <- 1.004
 
 
-y1<-RandomARMod_lin2(50,int1,arp1,15,3)
-y2<-RandomARMod_lin2(50,int2,arp2,y1[length(y1)],3)
-y<-c(y1,y2)
+y1 <- RandomARMod_lin2(50, int1, arp1, 15, 3)
+y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 3)
+y <- c(y1,y2)
 
 \dontrun{
 par(ask=T)
 
-changepoints_lin2(y,0.99,25,10,plots=FALSE,method=1,ncoresCP=4)->CP
+CP <- changepoints_lin2(y, 0.99, 25, 10, plots=FALSE, method=1, ncoresCP=4)
 
-plot(y,type="l")
-abline(v=CP$candidates[CP$changepoints==TRUE],col=2)
+plot(y, type="l")
+abline(v=CP$candidates[CP$changepoints], col=2)
 }
 }
-
-%\keyword{ ~kwd1 }
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
