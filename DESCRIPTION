@@ -5,7 +5,15 @@ Version: 1.0
 Date: 2016-02-17
 Author: Kustosz, Christoph; Szugat, Sebastian
 Maintainer: "Szugat, Sebastian" <szugat@statistik.tu-dortmund.de>
-Description: We introduce simplicial depth statistics for explosive AR(1) processes. The package implements robust statistics, estimators, tests and confidence intervals. Further changepoint detection and prediction methods for simple processes are available.
-Depends: matrixcalc, parallel, MASS
-Suggests: alphahull
+Description: We introduce simplicial depth statistics for explosive AR(1)
+    processes. The package implements robust statistics, estimators, tests and
+    confidence intervals. Further changepoint detection and prediction methods
+    for simple processes are available.
+Depends:
+    matrixcalc,
+    parallel,
+    MASS
+Suggests:
+    alphahull
 License: GPL-2
+RoxygenNote: 5.0.1
