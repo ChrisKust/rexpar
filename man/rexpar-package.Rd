@@ -14,7 +14,7 @@ Package: \tab rexpar\cr
 Type: \tab Package\cr
 Version: \tab 0.99(1.0beta)\cr
 Date: \tab 2014-07-25\cr
-License: \tab GPL-2, ACM\cr
+License: \tab GPL-2\cr
 }
 }
 \author{
