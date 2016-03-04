@@ -41,43 +41,42 @@ Christoph Kustosz and Sebastian Szugat
  \code{\link{predict_lin1}}
 }
 \examples{
-#generate random process
 set.seed(234)
 y <- RandomARMod_lin2(100, 0, 1.01, 15, 0)
 
 #evaluate depth on grid
-thetas <- seq(0.97,1.05,0.001)
-dS <- unlist(lapply(thetas,dS_lin1,y=y))
+thetas <- seq(0.97, 1.05, 0.001)
+dS <- unlist(lapply(thetas, dS_lin1, y=y))
 
 #plot emprirical depth
-par(mfrow=c(2,2))
-plot(thetas,dS)
+par(mfrow=c(2, 2))
+plot(thetas, dS)
 
 #generate random parameters 
 tmi <- min(thetas[dS>0])
 tma <- max(thetas[dS>0])
-replicate(10000,draw_from_depth(dS, thetas,lower=tmi,upper=tma)) -> rand_theta
+rand_theta <- replicate(10000, draw_from_depth(dS, thetas, lower=tmi, upper=tma))
 
 #plot 'discrete' distribution on grid and empirical distribution
-plot(table(rand_theta)/length(rand_theta),type="h")
+plot(table(rand_theta)/length(rand_theta), type="h")
 plot(ecdf(rand_theta))
 
 #plot process and generate trajectories with estimated variance
 #we now assume normally distributed errors with mean 0 for simulations
-plot(y,type="l")
-yy <- matrix(ncol=100,nrow=100)
+plot(y, type="l")
+yy <- matrix(ncol=100, nrow=100)
 for(i in 1:100)
 {
-rt <- sample(rand_theta,1)
-res <- resARMod_lin2(c(0,rt),y)
+rt <- sample(rand_theta, 1)
+res <- resARMod_lin2(c(0, rt), y)
 sd_est <- sd(res) 
-yy[i,] <- RandomARMod_lin2(100,0,rt,y[1],sd=sd_est)
+yy[i, ] <- RandomARMod_lin2(100, 0, rt, y[1], sd=sd_est)
 if(floor(i/10)==i/10)
 {
-lines(yy[i,],col=i)
+lines(yy[i, ],col=i)
 }
-mean_f <- apply(yy,2,mean)
-lines(mean_f,col=2,lwd=2)
+mean_f <- apply(yy, 2, mean)
+lines(mean_f, col=2, lwd=2)
 }
 
 }
