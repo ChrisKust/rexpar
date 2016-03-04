@@ -9,7 +9,8 @@ processes, when overlapping residuals are evaluated. Thereby
 the parameter \eqn{\theta} and the process y are fixed. The assumed model given by the model defined by the model parameter.
 }
 \usage{
-dS3_lin2(theta,res,y,model=c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"),cpow=1)
+dS3_lin2(theta, res, y, model=c("linAR1", "linAR1woI", "nlinAR1",
+"linAR2", "linARc"), cpow=1)
 }
 \arguments{
   \item{theta}{
@@ -63,7 +64,7 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}
 }
 \examples{
-y<-RandomARMod_lin2(100,0.2,1.01,15,0)
-theta<-c(0.2,1.01)
-dS3_lin2(theta,y)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
+theta <- c(0.2, 1.01)
+dS3_lin2(theta, y)
 }

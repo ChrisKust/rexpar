@@ -9,7 +9,7 @@ defined by \deqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 This is a version which uses a preset cluster which hast to be passed as argument when calling the function.
 }
 \usage{
-changepoints_lin2_cl(y,level,bw,sw,plots,method,cluster,mincper,mincp)
+changepoints_lin2_cl(y, level, bw, sw, plots, method, cluster, mincper, mincp)
 }
 \arguments{
   \item{y}{

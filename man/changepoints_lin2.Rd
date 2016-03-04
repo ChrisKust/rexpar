@@ -8,7 +8,7 @@ This function detects change points for parameter changes of a linear AR(1) mode
 defined by \deqn{Y_n = \theta_1 Y_{n-1} + \theta_0 + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimators and confidence intervals based on simplicial depth as proposed by Kustosz (2016). Further, a preselection of candidates by a simplified depth notion is used. 
 }
 \usage{
-changepoints_lin2(y,level,bw,sw,plots,method,ncoresCP,mincper,mincp)
+changepoints_lin2(y, level, bw, sw, plots, method, ncoresCP, mincper, mincp)
 }
 
 \arguments{

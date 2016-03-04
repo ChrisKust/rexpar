@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS1_lin2_test(thetaN,alpha,y,exact=F,cpow=1)
+dS1_lin2_test(thetaN, alpha, y, exact=FALSE, cpow=1)
 }
 \arguments{
   \item{thetaN}{
@@ -53,8 +53,8 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}}
 }
 \examples{
-y<-RandomARMod_lin2(1000,0.2,1.01,15,0)
-dS1_lin2_test(c(0.2,1.01),0.05,y)
-dS1_lin2_test(c(0.1,1.01),0.05,y)
+y <- RandomARMod_lin2(1000, 0.2, 1.01, 15, 0)
+dS1_lin2_test(c(0.2, 1.01), 0.05, y)
+dS1_lin2_test(c(0.1, 1.01), 0.05, y)
 }
 

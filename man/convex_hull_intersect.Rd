@@ -7,7 +7,7 @@ Intersections of convex hulls
 The function calculates how often the staights defining two convex hulls in \eqn{R^2} intersect and plots the results if desired.
 }
 \usage{
-convex_hull_intersect(points1,points2,alpha,y1,y2,notion,plots)
+convex_hull_intersect(points1, points2, alpha, y1, y2, notion, plots)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

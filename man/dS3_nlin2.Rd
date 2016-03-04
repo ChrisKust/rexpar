@@ -11,7 +11,7 @@ the parameter theta and the process y are fixed. The assumed model is given by
 whereby \eqn{E_n} i.i.d. errors with \eqn{med(E_n) = 0}.
 }
 \usage{
-dS3_nlin2(theta,y)
+dS3_nlin2(theta, y)
 }
 \arguments{
   \item{theta}{
@@ -48,9 +48,9 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin2(100,0,0.2,1.01,15,0)
-theta<-c(0,0.2,1.01)
-dS3_nlin2(theta,y)
+y <- RandomARMod_nlin2(100, 0, 0.2, 1.01, 15, 0)
+theta <- c(0, 0.2, 1.01)
+dS3_nlin2(theta, y)
 }
 
 

@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_nlin_test(thetaN,alpha,y,exact=F)
+dS2_nlin_test(thetaN, alpha, y, exact=FALSE)
 }
 \arguments{
   \item{thetaN}{
@@ -49,8 +49,7 @@ Kustosz, Christoph
  \code{\link{dS2_lin2}}
 }
 \examples{
-y<-RandomARMod_lin2(10,0.2,1.01,15,0)
-dS2_nlin_test(c(0.2,1.01),0.05,y)
-dS2_nlin_test(c(0.1,1.01),0.05,y)
-
+y <- RandomARMod_lin2(10, 0.2, 1.01, 15, 0)
+dS2_nlin_test(c(0.2, 1.01), 0.05, y)
+dS2_nlin_test(c(0.1, 1.01), 0.05, y)
 }

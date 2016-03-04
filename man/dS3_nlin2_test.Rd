@@ -6,9 +6,8 @@
 The function evaluates the asymptotic test based on \eqn{d_S^3} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS3_nlin2_test(dS3,thetaN,alpha,y,exact=FALSE)
+dS3_nlin2_test(dS3, thetaN, alpha, y, exact=FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
 \item{dS3}{
 Here the user can pass a pre-calculated depth statistic dS3 instead of a parameter thetaN and an observation vector y 
@@ -55,9 +54,8 @@ Christoph Kustosz and Sebastian Szugat
  \code{\link{dS1_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin2(10,0,0.2,1.01,15,0)
-dS3_nlin2_test(thetaN=c(0,0.2,1.01),alpha=0.05,y=y)
-dS3_nlin2_test(thetaN=c(0,0.1,1.01),alpha=0.05,y=y)
-
+y <- RandomARMod_nlin2(10, 0, 0.2, 1.01, 15, 0)
+dS3_nlin2_test(thetaN=c(0, 0.2, 1.01), alpha=0.05, y=y)
+dS3_nlin2_test(thetaN=c(0, 0.1, 1.01), alpha=0.05, y=y)
 }
 

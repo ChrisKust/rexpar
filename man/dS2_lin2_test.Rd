@@ -6,9 +6,8 @@
 The function evaluates the asymptotic test based on dS2 proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_lin2_test(thetaN,alpha,y,exact=FALSE,cpow=1,dS2)
+dS2_lin2_test(thetaN, alpha, y, exact=FALSE, cpow=1, dS2)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (theta_0^0, theta_1^0)} as defined by the model. 
@@ -58,9 +57,8 @@ Christoph Kustosz and Sebastian Szugat
 \code{\link{dS2_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin1(1000,0.2,1.01,15,0)
-dS2_lin2_test(thetaN=c(0.2,1.01),alpha=0.05,y=y)
-dS2_lin2_test(thetaN=c(0.1,1.01),alpha=0.05,y=y)
-
+y <- RandomARMod_nlin1(1000, 0.2, 1.01, 15, 0)
+dS2_lin2_test(thetaN=c(0.2, 1.01), alpha=0.05, y=y)
+dS2_lin2_test(thetaN=c(0.1, 1.01), alpha=0.05, y=y)
 }
 

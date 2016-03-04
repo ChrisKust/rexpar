@@ -11,7 +11,7 @@ the parameter \eqn{\theta} and the process y are fixed. The assumed model is giv
 whreby \eqn{E_n} i.i.d. errors with \eqn{med(E_n) = 0}.
 }
 \usage{
-dS1_nlin2(theta,y)
+dS1_nlin2(theta, y)
 }
 \arguments{
   \item{theta}{
@@ -48,11 +48,8 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin2(100,0,0.2,1.01,15,0)
-theta<-c(0,0.2,1.01)
-dS1_nlin2(theta,y)
+y <- RandomARMod_nlin2(100, 0, 0.2, 1.01, 15, 0)
+theta <- c(0, 0.2, 1.01)
+dS1_nlin2(theta, y)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

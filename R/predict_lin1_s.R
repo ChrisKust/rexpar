@@ -1,15 +1,15 @@
-predict_lin1_s<-function(y,CritLen,CritTime,NSim,alpha,restrict=F,start)
+predict_lin1_s<-function(y,CritLen,CritTime,NSim,alpha,restrict=FALSE,start)
 {
   simL_fac<-30
   cands<-lin1_theta_eps(y,0.000000001)$t1
   unlist(lapply(cands,rexpar::dS_lin1,y=y))->depth
   #plot(cands,depth)
-  if(restrict==T)
+  if(restrict==TRUE)
   {
     theta_min<-min(cands[(length(y)-1)*(depth-1/2)>=-1/2*qchisq(1-alpha,df=1)+1/2])
     theta_max<-max(cands[(length(y)-1)*(depth-1/2)>=-1/2*qchisq(1-alpha,df=1)+1/2])
   }
-  if(restrict==F)
+  if(restrict==FALSE)
   {
     theta_min<-min(cands)
     theta_max<-max(cands)
@@ -51,7 +51,3 @@ predict_lin1_s<-function(y,CritLen,CritTime,NSim,alpha,restrict=F,start)
 
 
 
-
-
-
-#predict_lin1(y,alpha=0.05,restric=F,NSim=100)->rr

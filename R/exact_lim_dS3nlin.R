@@ -20,12 +20,11 @@ for(i in 1:R)
 if(plot==T)
 {
 par(mfrow=c(1,1))
-hist(dSs,plot=F,breaks=seq(min(dSs)-1,max(dSs),1))->h
+hist(dSs,plot=FALSE,breaks=seq(min(dSs)-1,max(dSs),1))->h
 plot(h$mids,h$counts/R,type="h",xlim=c(min(dSs),max(dSs)),ylim=c(0,0.05),xlab="value",ylab="rel. freq.")
-#h$counts/R
 rr<-rbinom(R,size=floor(N-4),prob=(1/8))
 floor(N/3)
-hist(rr,plot=F,breaks=seq(min(rr)-1,max(rr),1))->hh
+hist(rr,plot=FALSE,breaks=seq(min(rr)-1,max(rr),1))->hh
 lines(hh$mids+0.4,hh$counts/R,type="h",col=2)
 }
 return(dSs)

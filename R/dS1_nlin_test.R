@@ -1,4 +1,4 @@
-dS1_nlin_test<-function(thetaN,alpha,y,exact=F)
+dS1_nlin_test<-function(thetaN,alpha,y,exact=FALSE)
 {
   dS1<-rexpar::dS1_lin2(theta=thetaN, y=y, model="nlinAR1")
   NdS1<-sqrt(floor((length(y)-1)/3))*(dS1-1/4)/sqrt(3/16)

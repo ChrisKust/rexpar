@@ -6,7 +6,7 @@
   The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS2_lin1_test(thetaN,alpha,y,exact)
+  dS2_lin1_test(thetaN, alpha, y, exact)
 }
 \arguments{
   \item{thetaN}{
@@ -21,7 +21,7 @@
     Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
   }
       \item{exact}{
-    Switch (TRUE/FALSE) to decide, weather the exact distribution (TRUE) or the approximate normal distribution (FALSE) should be used for the calculation of critical values. 
+    Switch to decide, weather the exact distribution \code{exact=TRUE} or the approximate normal distribution \code{exact=FALSE} should be used for the calculation of critical values. 
   }
   
 }
@@ -52,7 +52,7 @@ Papers 55, 125-140.
     \code{\link{dS1_lin2}}
   }
 \examples{
-  y<-RandomARMod_lin2(1000,0,1.01,15,0)
-  dS2_lin1_test(1.01,0.05,y)
+  y <- RandomARMod_lin2(1000, 0, 1.01, 15, 0)
+  dS2_lin1_test(1.01, 0.05, y)
 }
 

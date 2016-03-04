@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on dS3 proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
 }
 \usage{
-dS3_lin2_test(thetaN,alpha,y,exact=FALSE,cpow=1,dS3)
+dS3_lin2_test(thetaN, alpha, y, exact=FALSE, cpow=1, dS3)
 }
 \arguments{
   \item{thetaN}{
@@ -57,8 +57,8 @@ Christoph Kustosz and Sebastian Szugat
 }
 
 \examples{
-y<-RandomARMod_lin2(1000,0.2,1.01,15,0)
-dS3_lin2_test(c(0.2,1.01),0.05,y)
-dS3_lin2_test(c(0.1,1.01),0.05,y)
+y  <- RandomARMod_lin2(1000, 0.2, 1.01, 15, 0)
+dS3_lin2_test(c(0.2, 1.01), 0.05, y)
+dS3_lin2_test(c(0.1, 1.01), 0.05, y)
 }
 

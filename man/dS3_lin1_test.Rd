@@ -6,9 +6,8 @@
   The function evaluates the asymptotic test based on \eqn{d_S^3} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS3_lin1_test(thetaN,alpha,y,exact)
+  dS3_lin1_test(thetaN, alpha, y, exact)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
     Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = \theta_1^0}  is as defined by the model. 
@@ -22,7 +21,7 @@
     Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
   }
       \item{exact}{
-    Switch (TRUE/FALSE) to decide, weather the exact distribution (TRUE) or the approximate normal distribution (FALSE) should be used for the calculation of critical values. 
+    Switch to decide, weather the exact distribution \code{exact=TRUE} for the approximate normal distribution \code{exact=FALSE} should be used for the calculation of critical values. 
   }
   
 }
@@ -51,8 +50,7 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
     \code{\link{dS3_lin2}}
   }
 \examples{
-  y<-RandomARMod_lin2(1000,0,1.01,15,0)
-  dS3_lin1_test(1.01,0.05,y)
-  
+  y <- RandomARMod_lin2(1000, 0, 1.01, 15, 0)
+  dS3_lin1_test(1.01, 0.05, y)
 }
 
