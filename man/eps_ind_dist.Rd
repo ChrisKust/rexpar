@@ -7,7 +7,7 @@ Calculation of a point inside of a triangle
 This is a internal function of the optimisation algoritm using a candidate search and a precise calculation by considering points inside of the simplices defined by intersection of roots of residuals and an epsilon to shift the candidates into the simplex. Thereby the considered simplices are constructed by the colosest two neighbours of each candidate.
 }
 \usage{
-eps_ind_dist(v1,Mat,eps)
+eps_ind_dist(v1, Mat, eps)
 }
 \arguments{
 \item{v1}{

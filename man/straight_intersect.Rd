@@ -8,20 +8,20 @@ This function calculates the intersection of two straights and gives the paramte
 parametric form. Further it indicates, if the straigths intersect within the range of the four defining edges.
 }
 \usage{
-straight_intersect(v1,v2,v3,v4,plots)
+straight_intersect(v1, v2, v3, v4, plots)
 }
 \arguments{
   \item{v1}{
-Startingpoint v1=c(v11,v22) of the first staight.
+Startingpoint \code{v1 = c(v11, v22)} of the first staight.
 }
   \item{v2}{
-Endpoint v1=c(v11,v22) of the first staight.
+Endpoint \code{v1 = c(v11, v22)} of the first staight.
 }
   \item{v3}{
-Startingpoint v1=c(v11,v22) of the second staight.
+Startingpoint \code{v1 = c(v11, v22)} of the second staight.
 }
   \item{v4}{
-Endpoint v1=c(v11,v22) of the second staight.
+Endpoint \code{v1 = c(v11, v22)} of the second staight.
 }
   \item{plots}{
 Switch (TRUE or FALSE) to choose, if the results should be plotted. Needs an active plot window.
@@ -50,10 +50,10 @@ Kustosz, Christoph
  \code{\link{lin2_CI}},\code{\link{lin2_CI_cl}}
 }
 \examples{
-straight_intersect(c(1,1),c(4,4),c(4,3),c(-1,1))->a
+a <- straight_intersect(c(1, 1), c(4, 4), c(4, 3), c(-1, 1))
 a
 
-straight_intersect(c(1,1),c(2,1),c(1,2),c(2,2))->a
+a <- straight_intersect(c(1, 1), c(2, 1), c(1, 2), c(2, 2))
 a
 }
 

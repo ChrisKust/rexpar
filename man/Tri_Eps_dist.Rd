@@ -1,6 +1,5 @@
 \name{Tri_Eps_dist}
 \alias{Tri_Eps_dist}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Calculation of candidates, restricted for faster estimation by simplicial depth
 }
@@ -8,7 +7,7 @@ Calculation of candidates, restricted for faster estimation by simplicial depth
 This function calculates candidates for estimates by simplicial depth based on intersections from residual straights and epsilon variation. Thereby for large samples the candidates can be restricted by quantiles to reduce computational costs. Further the inner points are just calulated by simplices defineded by the colsest neighbours of each point. 
 }
 \usage{
-Tri_Eps_dist(y,perc,eps)
+Tri_Eps_dist(y, perc, eps)
 }
 \arguments{
   \item{y}{

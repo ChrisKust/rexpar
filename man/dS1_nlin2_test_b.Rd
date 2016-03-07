@@ -7,7 +7,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS1_nlin2_test_b(ind, thetaNv, alpha, y, exact=FALSE)
+dS1_nlin2_test_b(ind, thetaNv, alpha, y, exact = FALSE)
 }
 \arguments{
 \item{ind}{

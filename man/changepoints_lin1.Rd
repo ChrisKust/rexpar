@@ -8,7 +8,7 @@ This function detects change points for parameter changes of a linear AR(1) mode
 defined by \deqn{Y_n = \theta_{1} \cdot Y_{n-1} + E_n} with \eqn{med(E_n)=0}. The main idea is based on estimation and confidence intervalconstruction based on simplicial depth as proposed in Kustosz (2016). Thereby, the applied depth notion is given by the full simplicial depth.
 }
 \usage{
-changepoints_lin1(y, level, bw, sw, plots=FALSE, method=1, mincper=1, mincp=1)
+changepoints_lin1(y, level, bw, sw, plots = FALSE, method = "m1", mincper = 1, mincp = 1)
 }
 \arguments{
   \item{y}{
@@ -25,7 +25,7 @@ A step-width to reduce the candidate points in which the change points are evalu
 }
 \item{plots}{A switch, activating plots while the calculations are preformed. The plots show the confidence regions for the actually considered windows.}
 \item{method}{
-This parameter determines the method to detect change points. If \code{method=1} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method=2} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
+This parameter determines the method to detect change points. If \code{method = "m1"} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method = "m2"} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }
 \item{mincper}{
 Percentage to define relevant change-point clusters based on the length of the 'mincp' longest detected cluster.
@@ -55,21 +55,26 @@ Kustosz, Christoph
   \code{\link{RandomARMod_lin2}}, \code{\link{lin1_CI}},  \code{\link{est_lin1}},  \code{\link{dS_lin1}},  \code{\link{dS_lin1_test}}}
 \examples{
 int1 <- 0
-int2 <- 0.2
+int2 <- 0
 arp1 <- 1.001
-arp2 <- 1.004
+arp2 <- 1.02
 
-
+set.seed(17)
 y1 <- RandomARMod_lin2(50, int1, arp1, 15, 3)
 y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 3)
 y <- c(y1, y2)
 
-\dontrun{
-par(ask=T)
+CP1 <- changepoints_lin1(y, 0.99, 25, 5, plots = FALSE, method = "m1")
 
-CP <- changepoints_lin1(y, 0.99, 25, 10, plots=FALSE, method=1)
+CP2 <- changepoints_lin1(y, 0.99, 25, 5, plots = FALSE, method = "m2")
+
+
+par(mfrow=c(2,1))
+plot(y, type="l")
+abline(v=CP1$candidates[CP1$changepoints==1], col=2,lty=2)
+abline(v=CP2$candidates[CP2$changepoints==1], col=3,lty=3)
 
 plot(y, type="l")
-abline(v=CP$candidates[CP$changepoints], col=2)
-}
+abline(v=CP1$rjumps, col=2,lty=3,lwd=2)
+abline(v=CP2$rjumps, col=3,lty=3,lwd=3)
 }

@@ -36,6 +36,6 @@ The funcion is used in the symmetrised dS calculation routine.
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}, \code{\link{inv_tri}}
 }
 \examples{
-res<-c(1,2,3,4,5)
+res <- c(1, 2, 3, 4, 5)
 oner_sym(res)
 }

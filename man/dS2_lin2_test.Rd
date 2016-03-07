@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on dS2 proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_lin2_test(thetaN, alpha, y, exact=FALSE, cpow=1, dS2)
+dS2_lin2_test(thetaN, alpha, y, exact = FALSE, cpow = 1, dS2)
 }
 \arguments{
   \item{thetaN}{

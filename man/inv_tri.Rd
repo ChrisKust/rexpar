@@ -40,7 +40,7 @@ The function is neccecary for internal usage in the calculation of dS.
 
 }
 \examples{
-M<-matrix(seq(1,9,1),ncol=3,byrow=TRUE)
+M <- matrix(seq(1, 9, 1),ncol = 3,byrow = TRUE)
 inv_tri(M)
 M[inv_tri(M)==FALSE]
 M[inv_tri(M)==TRUE]<-0

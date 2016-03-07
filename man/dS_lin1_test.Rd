@@ -6,9 +6,8 @@
 The function evaluates the asymptotic test based on dS proposed in Kustosz and Mueller (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_lin1_test(thetaN,alpha,y,mod=FALSE)
+dS_lin1_test(thetaN, alpha, y, mod = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{thetaN}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}.
@@ -22,7 +21,7 @@ Value in (0,1) defining the level of the test.
 Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
 }
   \item{mod}{
-Switch to enable full tangential depth derivative (multiplication with \eqn{y_{n-1}}) in the test statistic (TRUE).
+Switch to enable full tangential depth derivative (multiplication with \eqn{y_{n-1}}) in the test statistic, if \code{mod= TRUE}.
 }
 
 
@@ -55,7 +54,7 @@ Kustosz, Christoph
 }
 
 \examples{
-y<-RandomARMod_lin2(100,0,1.01,15,0)
-theta<-1.01
-dS_lin1_test(thetaN=c(0,1.01),alpha=0.05,y=y)
+y <- RandomARMod_lin2(100, 0, 1.01, 15, 0)
+theta <- 1.01
+dS_lin1_test(thetaN=c(0, 1.01), alpha=0.05, y=y)
 }

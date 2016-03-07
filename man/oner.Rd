@@ -38,11 +38,11 @@ The funcion is used in the dS calculation routine.
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}, \code{\link{inv_tri}}
 }
 \examples{
-res<-c(1,2,3,4)
+res <- c(1, 2, 3, 4)
 oner(res)
 
-y<-RandomARMod_lin2(100,0.2,1.01,15,0)
-res<-resARMod_lin2(c(0.2,1.01),y)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
+res <- resARMod_lin2(c(0.2, 1.01), y)
 oner(res)
 
 }

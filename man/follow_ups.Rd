@@ -7,7 +7,7 @@ Postprocessing for changepoint detection
 The function collects subsequent marked candidate points in the changepoints_lin2 function to calculate final estimates of the change points. 
 }
 \usage{
-follow_ups(dat, mincper, steps,mincp)
+follow_ups(dat, mincper, steps, mincp)
 }
 \arguments{
   \item{dat}{
@@ -44,8 +44,8 @@ Kustosz, Christoph
 \code{\link{changepoints_lin2}}, \code{\link{changepoints_lin2_cl}}
 }
 \examples{
-x<-c(1,2,3,4,7,8,11,35,40,50,60)
-follow_ups(x,0.75,1)
+x <- c(1, 2, 3, 4, 7, 8, 11, 35, 40, 50, 60)
+follow_ups(x, 0.75, 1)
 
 
 

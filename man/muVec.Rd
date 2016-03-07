@@ -7,7 +7,7 @@ Mean vector function for limit process
 This function evaluates the mean vector function for the limit process derived in Kustosz, Leucht and Mueller (2016). It is just useful in the internal calculations of the Limit simulation.
 }
 \usage{
-muVec(t,y)
+muVec(t, y)
 }
 
 \arguments{
@@ -41,7 +41,7 @@ Kustosz, Christoph
 \code{\link{simulateGP}}, \code{\link{sigmaMat}}
 }
 \examples{
-g<-seq(-2,2,0.5)
-y<-0.25
-muVec(g,y)
+g <- seq(-2, 2, 0.5)
+y <- 0.25
+muVec(g, y)
 }

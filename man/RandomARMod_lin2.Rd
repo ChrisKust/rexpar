@@ -9,7 +9,7 @@ value. Further the errors can be specified by 4 predefined examples. The main eq
 is given by \deqn{Y_n = \theta_1 \cdot Y_{n-1} + \theta_0 + E_n,}, whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
 }
 \usage{
-RandomARMod_lin2(nobs,intercept=0,arp,start=0,cont=0,sd=0.2)
+RandomARMod_lin2(nobs, intercept = 0, arp, start = 0, cont = 0, sd = 0.2)
 }
 \arguments{
   \item{nobs}{
@@ -65,8 +65,8 @@ Kustosz, Christoph
 \code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}, \code{\link{dS_lin2}}
 }
 \examples{
-y<-RandomARMod_lin2(100,0.02,1.01,5,3)
-plot(y,type="l")
+y <- RandomARMod_lin2(100, 0.02, 1.01, 5, 3)
+plot(y, type="l")
 
 
 }

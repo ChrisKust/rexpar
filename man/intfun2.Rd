@@ -7,7 +7,7 @@ Covariance function integral
 This function evaluates a part of the covariance matrix for the Limit process derived in Kustosz, Leucht and Mueller (2016). It is just useful for internal calculations in the simulation of the limit distribution.
 }
 \usage{
-intfun2(t2,t1)
+intfun2(t2, t1)
 }
 \arguments{
   \item{t2}{
@@ -43,5 +43,5 @@ Auxiliary function for internal usage in some more central functions of this pac
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}
 }
 \examples{
-intfun2(0,0)
+intfun2(0, 0)
 }

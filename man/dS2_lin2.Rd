@@ -8,8 +8,8 @@ This function calculates a simplified version of simplicial depth for explosive 
 processes, when non partially overlapping residuals with the middle residual fixed are evaluated. Thereby the parameter \eqn{\theta} and the process y are fixed. The assumed model given by the model parameter.
 }
 \usage{
-dS2_lin2(theta, res, y, model=c("linAR1", "linAR1woI", "nlinAR1", "linAR2",
-"linARc"), cpow=1)
+dS2_lin2(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2",
+"linARc"), cpow = 1)
 }
 \arguments{
   \item{theta}{

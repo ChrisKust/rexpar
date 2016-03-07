@@ -18,8 +18,8 @@ Size of the sample. This is necessary for the number of bins for the exact distr
 Number of simulations used to approximate the distribution.
 }
   \item{plot}{
-Switch to allow a plot of the resulting approximation in a histogram. Select (TRUE) for plotting and
-(FALSE) for no plots.
+Switch to allow a plot of the resulting approximation in a histogram. Select \code{plot = TRUE} for plotting and
+\code{plot = FALSE} for no plots.
 }
 }
 \details{
@@ -44,6 +44,6 @@ The function is used, when the dS3_lin2 test is applied with exact=TRUE.}
  \code{\link{dS3_lin2}},  \code{\link{exact_lim_dS3nlin}}
 }
 \examples{
-sim<-exact_lim_dS3lin(20,100)
+sim <- exact_lim_dS3lin(20, 100)
 }
 

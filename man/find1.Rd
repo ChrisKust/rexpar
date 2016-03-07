@@ -7,7 +7,7 @@ Auxilliary covariance function
 This function evaluates a part of the covariance matrix for the Limit process derived in Kustosz, Leucht Mueeller (2016). It is just useful for internal calculations in the simulation of the limit distribution.
 }
 \usage{
-find1(x,pars)
+find1(x, pars)
 }
 \arguments{
   \item{x}{
@@ -42,7 +42,7 @@ Auxiliary function for internal usage in some more central functions of this pac
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}
 }
 \examples{
-find1(1,0)
+find1(1, 0)
 
 
 }

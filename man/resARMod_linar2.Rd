@@ -9,7 +9,7 @@ without intercept for given parameter and data based on
 \deqn{r_n = y_n - \theta_1 y_{n-1} - \theta_2 y_{n-2}}
 }
 \usage{
-resARMod_linar2(theta,dat)
+resARMod_linar2(theta, dat)
 }
 
 \arguments{
@@ -41,21 +41,19 @@ Kustosz, Christoph
 
 \examples{
 ## Minimal Example
-y<-c(1,2,3)
-theta<-c(1,1)
-resARMod_linar2(theta,y)
+y <- c(1, 2, 3)
+theta <- c(1, 1)
+resARMod_linar2(theta, y)
 
 ## Generating an example process in advance
-theta<-c(0.002,1.001)
-N<-100
-y0<-1
-y<-RandomARMod_linar2(N,theta,y0)
+theta <- c(0.002, 1.001)
+N <- 100
+y0 <- 1
+y <- RandomARMod_linar2(N, theta, y0)
 
-resARMod_linar2(theta,y)->res
-par(mfrow=c(2,1))
+res <- resARMod_linar2(theta, y)
+par(mfrow=c(2, 1))
 plot(res)
 hist(res)
-
-
 }
 

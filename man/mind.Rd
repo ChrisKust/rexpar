@@ -7,7 +7,7 @@ Calculation of a point inside of a triangle
 This is a internal function of the optimisation algoritm using a candidate search and a precise calculation by considering points inside of the simplices defined by intersection of straight defined by the roots of the residuals.
 }
 \usage{
-mind(Mat,iX)
+mind(Mat, iX)
 }
 \arguments{
   \item{Mat}{

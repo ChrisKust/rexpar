@@ -6,8 +6,8 @@
 This function calculates simplicial depth for explosive AR(1) processes as defined in Kustosz, Mueller and Leucht (2016). Thereby it is capable to autodetects the number of available cores or uses a user defined number of cores to speed up computation. The basic model is defined by \deqn{Y_n = \theta_0 + \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
-dS_lin2(theta,resy,y,ncores=1,
-model=c("linAR1","linAR1woI","nlinAR1","linAR2","linARc"),cpow=1)
+dS_lin2(theta, resy, y, ncores = 1,
+model = c("linAR1", "nlinAR1", "linARc"), cpow = 1)
 }
 \arguments{
   \item{theta}{
@@ -26,9 +26,7 @@ Number of cores for parallel computation. If no value is selected the method set
    \item{model}{
 Here the model for the calculation of the underlying residuals is specified. currently the following
 models are available\cr
-"linAR1woI" = linear AR(1) model without intercept          \deqn{Y_n = \theta_1 Y_{n-1} + E_n}
 "linAR1" = linear AR(1) model with intercept                 \deqn{Y_n = \theta_1 Y_{n-1} \theta_0 + E_n}
-"linAR2" = linear AR(2) model without intercept               \deqn{Y_n = \theta_1 Y_{n-1} + \theta_2 Y_{n-2} + E_n}
 "nlinAR1" = linear AR(1) model without intercept but with power parameter\deqn{Y_n = Y_{n-1} + \theta_1 Y_{n-1}^{\theta_3} + E_n}
 "linARc" = linear AR(1) model with intercept and fixed and knwon power cpow \deqn{Y_n = \theta_1 Y_{n-1}^{cpow} + \theta_0 + E_n}
 }
@@ -66,10 +64,10 @@ The function depends on several internal functions.
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}, \code{\link{oner}}
 }
 \examples{
-y<-RandomARMod_lin2(100,0.2,1.01,15,0)
-theta<-c(0.2,1.01)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
+theta <- c(0.2, 1.01)
  \dontrun{
-dS_lin2(theta,y)
+dS_lin2(theta, y)
 }
 }
 

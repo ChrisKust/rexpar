@@ -8,8 +8,9 @@ This function implements an algortihm to estimate a linear AR(1) model with inte
 explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueller and Wendler (2016).
 }
 \usage{
-est_lin2(y,maxit=25,candy=FALSE,candy_eps=FALSE,perc=1,acc=0.1,
-plots=FALSE,normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2,optim_rude=FALSE)
+est_lin2(y, maxit = 25, candy = FALSE, candy_eps = FALSE, perc = 1, acc = 0.1, 
+plots = FALSE, normtype = 1, pv = 2, wgt = c(1, 0.5), unique = TRUE, 
+notion = dS3_lin2, optim_rude = FALSE)
 }
 \arguments{
   \item{y}{
@@ -19,10 +20,10 @@ An observed series form an linear AR(1) process with intercept.
 A value for the maximal number of iterations of the optimisation algorithm.
 }
 \item{candy}{
-A switch deciding, if just edges of simplices defined by the residuals shall be evaluated (FALSE) or if points interior of the simplices should be considered (TRUE). This swich just applies, if candy_eps is set to FALSE.
+A switch deciding, if just edges of simplices defined by the residuals shall be evaluated \code{candy = FALSE} or if points interior of the simplices should be considered \code{candy = TRUE}. This swich just applies, if candy_eps is set to FALSE.
 }
 \item{candy_eps}{
-A switch deciding, if just edges of simplices defined by the residuals shall be evaluated (FALSE) or if points interior of the simplices defined by a epsilon distance shall be evaluated. This swich overrides the candy option.
+A switch deciding, if just edges of simplices defined by the residuals shall be evaluated \code{candy_eps= FALSE} or if points interior of the simplices defined by a epsilon distance shall be evaluated. This swich overrides the candy option.
 }
 \item{perc}{
 A value in (0,1), defining how large the search regions around an acual candidate should be. A small value defines a very small region, while the value 1 means, that all potential candidates are considered.
@@ -77,7 +78,7 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}},\code{\link{dS_lin2}},\code{\link{Tri_Mid}},\code{\link{lin2_theta_f}},\code{\link{Ele_Norm}}
 }
 \examples{
-y<-RandomARMod_lin2(250,0.2,1.003,15,1)
+y <- RandomARMod_lin2(250, 0.2, 1.003, 15, 1)
 \dontrun{
 est_lin2(y)
 }

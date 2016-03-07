@@ -7,7 +7,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence regions for linear AR(1) processes with intercept and explosion based on simplified and full simplicial depth for AR processes. This is a version which uses a predefined cluster. This allows a calculation of the confidence sets on HPC's.
 }
 \usage{
-lin2_CI_cl(y,level,plots,notion,cluster)
+lin2_CI_cl(y, level, plots, notion, cluster)
 }
 \arguments{
   \item{y}{
@@ -17,7 +17,7 @@ A observed series from an linear AR(1) process with intercept.
 A value in (0,1) defining the level of the confidence regions to evaluate.
 }
 \item{plots}{
-A swich to turn on and off plots of the resulting region. Use (TRUE) to turn on plots and (FALSE) (default) to suppress plotting.
+A swich to turn on and off plots of the resulting region. Use \code{plots = TRUE} to turn on plots and \code{plots = FALSE} (default) to suppress plotting.
 }
 \item{notion}{
 A parameter to select the desired depth notion to evaluate. The possible choices are "dS1", "dS2", "dS3" and "dS" defining three simplified notions as discussed in Kustosz, Mueeller and Wendler (2016) and the full depth discussed in Kustosz, Leucht and Mueller (2016). The standard notion is "dS1".
@@ -31,7 +31,7 @@ The theoretical details can be found in Kustosz, Mueeller and Wendler (2016) and
 \value{
 
 \item{par }{A matrix with the evaluated points to calculate the confidence region by evaluation of the depth tests.}
-\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not.}
+\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not. Thereby the test decision is reported. Hence, \code{inCI = 0} donotes a parameter being inside of the confidence set and \code{inCI = 1} denotes a parameter which is not.}
 }
 \references{
 Kustosz, C. (2016). Depth based estimators and tests for

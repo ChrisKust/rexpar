@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on dS proposed in Kustosz, Leucht and Mueller (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_nlin_test(thetaN,alpha,y,ncores)
+dS_nlin_test(thetaN, alpha, y, ncores)
 }
 \arguments{
   \item{thetaN}{
@@ -32,7 +32,7 @@ details are in Kustosz (2016).
 \value{
 
 \item{TS}{Returns the value of the rescaled and centred test statistic}
-\item{phi}{Retuns the test decision, phi = 1 means reject H0, and phi = 0 means do not reject H0}
+\item{phi}{Retuns the test decision, \code{phi = 1} means reject H0, and \code{phi = 0} means do not reject H0}
 }
 \references{
 Kustosz, C. (2016). Depth based estimators and tests for
@@ -56,9 +56,8 @@ Note, that the evaluation depends on the simulated results of the limit process,
 \code{\link{dS_lin2}},
 }
 \examples{
-data("simLimit")
-y<-RandomARMod_nlin1(10,0.2,1.01,15,0)
-dS_nlin_test(c(0.2,1.01),0.05,y)
-dS_nlin_test(c(0.1,1.01),0.05,y)
+y <- RandomARMod_nlin1(10, 0.2, 1.01, 15, 0)
+dS_nlin_test(c(0.2, 1.01), 0.05, y)
+dS_nlin_test(c(0.1, 1.01), 0.05, y)
 }
 

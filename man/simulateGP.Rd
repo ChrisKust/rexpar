@@ -7,7 +7,7 @@ Simulation of the gaussian limit process from simplicial depth based on two para
 This function simulates the gaussian limit process defined in Kustosz, Leucht, and M\"{u}eller (2016). Thereby a grid can be definied and the covariance matrix has to be precalculated to enable a faster generation of repetitions. 
 }
 \usage{
-simulateGP(g,sigma)
+simulateGP(g, sigma)
 }
 \arguments{
   \item{g}{
@@ -41,12 +41,12 @@ Kustosz, Christoph
 \code{\link{sigmaMat}}, \code{\link{muVec}}, \code{\link{find1}},\code{\link{find2}},\code{\link{intfun2}}
 }
 \examples{
-g<-seq(-2,2,0.1)
-sigma<-sigmaMat(g)
+g <- seq(-2, 2, 0.1)
+sigma <- sigmaMat(g)
 
-Y<-simulateGP(g,sigma)
-plot(g,Y$Y1)
-lines(g,Y$Y2)
+Y <- simulateGP(g, sigma)
+plot(g, Y$Y1)
+lines(g, Y$Y2)
 
 
 }

@@ -24,7 +24,7 @@ Level \eqn{alpha} of the test.
 The theoretical details can be found in Wang and Yu (2013). Remarks on the implementation are in Kustosz (2016).
 }
 \value{
-The function returns a boolean denoting the test decision by TRUE for reject and FALSE for not-reject.
+The function returns a boolean denoting the test decision by \code{TRUE} for reject and \code{FALSE} for not-reject.
 }
 
 \seealso{

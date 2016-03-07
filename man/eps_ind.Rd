@@ -7,9 +7,8 @@ Calculation of a point inside of a triangle
 This is a internal function of the optimisation algoritm using a candidate search and a precise calculation by considering points inside of the simplices defined by intersection of residual straights and an epsilon to shift the candidates into the simplex.
 }
 \usage{
-eps_ind(Mat,iX,eps)
+eps_ind(Mat, iX, eps)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{Mat}{
 A Matrix with parameters defining the edges of simplicies defined by intersections of residuals.

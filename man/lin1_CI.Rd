@@ -7,7 +7,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence intervals for linear AR(1) processes without intercept and explosion based on simplicial depth for AR processes.
 }
 \usage{
-lin1_CI(y,level,plots=FALSE,notion="dS",eps=NULL)
+lin1_CI(y, level, plots = FALSE, notion = "dS", eps = NULL)
 }
 \arguments{
   \item{y}{
@@ -17,7 +17,7 @@ A observed series from an linear AR(1) process with intercept.
 A value in (0,1) defining the level of the confidence regions to evaluate.
 }
 \item{plots}{
-A swich to turn on and off plots of the resulting region. Use (TRUE) to turn on plots and (FALSE) (default) to suppress plotting.
+A swich to turn on and off plots of the resulting region. Use \code{plots = TRUE} to turn on plots and \code{plots = FALSE} (default) to suppress plotting.
 }
 \item{notion}{
 Here the applied test statistic for the calculation of confidence intervals is specified. The available notions are\cr
@@ -35,7 +35,7 @@ The theoretical background can be found in Kustosz, Mueller and Wendler (2016) a
 }
 \value{
 \item{par }{A vector evaluated points to calculate the confidence region by evaluation of the depth tests.}
-\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not.}
+\item{inCI }{A binary vector indicating, if a parameter in par is in the confidence interval or not. Thereby the test decision is reported. Hence, \code{inCI = 0} donotes a parameter being inside of the confidence set and \code{inCI = 1} denotes a parameter which is not.}
 }
 \references{
 Kustosz, C. (2016). Depth based estimators and tests for
@@ -55,7 +55,7 @@ Kustosz, Christoph
 \code{\link{dS1_lin1_test}},\code{\link{dS2_lin1_test}},\code{\link{dS3_lin1_test}},\code{\link{dS_lin1_test}},\code{\link{lin1_theta}}}
 
 \examples{
-y<-RandomARMod_lin2(100,0,1.001,15,0)
-lin1_CI(y,0.05)
+y <- RandomARMod_lin2(100, 0, 1.001, 15, 0)
+lin1_CI(y, 0.05)
 }
 

@@ -8,8 +8,9 @@ This function implements an algortihm to estimate a non-linear AR(1) model and
 explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueller and Wendler (2016).
 }
 \usage{
-est_nlin1(y,maxit=25,candy=FALSE,perc=0.1,acc=0.1,plots=FALSE,
-normtype=1,pv=2,wgt=c(1,0.5),unique=TRUE,notion=dS3_lin2,optim_rude=FALSE)
+est_nlin1(y, maxit = 25, candy = FALSE, perc = 0.1, acc = 0.1, plots = FALSE, 
+normtype = 1, pv = 2, wgt = c(1, 0.5), unique = TRUE, 
+notion = dS3_lin2, optim_rude = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,7 +21,7 @@ An observed series form an non-linear AR(1) process with intercept.
 A value for the maximal number of iterations of the optimisation algorithm.
 }
 \item{candy}{
-A switch (TRUE/FALSE) deciding, if just edges of simplices defined by the residuals shall be evaluated (FALSE) or if points interior of the simplices should be considered (TRUE).
+A switch (TRUE/FALSE) deciding, if just edges of simplices defined by the residuals shall be evaluated \code{candy = FALSE} or if points interior of the simplices should be considered \code{candy = TRUE}.
 }
 \item{perc}{
 A value in (0,1) definig, how large the search regions around an acual candidate should be. A small value defines a very small region, while the value 1 means, that all potential candidates are considered.
@@ -75,7 +76,7 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}},\code{\link{dS_lin2}},\code{\link{Tri_Mid_n1}},\code{\link{nlin1_theta_f}},\code{\link{Ele_Norm}}
 }
 \examples{
-y<-RandomARMod_nlin1(200,1.003,0.2,15,1)
+y <- RandomARMod_nlin1(200, 1.003, 0.2, 15, 1)
 \dontrun{
 est_nlin1(y)
 }

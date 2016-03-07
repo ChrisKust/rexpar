@@ -8,7 +8,7 @@ This function precalculates parameters on which depth changes to restirict the
 region on which the depth statistic has to be evaluated on as described in Kustosz (2016), based on the roots of the residuals. Thereby not the exact candidate points are evaluated, but variations defined by +- eps.
 }
 \usage{
-lin1_theta_eps(dat,eps)
+lin1_theta_eps(dat, eps)
 }
 \arguments{
   \item{dat}{
@@ -39,6 +39,6 @@ Kustosz, Christoph
 \code{\link{dS_lin2}},\code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}}, \code{\link{lin2_CI}},\code{\link{est_lin2}},\code{\link{est_nlin1}}
 }
 \examples{
-y<-RandomARMod_lin2(100,1.001,0,15,0)
-thetas<-lin1_theta_eps(y,0.01)
+y <- RandomARMod_lin2(100, 1.001, 0, 15, 0)
+thetas <- lin1_theta_eps(y, 0.01)
 }

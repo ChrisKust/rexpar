@@ -7,7 +7,7 @@ Calculation of candidates, restricted for faster estimation by simplicial depth
 This function calculates candidates for estimates by simplicial depth based on intersections from residual straights and epsilon variation. Thereby for large samples the candidates can be restricted by quantiles to reduce computational costs.
 }
 \usage{
-Tri_Eps(y,perc,eps)
+Tri_Eps(y, perc, eps)
 }
 \arguments{
   \item{y}{

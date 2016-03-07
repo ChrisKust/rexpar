@@ -28,7 +28,7 @@ A step-width to reduce the candidate points in which the change points are evalu
 A switch (TRUE and FALSE) to determine if plots shall be produced for each tested candidate
 }
 \item{method}{
-This parameter determines the method to detect change points. If \code{method=1} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method=2} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
+This parameter determines the method to detect change points. If \code{method = "m1"} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method = "m2"} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }
 \item{cluster}{
 Initialized cluster for parallel computing.
@@ -62,26 +62,36 @@ Kustosz, Christoph
 
 \examples{
 int1 <- 0.1
-int2 <- 0.2
-arp1 <- 1.001
-arp2 <- 1.004
+int2 <- 0.3
+arp1 <- 1.015
+arp2 <- 1.001
 
-
-y1 <- RandomARMod_lin2(50, int1, arp1, 15, 3)
-y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 3)
+set.seed(123)
+y1 <- RandomARMod_lin2(50, int1, arp1, 15, 0)
+y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 0)
 y <- c(y1,y2)
 
 
 
+
+
 \dontrun{
-par(ask=T)
 cl <- makeCluster(2)
 
-CP <- changepoints_lin2_cl(y, 0.99, 25, 10, plots=FALSE, method=1, cl=cl)
+CP1 <- changepoints_lin2_cl(y, 0.99, 25, 5, plots = FALSE, method = "m1", cl = cl)
+CP2 <- changepoints_lin2_cl(y, 0.99, 25, 5, plots = FALSE, method = "m2", cl = cl)
+
+
+stopCluster(cl)
+
+par(mfrow = c(2, 1))
+plot(y, type="l")
+abline(v=CP1$candidates[CP1$changepoints==1], col=4,lty=4)
+abline(v=CP2$candidates[CP2$changepoints==1], col=5,lty=5)
 
 plot(y, type="l")
-abline(v=CP$candidates[CP$changepoints], col=2)
-stopCluster(cl)
+abline(v=CP1$rjumps, col=4,lty=4,lwd=2)
+abline(v=CP2$rjumps, col=5,lty=5,lwd=3)
 }
 }
 

@@ -7,7 +7,7 @@ Calculation of covariance matrix for the limit process of full simplical depth f
 This function calculates the covariance matrix of the limit process in Kustosz, Leucht and Mueeller (2016) for a given grid.
 }
 \usage{
-sigmaMat(t,nclust=1)
+sigmaMat(t, nclust = 1)
 }
 \arguments{
   \item{t}{
@@ -39,10 +39,10 @@ Kustosz, Christoph
 \code{\link{simulateGP}}, \code{\link{muVec}}
 }
 \examples{
-g<-seq(-2,2,0.1)
-sigma<-sigmaMat(g)
+g <- seq(-2, 2, 0.1)
+sigma <- sigmaMat(g)
 
-Y<-simulateGP(g,sigma)
+Y <- simulateGP(g, sigma)
 plot(Y$Y1)
 lines(Y$Y2)
 }

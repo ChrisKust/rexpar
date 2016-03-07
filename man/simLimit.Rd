@@ -34,6 +34,6 @@ explosion. Journal of Time Series Analysis. In press.\cr
 }
 \examples{
 data(simLimit)
-hist(simLimit[,1])
+hist(simLimit[, 1])
 }
 \keyword{datasets}

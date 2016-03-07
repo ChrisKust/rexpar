@@ -8,9 +8,8 @@
   explosion by simplicial depth or one of the proposed simplified notions in Kustosz, Mueeller and Wendler (2016).
 }
 \usage{
-  est_lin1(y,maxit,candy,acc,plots,eps,unique,notion)
+  est_lin1(y, maxit, candy, acc, plots, eps, unique, notion)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
     An observed series form an linear AR(1) process without intercept.
@@ -19,7 +18,7 @@
     A value for the maximal number of iterations of the optimisation algorithm.
   }
   \item{candy}{
-    A switch deciding, if just edges of simplices defined by the residuals shall be evaluated (FALSE) or if points interior of the simplices should be considered (TRUE).
+    A switch deciding, if just edges of simplices defined by the residuals shall be evaluated \code{candy = FALSE} or if points interior of the simplices should be considered \code{candy = TRUE}.
   }
   \item{acc}{
     A value in (0,1) definig the size of the search regions in each iteration step.
@@ -66,7 +65,7 @@ Papers 55, 125-140.\cr
     \code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}},\code{\link{dS_lin1}},\code{\link{Tri_Mid}},\code{\link{lin1_theta}},\code{\link{Ele_Norm}}
   }
 \examples{
-  y<-RandomARMod_lin2(250,0,1.003,15,1)
+  y <- RandomARMod_lin2(250, 0, 1.003, 15, 1)
   \dontrun{
     est_lin1(y)
   }

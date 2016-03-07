@@ -7,7 +7,7 @@ Approximation of the integrated limit based on a simulated bivaraite gaussian pr
 This function approximates the integrated limit based on the bivariate gaussian limit process discussed in Kustosz, Leucht and Mueller (2016).
 }
 \usage{
-LimitApprox(g,Y)
+LimitApprox(g, Y)
 }
 \arguments{
   \item{g}{
@@ -36,11 +36,11 @@ Kustosz, Christoph
 }
 
 \examples{
-g<-seq(-2,2,0.1)
-sigma<-sigmaMat(g)
+g <- seq(-2, 2, 0.1)
+sigma <- sigmaMat(g)
 
-Y<-simulateGP(g,sigma)
+Y <- simulateGP(g, sigma)
 
-R<-LimitApprox(g,Y)
+R <- LimitApprox(g, Y)
 }
 

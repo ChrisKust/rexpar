@@ -9,9 +9,8 @@ adjusted by additional arguments, to allow an extrapolation of future values. Th
 the simulated processes can be specified.
 }
 \usage{
-predict_lin1_s(y,CritLen,CritTime,NSim,alpha,restrict=F,start)
+predict_lin1_s(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, start)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
@@ -29,7 +28,7 @@ A value for a critical lenght for which the time of arrival then can be predicte
 A level which defines  the \eqn{1-\alpha} prediction intervals.
 }
   \item{restrict}{
-A switch, which allow to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activatet (TRUE) 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off (FALSE) the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
+A switch, which allow to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activated \code{restrict = TRUE} 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off \code{restrict = FALSE} the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
 }
 \item{start}{
 Here a starting value for the simulated processes can be specified.
