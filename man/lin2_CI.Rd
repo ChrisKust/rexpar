@@ -7,7 +7,7 @@ Confidence regions for linar AR(1) processes with intercept based on simplicial 
 This function generates confidence regions for linear AR(1) processes with intercept and explosion based on simplified and full simplicial depth for AR processes.
 }
 \usage{
-lin2_CI(y, level, plots = FALSE, notion = "dS1", ncoresC = 1, mid = FALSE)
+lin2_CI(y, level, plots = FALSE, notion = "dS1", ncoresC = 1, mid = FALSE, eps = 1e-26)
 }
 \arguments{
   \item{y}{
@@ -29,6 +29,8 @@ If the notion "dS" is selected a multicore computation is possible. Here the num
 This switch allow to use central points from data generated candidates based on the paramters defining the
 roots of the resuiduals.
 }
+\item{eps}{
+Parameter to shift the candidates to differ from parameters defined by roots of residuals.}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueeller and Wendler (2016) and Kustosz, Leucht and Mueller (2016). The details on the implementation are in Kustosz (2016).}
