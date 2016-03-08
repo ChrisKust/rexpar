@@ -42,7 +42,7 @@ Christoph Kustosz and Sebastian Szugat
 }
 \examples{
 set.seed(234)
-y <- RandomARMod_lin2(100, 0, 1.01, 15, 0)
+y <- RandomARMod_lin2(100, 0, 1.01, 15, "0")
 
 #evaluate depth on grid
 thetas <- seq(0.97, 1.05, 0.001)

@@ -41,9 +41,8 @@ The funcion is used in the dS calculation routine.
 res <- c(1, 2, 3, 4)
 oner(res)
 
-y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, "0")
 res <- resARMod_lin2(c(0.2, 1.01), y)
 oner(res)
-
 }
 

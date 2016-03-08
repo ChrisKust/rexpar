@@ -79,7 +79,5 @@ Kustosz, Christoph
 }
 \examples{
 y <- RandomARMod_lin2(250, 0.2, 1.003, 15, 1)
-\dontrun{
 est_lin2(y)
-}
 }

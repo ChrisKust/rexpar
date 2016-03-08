@@ -42,8 +42,6 @@ Auxiliary function for internal usage in some more central functions of this pac
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}
 }
 \examples{
-find1(1, 0)
-
-
+find1(0.5, 2)
 }
 

@@ -44,3 +44,4 @@ Y <- simulateGP(g, sigma)
 R <- LimitApprox(g, Y)
 }
 
+

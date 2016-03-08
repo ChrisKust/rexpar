@@ -53,8 +53,8 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}}
 }
 \examples{
-y <- RandomARMod_lin2(1000, 0.2, 1.01, 15, 0)
+y <- RandomARMod_lin2(1000, 0.2, 1.01, 15, "0")
 dS1_lin2_test(c(0.2, 1.01), 0.05, y)
-dS1_lin2_test(c(0.1, 1.01), 0.05, y)
+dS1_lin2_test(c(0.1, 1.11), 0.05, y)
 }
 

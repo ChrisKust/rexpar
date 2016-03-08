@@ -58,8 +58,9 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}
 }
 \examples{
-y <- RandomARMod_lin2(100, 0.2, 1.01 ,15 ,0)
+y <- RandomARMod_lin2(100, 0.2, 1.01 ,15 ,"0")
 theta <- c(0.2, 1.01)
 dS1_lin2(theta, y)
+dS1_lin2(theta+0.1, y)
 }
 

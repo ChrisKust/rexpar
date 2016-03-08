@@ -44,8 +44,9 @@ The function is not really efficient for large samples. Use dS_lin2 instead.
  \code{\link{dS_lin2}}
 }
 \examples{
-y <- RandomARMod_lin2(15, 0.2, 1.01, 15, 0)
+y <- RandomARMod_lin2(15, 0.2, 1.01, 15, "0")
 theta <- c(0.2, 1.01)
-dS_lin2_loop(theta, y)
+dS_lin2_loop(theta = theta, y = y)
+dS_lin2_loop(theta = theta + 0.1, y = y)
 }
  

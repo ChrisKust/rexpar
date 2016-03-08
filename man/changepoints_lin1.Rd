@@ -60,8 +60,8 @@ arp1 <- 1.001
 arp2 <- 1.02
 
 set.seed(17)
-y1 <- RandomARMod_lin2(50, int1, arp1, 15, 3)
-y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 3)
+y1 <- RandomARMod_lin2(50, int1, arp1, 15, "3")
+y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], "3")
 y <- c(y1, y2)
 
 CP1 <- changepoints_lin1(y, 0.99, 25, 5, plots = FALSE, method = "m1")

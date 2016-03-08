@@ -15,7 +15,7 @@ dS3_nlin2(theta, y)
 }
 \arguments{
   \item{theta}{
-\eqn{\theta = (\theta_0,\theta_1,\theta_2)}, parameter vector to evaluate dS1 in. 
+\eqn{\theta = (\theta_1,\theta_2,\theta_0)}, parameter vector to evaluate dS1 in. 
 }
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in. 
@@ -48,9 +48,10 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}
 }
 \examples{
-y <- RandomARMod_nlin2(100, 0, 0.2, 1.01, 15, 0)
-theta <- c(0, 0.2, 1.01)
+y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
+theta <- c(0.2, 1.01, 0)
 dS3_nlin2(theta, y)
+dS3_nlin2(theta+0.1, y)
 }
 
 

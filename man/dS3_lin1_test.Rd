@@ -50,7 +50,8 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
     \code{\link{dS3_lin2}}
   }
 \examples{
-  y <- RandomARMod_lin2(1000, 0, 1.01, 15, 0)
+  y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
   dS3_lin1_test(1.01, 0.05, y)
+  dS3_lin1_test(1.11, 0.05, y)
 }
 

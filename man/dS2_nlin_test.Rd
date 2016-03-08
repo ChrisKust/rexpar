@@ -49,7 +49,7 @@ Kustosz, Christoph
  \code{\link{dS2_lin2}}
 }
 \examples{
-y <- RandomARMod_lin2(10, 0.2, 1.01, 15, 0)
-dS2_nlin_test(c(0.2, 1.01), 0.05, y)
-dS2_nlin_test(c(0.1, 1.01), 0.05, y)
+y <- RandomARMod_nlin1(200, 0.02, 1.01, 15, "0")
+dS2_nlin_test(c(0.02, 1.01), 0.05, y)
+dS2_nlin_test(c(0.1, 1.11), 0.05, y)
 }

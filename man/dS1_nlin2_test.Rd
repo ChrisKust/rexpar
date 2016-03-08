@@ -10,7 +10,7 @@ dS1_nlin2_test(thetaN, alpha, y, exact = FALSE)
 }
 \arguments{
 \item{thetaN}{
-Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0} . Thereby \eqn{\theta^0 = (\theta_0^0\theta_1^0,\theta_2^0)} as defined by the model. 
+Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0} . Thereby \eqn{\theta^0 = (\theta_1^0\theta_2^0,\theta_0^0)} as defined by the model. 
 }
 
   \item{alpha}{
@@ -50,7 +50,8 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}}
 }
 \examples{
-y <- RandomARMod_nlin2(10, 0, 0.2, 1.01, 15, 0)
-dS1_nlin2_test(c(0, 0.2, 1.01), 0.05, y)
-dS1_nlin2_test(c(0, 0.1, 1.01), 0.05, y)
+y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
+theta <- c(0.2,1.01,0) # (arp, power, intercept)
+dS1_nlin2_test(theta, 0.05, y)
+dS1_nlin2_test(theta + c(0, 0, 0.5), 0.05, y)
 }

@@ -26,23 +26,23 @@ Autoregression parameter \eqn{\theta_1}.
 Starting value of the process \eqn{y_0}.
 }
   \item{cont}{
-Error distribution defined by value in (0,1,2,3,4).
+Error distribution defined by value in ("0","1","2","3","4").
 \cr
-0 : E_n is i.i.d. N(0,sd) distributed.
+"0" : E_n is i.i.d. N(0,sd) distributed.
 \cr
-1 : E_n is i.i.d. N(0,sd) distributed, but in Pois(5/100) drawn points in time N(5,1) errors are added.
+"1" : E_n is i.i.d. N(0,sd) distributed, but in Pois(5/100) drawn points in time N(5,1) errors are added.
 \cr
-2 : E_n is i.i.d. Gumbel distributed with parameters 10 and -3.665129.
+"2" : E_n is i.i.d. Gumbel distributed with parameters 10 and -3.665129.
 \cr
-3 : E_n is i.i.d. Frechet distributed with parameters 1.928, -2, 10.
+"3" : E_n is i.i.d. Frechet distributed with parameters 1.928, -2, 10.
 \cr
-4 : E_n is i.i.d. Gamma distributed with paramters 1 and 1. Further the errors are centered by -0.6932 to satisfy a med(E_n)=0 condition.
+"4" : E_n is i.i.d. Gamma distributed with paramters 1 and 1. Further the errors are centered by -0.6932 to satisfy a med(E_n)=0 condition.
 \cr
-5 :  E_n is i.i.d. N(0,1) distributed, but in Pois(2/200) drawn points in time the value 150 is added.
+"5" :  E_n is i.i.d. N(0,1) distributed, but in Pois(2/200) drawn points in time the value 150 is added.
 \cr
-6 : E_n is i.i.d. Gumbel distributed with parameters 100 and -36.65129.
+"6" : E_n is i.i.d. Gumbel distributed with parameters 100 and -36.65129.
 \cr
-7 : Here the errors are neglected and just the determinisic process is generated.
+"7" : Here the errors are neglected and just the determinisic process is generated.
 }
 \item{sd}{Standard deviation of the normally distributed errors, if cont in \{0,1\} is selected.}
 }
@@ -65,7 +65,7 @@ Kustosz, Christoph
 \code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}, \code{\link{dS_lin2}}
 }
 \examples{
-y <- RandomARMod_lin2(100, 0.02, 1.01, 5, 3)
+y <- RandomARMod_lin2(100, 0.02, 1.01, 5, "3")
 plot(y, type="l")
 
 

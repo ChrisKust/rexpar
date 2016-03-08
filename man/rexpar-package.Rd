@@ -6,7 +6,7 @@
 rexpar -  Robust Methods for Explosive Autoregressive Processes Based on Simplicial Depth
 }
 \description{
-The package contains simplicial depth statistics for autoregressive processes with explosion. Tests statisticsbased on Kustosz and Mueller (2014), Kustosz, Leucht and Mueller (2016) and Kustosz, Mueller and Wendler (2016) are implemented and some functions to generate examples are included. Further estimators, confidence sets are implementd. For the one dimensional AR Model, we also present a prediction algorithm and change point detection methods for one and two parameter models are proposed, as defined in Kustosz (2016). 
+The package contains simplicial depth statistics for autoregressive processes with explosion (rexpar - robust explosive processes with autoregression). Tests statisticsbased on Kustosz and Mueller (2014), Kustosz, Leucht and Mueller (2016) and Kustosz, Mueller and Wendler (2016) are implemented and some functions to generate examples are included. Further estimators, confidence sets are implementd. For the one dimensional AR Model, we also present a prediction algorithm and change point detection methods for one and two parameter models are proposed, as defined in Kustosz (2016). 
 }
 \details{
 \tabular{ll}{

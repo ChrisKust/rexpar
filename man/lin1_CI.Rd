@@ -55,7 +55,9 @@ Kustosz, Christoph
 \code{\link{dS1_lin1_test}},\code{\link{dS2_lin1_test}},\code{\link{dS3_lin1_test}},\code{\link{dS_lin1_test}},\code{\link{lin1_theta}}}
 
 \examples{
-y <- RandomARMod_lin2(100, 0, 1.001, 15, 0)
-lin1_CI(y, 0.05)
+y <- RandomARMod_lin2(100, 0, 1.001, 15, "0")
+lin1_CI(y, 0.05) -> CI
+ci_result <- c(min(CI$par[!CI$inCI]),max(CI$par[!CI$inCI]))
+print(ci_result)
 }
 

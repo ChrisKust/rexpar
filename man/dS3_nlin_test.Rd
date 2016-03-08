@@ -50,8 +50,8 @@ Kustosz, Christoph
  \code{\link{dS3_lin2}}
 }
 \examples{
-y <- RandomARMod_nlin1(10, 0.2, 1.01, 15, 0)
-dS3_nlin_test(c(0.2, 1.01), 0.05, y)
-dS3_nlin_test(c(0.1, 1.01), 0.05, y)
+y <- RandomARMod_nlin1(100, 0.2, 1.01, 15, "0")
+dS3_nlin_test(thetaN = c(0.2, 1.01), alpha =  0.05, y = y)
+dS3_nlin_test(thetaN = c(0.1, 1.01), alpha = 0.05, y = y)
 }
 

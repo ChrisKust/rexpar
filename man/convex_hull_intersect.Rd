@@ -9,7 +9,6 @@ The function calculates how often the staights defining two convex hulls in \eqn
 \usage{
 convex_hull_intersect(points1, points2, alpha, y1, y2, notion, plots)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{points1}{
 Points \eqn{(x_1,y_1),(x_2,y_2),...,(x_K,y_K)} to calculate the first convex hull as Kx2 matrix.

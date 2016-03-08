@@ -7,7 +7,7 @@ The function allows a prediction of a linear AR(1) model without intercept based
 on simplicial depth and residual bootstrapping. The method is introduced in Kustosz (2016) and applies the simplical depth for AR(1) processes without intercept to generate estiamtes and confidence sets. 
 }
 \usage{
-predict_lin1(y, CritLen, CritTime, NSim, alpha, restrict = FALSE)
+predict_lin1(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, eps = 1e-9)
 }
 \arguments{
   \item{y}{
@@ -27,6 +27,9 @@ A level which defines  the \eqn{1-\alpha} prediction intervals.
 }
   \item{restrict}{
 A switch, which allow to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activatet (TRUE) 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off (FALSE) the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
+}
+\item{eps}{
+Parameter to shift candidates to differ from the roots of the residuals.
 }
 }
 

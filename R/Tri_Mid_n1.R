@@ -1,30 +1,28 @@
-Tri_Mid_n1<-function(y,perc=1,candy=FALSE)
+Tri_Mid_n1 <- function(y, perc = 1, candy = FALSE)
 {
-  LT<-nlin1_theta_f(y)
-  ll<-cbind(LT$t1,LT$t2)
-  l1l<-quantile(LT$t1,0.5-perc/2)
-  l1u<-quantile(LT$t1,0.5+perc/2)
-  l2l<-quantile(LT$t2,0.5-perc/2)
-  l2u<-quantile(LT$t2,0.5+perc/2)
-  which(ll[,1]<l1u & ll[,1]>l1l)->il1
-  ll<-ll[il1,]
-  which(ll[,2]<l2u & ll[,2]>l2l)->il2
-  ll<-ll[il2,]
-  #print(dim(ll))
-  d1<-ll[,1]
-  d2<-ll[,2]
-  if(candy==TRUE)
+  LT <- nlin1_theta_f(y)
+  ll <- cbind(LT$t1, LT$t2)
+  l1l <- quantile(LT$t1, 0.5 - perc / 2)
+  l1u <- quantile(LT$t1, 0.5 + perc / 2)
+  l2l <- quantile(LT$t2, 0.5 - perc / 2)
+  l2u <- quantile(LT$t2, 0.5 + perc / 2)
+  il1 <- which(ll[, 1] < l1u & ll[, 1] > l1l)
+  ll <- ll[il1, ]
+  il2 <- which(ll[, 2] < l2u & ll[, 2] > l2l)
+  ll <- ll[il2, ]
+  d1 <- ll[, 1]
+  d2 <- ll[, 2]
+  if(candy)
   {#generate indices
-    iX<-seq(1,length(d1),1)
-    p1<-combn(seq(1,length(d1),1),m=3)
-    apply(p1,2,mind,Mat=d1)->v1
-    apply(p1,2,mind,Mat=d2)->v2
-    sol<-cbind(v1,v2)
+    iX <- seq(1, length(d1), 1)
+    p1 <- combn(seq(1, length(d1), 1), m = 3)
+    v1 <- apply(p1, 2, mind, Mat = d1)
+    v2 <- apply(p1, 2, mind, Mat = d2)
+    sol <- cbind(v1, v2)
   }
-  if(candy==FALSE)
+  if(!candy)
   {
-    sol<-ll
+    sol <- ll
   }
-  #print(dim(sol))
   return(sol)
 }

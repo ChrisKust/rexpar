@@ -14,7 +14,7 @@ Integration variable.
 }
 
   \item{pars}{
-Value t, where the integral has to be evaluated.
+Values t1 and t2, where the integral has to be evaluated.
 }
 }
 
@@ -44,6 +44,6 @@ Auxiliary function for internal usage in some more central functions of this pac
 \code{\link{find1}}, \code{\link{find2}},\code{\link{intfun2}}, \code{\link{oner}}
 }
 \examples{
-find2(1, 0)
+find2(0.2, c(-2,2))
 }
 

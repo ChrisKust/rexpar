@@ -50,8 +50,8 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
     \code{\link{dS1_lin2}}
   }
 \examples{
-  y <- RandomARMod_lin2(1000, 0, 1.01, 15, 0)
+  y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
   dS1_lin1_test(thetaN = 1.01, alpha = 0.05, y = y)
-  
+  dS1_lin1_test(thetaN = 1.11, alpha = 0.05, y = y)
 }
 

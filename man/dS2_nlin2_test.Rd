@@ -13,7 +13,7 @@ dS2_nlin2_test(dS2, thetaN, alpha, y, exact = FALSE)
 Here the user can pass a pre-calculated depth statistic dS3 instead of a parameter thetaN and an observation vector y to apply the test directly.
 }
 \item{thetaN}{
-Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_0^0,\theta_1^0,\theta_2^0)} as defined by the model. 
+Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0,\theta_0^0)} as defined by the model. 
 }
 
   \item{alpha}{
@@ -54,8 +54,8 @@ Christoph Kustosz and Sebastian Szugat
  \code{\link{dS1_lin2}}
 }
 \examples{
-y <- RandomARMod_nlin2(10, 0, 0.2, 1.01, 15, 0)
-dS2_nlin2_test(thetaN=c(0, 0.2, 1.01), alpha=0.05, y=y)
-dS2_nlin2_test(thetaN=c(0, 0.1, 1.01), alpha=0.05, y=y)
+y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
+dS2_nlin2_test(thetaN = c(0.2, 1.01, 0), alpha=0.05, y=y)
+dS2_nlin2_test(thetaN = c(0.2, 1.01, 1), alpha=0.05, y=y)
 }
 

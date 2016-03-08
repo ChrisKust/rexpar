@@ -46,7 +46,4 @@ Kustosz, Christoph
 \examples{
 x <- c(1, 2, 3, 4, 7, 8, 11, 35, 40, 50, 60)
 follow_ups(x, 0.75, 1)
-
-
-
 }

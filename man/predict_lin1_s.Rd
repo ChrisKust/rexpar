@@ -9,7 +9,7 @@ adjusted by additional arguments, to allow an extrapolation of future values. Th
 the simulated processes can be specified.
 }
 \usage{
-predict_lin1_s(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, start)
+predict_lin1_s(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, start, eps = 1e-9)
 }
 \arguments{
   \item{y}{
@@ -32,6 +32,9 @@ A switch, which allow to activate a restriction for parameter simulations used i
 }
 \item{start}{
 Here a starting value for the simulated processes can be specified.
+}
+\item{eps}{
+Parameter to shift candidates to differ from the roots of the residuals.
 }
 }
 

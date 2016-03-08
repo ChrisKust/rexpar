@@ -45,6 +45,5 @@ inv_tri(M)
 M[inv_tri(M)==FALSE]
 M[inv_tri(M)==TRUE]<-0
 M
-
 }
 

@@ -7,7 +7,8 @@ Confidence regions for non-linar AR(1) processes with intercept based on simplic
 This function generates confidence regions for non-linear AR(1) processes without intercept and explosion based on simplicial depth for AR processes.
 }
 \usage{
-nlin_CI(y, level, plots, notion, ncoresC, addPar, spar)
+nlin_CI(y, level, plots = FALSE, notion = "dS1", ncoresC = 1, addPar = FALSE, 
+spar = 0.8, eps = 1e-19)
 }
 \arguments{
   \item{y}{
@@ -29,8 +30,9 @@ If the notion "dS" is selected a multicore computation is possible. Here the num
 A swich to decide if the resulting confidence region shall be added to a existing plot (TRUE) or is generated in a new plot window (FALSE).
 }
 \item{spar}{
-{Smoothing parameter for alpha hull construction in plots.}
-}
+Smoothing parameter for alpha hull construction in plots.}
+\item{eps}{
+Parameter to shift the candidates to differ from parameters defined by roots of residuals.}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueeller and Wendler (2016) and Kustosz, Leucht and Mueller (2016). The details on the implementation are in Kustosz (2016).}
@@ -60,8 +62,9 @@ Kustosz, Christoph
 \code{\link{dS1_nlin_test}},\code{\link{dS2_nlin_test}},\code{\link{dS3_nlin_test}},\code{\link{dS_nlin_test}},\code{\link{nlin1_theta_f}},\code{\link{convex_hull_plot}}
 }
 \examples{
-y <- RandomARMod_lin2(10, 0, 1.001, 15, 0)
-nlin_CI(y, 0.05)
+y <- RandomARMod_nlin1(100, 0.02, 1.001, 15, "0")
+ci_res <- nlin_CI(y, 0.95) 
+plot(ci_res$par[ci_res$inCI == 0, ])
 }
 
 

@@ -59,20 +59,20 @@ Kustosz, Christoph
 \code{\link{dS1_lin2_test}},\code{\link{dS2_lin2_test}},\code{\link{dS3_lin2_test}},\code{\link{dS_lin2_test}},\code{\link{lin2_theta_f}},\code{\link{convex_hull_plot}}
 }
 \examples{
-\dontrun{y <- RandomARMod_lin2(100, 0.2, 1.001, 15, 0)
-lin2_CI(y, 0.05, notion = "dS1")
+\dontrun{
+y <- RandomARMod_lin2(100, 0.2, 1.001, 15, "0")
+CI <- lin2_CI(y, 0.05, notion = "dS1") 
 
-y1 <- RandomARMod_lin2(50, 0.2, 1.002, 15, 0)
-A1 <- lin2_CI(y1, 0.05, notion = "dS1")
-A2 <- lin2_CI(y1, 0.05, notion = "dS2")
-A3 <- lin2_CI(y1, 0.05, notion = "dS3")
-AS <- lin2_CI(y1, 0.05, notion = "dS", ncoresC = 2)
-ASp <- lin2_CI(y1, 0.05, notion = "dS_pre", ncoresC = 2)
-
+y1 <- RandomARMod_lin2(50, 0.2, 1.002, 15, "0")
+A1 <- lin2_CI(y1, 0.95, notion = "dS1")
+A2 <- lin2_CI(y1, 0.95, notion = "dS2")
+A3 <- lin2_CI(y1, 0.95, notion = "dS3")
+AS <- lin2_CI(y1, 0.95, notion = "dS", ncoresC = 2)
+ASp <- lin2_CI(y1, 0.95, notion = "dS_pre", ncoresC = 2)
 
 par(mfrow=c(2, 2))
-plot(AS$par[!AS$inCI, ], col = 3, pch = 19, main = "dS vs dSp")
-points(ASp$par[!ASp$inCI, ], col = 2)
+plot(AS$par[AS$inCI == 0, ], col = 3, pch = 19, main = "dS vs dSp")
+points(ASp$par[ASp$inCI == 0, ], col = 2)
 plot(A1$par[!A1$inCI, ], col = 2, pch = 19, main = "dS1 vs dS")
 points(AS$par[!AS$inCI, ], col = 3)
 plot(A2$par[!A2$inCI, ], col = 2, pch = 19, main = "dS2 vs dS")

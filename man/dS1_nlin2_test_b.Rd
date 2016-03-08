@@ -1,6 +1,5 @@
 \name{dS1_nlin2_test_b}
 \alias{dS1_nlin2_test_b}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{Test based on dS1 for explosive nonlinear AR(1) processes with intercept for Batch-Jobs usage
 }
 \description{
@@ -14,7 +13,7 @@ dS1_nlin2_test_b(ind, thetaNv, alpha, y, exact = FALSE)
 Indicator to select specific Null hypothesis in the matrix thetaNv.
 }
 \item{thetaNv}{
-Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0} . Thereby \eqn{\theta^0 = (\theta_0^0\theta_1^0,\theta_2^0)} as defined by the model. 
+Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0} . Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0,\theta_0^0)} as defined by the model. 
 }
 
   \item{alpha}{
@@ -53,8 +52,11 @@ Kustosz, Christoph
  \code{\link{dS1_lin2}}
 }
 \examples{
-y<-RandomARMod_nlin2(10, 0, 0.2, 1.01, 15, 0)
-dS1_nlin2_test(c(0, 0.2, 1.01), 0.05, y)
-dS1_nlin2_test(c(0, 0.1, 1.01), 0.05, y)
+y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
+thetaNv <- rbind(c(0.2,1.01,0),c(0.2,1.01,0.5)) # (arp, power, intercept)
+dS1_nlin2_test_b(1,thetaNv, 0.05, y)
+dS1_nlin2_test_b(2,thetaNv, 0.05, y)
+
+
 }
 

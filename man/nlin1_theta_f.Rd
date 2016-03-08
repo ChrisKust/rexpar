@@ -36,6 +36,7 @@ Kustosz, Christoph
 \code{\link{dS_lin2}},\code{\link{dS1_lin2}},\code{\link{dS2_lin2}},\code{\link{dS3_lin2}},\code{\link{est_nlin1}}
 }
 \examples{
-y <- RandomARMod_nlin1(100, 1.001, 0.2, 15, 0)
+y <- RandomARMod_nlin1(100, 1.001, 0.2, 15, "0")
 thetas <- nlin1_theta_f(y)
+plot(thetas$t1, thetas$t2)
 }

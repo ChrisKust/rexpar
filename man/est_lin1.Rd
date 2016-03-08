@@ -66,8 +66,6 @@ Papers 55, 125-140.\cr
   }
 \examples{
   y <- RandomARMod_lin2(250, 0, 1.003, 15, 1)
-  \dontrun{
-    est_lin1(y)
-  }
+  est_lin1(y, eps = 1e-9)
 }
 

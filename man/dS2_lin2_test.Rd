@@ -57,8 +57,8 @@ Christoph Kustosz and Sebastian Szugat
 \code{\link{dS2_lin2}}
 }
 \examples{
-y <- RandomARMod_nlin1(1000, 0.2, 1.01, 15, 0)
-dS2_lin2_test(thetaN=c(0.2, 1.01), alpha=0.05, y=y)
-dS2_lin2_test(thetaN=c(0.1, 1.01), alpha=0.05, y=y)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, "0")
+dS2_lin2_test(thetaN = c(0.2, 1.01), alpha = 0.05, y = y)
+dS2_lin2_test(thetaN = c(0.1, 1.01), alpha = 0.05, y = y)
 }
 

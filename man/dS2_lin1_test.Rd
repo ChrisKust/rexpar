@@ -52,7 +52,8 @@ Papers 55, 125-140.
     \code{\link{dS1_lin2}}
   }
 \examples{
-  y <- RandomARMod_lin2(1000, 0, 1.01, 15, 0)
+  y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
   dS2_lin1_test(1.01, 0.05, y)
+  dS2_lin1_test(1.1, 0.05, y)
 }
 

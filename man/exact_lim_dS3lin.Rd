@@ -45,5 +45,6 @@ The function is used, when the dS3_lin2 test is applied with exact=TRUE.}
 }
 \examples{
 sim <- exact_lim_dS3lin(20, 100)
+hist(sim)
 }
 

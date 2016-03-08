@@ -12,7 +12,6 @@ est_nlin1(y, maxit = 25, candy = FALSE, perc = 0.1, acc = 0.1, plots = FALSE,
 normtype = 1, pv = 2, wgt = c(1, 0.5), unique = TRUE, 
 notion = dS3_lin2, optim_rude = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{y}{
 An observed series form an non-linear AR(1) process with intercept.
@@ -77,8 +76,6 @@ Kustosz, Christoph
 }
 \examples{
 y <- RandomARMod_nlin1(200, 1.003, 0.2, 15, 1)
-\dontrun{
 est_nlin1(y)
-}
 }
 

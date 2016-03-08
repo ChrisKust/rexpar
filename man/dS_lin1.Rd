@@ -43,7 +43,7 @@ Kustosz, Christoph
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}, \code{\link{oner}}
 }
 \examples{
-y <- RandomARMod_lin2(100, 0, 1.01, 15, 0)
+y <- RandomARMod_lin2(100, 0, 1.01, 15, "0")
 theta <- 1.01
 dS_lin1(theta, y)
 }

@@ -64,10 +64,10 @@ The function depends on several internal functions.
 \code{\link{resARMod_lin2}}, \code{\link{dS_lin2}},\code{\link{dS1_lin2}}, \code{\link{dS2_lin2}}, \code{\link{dS3_lin2}}, \code{\link{oner}}
 }
 \examples{
-y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, "0")
 theta <- c(0.2, 1.01)
- \dontrun{
-dS_lin2(theta, y)
-}
+dS_lin2(theta = theta, y = y)
+dS_lin2(theta = theta + 0.1, y = y)
+
 }
 

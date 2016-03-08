@@ -44,4 +44,5 @@ Kustosz, Christoph
 }
 \examples{
 sim <- exact_lim_dS3nlin(20, 100)
+hist(sim)
 }

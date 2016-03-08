@@ -21,21 +21,21 @@ for(i in 1:length(cands))
   ASp2$inCI[is.na(ASp2$inCI)] <- 1
   if(plots)
   {  
-    lx1 <- min(c(ASp1$par[!ASp1$inCI, 1], ASp2$par[!ASp2$inCI, 1]), na.rm=TRUE)
+    lx1 <- min(c(ASp1$par[ASp1$inCI == 0, 1], ASp2$par[ASp2$inCI == 0, 1]), na.rm=TRUE)
     if(lx1 == -Inf | is.na(lx1))
     {lx1 <- -10}
-    lx2 <- max(c(ASp1$par[!ASp1$inCI, 1], ASp2$par[!ASp2$inCI, 1]), na.rm=TRUE)
+    lx2 <- max(c(ASp1$par[ASp1$inCI == 0, 1], ASp2$par[ASp2$inCI == 0, 1]), na.rm=TRUE)
     if(lx2 == Inf | is.na(lx2))
     {lx2 <- 10}
-    ly1 <- min(c(ASp1$par[!ASp1$inCI, 2], ASp2$par[!ASp2$inCI, 2]), na.rm=TRUE)
+    ly1 <- min(c(ASp1$par[ASp1$inCI == 0, 2], ASp2$par[ASp2$inCI == 0, 2]), na.rm=TRUE)
     if(ly1 == -Inf | is.na(ly1))
     {ly1 <- 0.5}
-    ly2 <- max(c(ASp1$par[!ASp1$inCI, 2],ASp2$par[!ASp2$inCI, 2]), na.rm=TRUE)
+    ly2 <- max(c(ASp1$par[ASp1$inCI == 0, 2],ASp2$par[ASp2$inCI == 0, 2]), na.rm=TRUE)
     if(ly2 == Inf | is.na(ly2))
     {ly2 <- 1.5}
   plot(0, 0, xlab=expression(theta[1]), ylab=expression(theta[2]), main=cands[i], xlim=c(lx1, lx2), ylim=c(ly1, ly2))
-  convex_hull_plot(ASp1$par[!ASp1$inCI, 1], ASp1$par[!ASp1$inCI, 2], col = 1)
-  convex_hull_plot(ASp2$par[!ASp2$inCI, 1], ASp2$par[!ASp2$inCI, 2], col = 2)
+  convex_hull_plot(ASp1$par[ASp1$inCI == 0, 1], ASp1$par[ASp1$inCI == 0, 2], col = 1)
+  convex_hull_plot(ASp2$par[ASp2$inCI == 0, 1], ASp2$par[ASp2$inCI == 0, 2], col = 2)
   }
   changeind[i] <- 1 - (convex_hull_intersect(cbind(ASp1$par[!ASp1$inCI, 1], ASp1$par[!ASp1$inCI, 2]), cbind(ASp2$par[!ASp2$inCI, 1], ASp2$par[!ASp2$inCI, 2]), y1 = y[(cands[i] - bw):cands[i]], y2 = y[cands[i]:(cands[i] + bw)])$sumint > 0)
 

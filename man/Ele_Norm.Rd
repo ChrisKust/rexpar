@@ -51,7 +51,7 @@ The function is an auxilary function to estimate parameters of (non)linear AR pr
 x1 <- seq(-2, 2, 0.05)
 x2 <- seq(-2, 2, 0.05)
 g <- expand.grid(x1, x2)
-d <- apply(g, 1, Ele_Norm, center=c(0, 0), nortype=2, wgt=c(1, 1), pv=2)
+d <- apply(g, 1, Ele_Norm, center = c(0, 0), nortype = 2, wgt = c(1, 1), pv = 2)
 plot(g)
-points(g[, 1][d<1], g[, 2][d<1], col=2)
+points(g[, 1][d < 1], g[, 2][d < 1], col = 2)
 }

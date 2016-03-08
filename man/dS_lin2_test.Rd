@@ -61,9 +61,9 @@ Note, that the evaluation depends on the simulated results of the limit process,
 \code{\link{dS_lin2}},
 }
 \examples{
-y <- RandomARMod_lin2(100, 0.2, 1.01, 15, 0)
-dS_lin2_test(c(0.2, 1.01), 0.05, y)
-dS_lin2_test(c(0.1, 1.01), 0.05, y)
+y <- RandomARMod_lin2(100, 0.2, 1.01, 15, "0")
+dS_lin2_test(thetaN = c(0.2, 1.01), alpha =  0.05, y = y)
+dS_lin2_test(thetaN = c(0.1, 1.11), alpha = 0.05, y = y)
 
 }
 

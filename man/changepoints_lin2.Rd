@@ -65,8 +65,8 @@ arp1 <- 1.015
 arp2 <- 1.001
 
 set.seed(123)
-y1 <- RandomARMod_lin2(50, int1, arp1, 15, 0)
-y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], 0)
+y1 <- RandomARMod_lin2(50, int1, arp1, 15, "0")
+y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], "0")
 y <- c(y1,y2)
 
 \dontrun{

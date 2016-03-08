@@ -9,7 +9,7 @@ adjusted by additional arguments, to allow an extrapolation of future values. Th
 }
 \usage{
 predict_lin1_extra(y, CritLen, CritTime, NSim, alpha, 
-restrict = FALSE, start, dmax_neu, res_rescale, lambda_j)
+restrict = FALSE, start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
 }
 \arguments{
   \item{y}{
@@ -42,6 +42,9 @@ heights in the simulated series.}
 \item{lambda_j}{
 This parameetes sets the jump frequency modelled by a Poisson proces with parameter lambda_j to adjust the
 number of jumps in the simulated series.}
+\item{eps}{
+Parameter to shift candidates to differ from the roots of the residuals.
+}
 }
 
 \value{
