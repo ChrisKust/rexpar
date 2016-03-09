@@ -51,10 +51,10 @@ resARMod_lin2(theta, y)
 theta <- c(0.2, 1.01)
 N <- 100
 y0 <- 1
-y <- RandomARMod_lin2(N, theta, y0)
+y <- RandomARMod_lin2(nobs = N, intercept = theta[1], arp = theta[2], start = y0)
 
 res <- resARMod_lin2(theta, y)
-par(mfrow=c(2, 1))
+par(mfrow=c(1, 2))
 plot(res)
 hist(res)
 }

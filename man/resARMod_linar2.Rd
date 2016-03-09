@@ -46,13 +46,13 @@ theta <- c(1, 1)
 resARMod_linar2(theta, y)
 
 ## Generating an example process in advance
-theta <- c(0.002, 1.001)
+theta <- c(0.6, 0.44)
 N <- 100
-y0 <- 1
-y <- RandomARMod_linar2(N, theta, y0)
+y0 <- c(13, 14)
+y <- RandomARMod_linar2(nobs = N, arp1 = theta[1], arp2 = theta[2], start = y0)
 
 res <- resARMod_linar2(theta, y)
-par(mfrow=c(2, 1))
+par(mfrow=c(1, 2))
 plot(res)
 hist(res)
 }

@@ -38,3 +38,13 @@ Kustosz, Christoph
 \seealso{
  \code{\link{est_nlin1}},  \code{\link{dS_lin2_test}}
 }
+
+\examples{
+set.seed(17)
+y <- RandomARMod_lin2(nobs = 20, intercept = 0.2, arp = 1.001, start = 15, cont = "0")
+par(mfrow = c(1, 2))
+tt1 <- Tri_Mid(y = y, perc = 0.5, candy = FALSE)
+plot(tt1[,1], tt1[,2])
+tt2 <- Tri_Mid(y = y, perc = 0.5, candy = TRUE)
+plot(tt2[,1], tt2[,2])
+}

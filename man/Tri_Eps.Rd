@@ -38,3 +38,10 @@ Kustosz, Christoph
 \seealso{
  \code{\link{est_nlin1}},  \code{\link{dS_lin2_test}}
 }
+
+\examples{
+set.seed(17)
+y <- RandomARMod_lin2(nobs = 20, intercept = 0.2, arp = 1.001, start = 15, cont = "0")
+tt <- Tri_Eps(y = y, perc = 0.5, eps = 1e-3)
+plot(tt[1,], tt[2,])
+}

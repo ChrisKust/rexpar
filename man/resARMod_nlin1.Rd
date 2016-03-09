@@ -49,13 +49,13 @@ theta <- c(1, 1)
 resARMod_nlin1(theta, y)
 
 ## Generating an example process in advance
-theta <- c(0.002, 1.001)
+theta <- c(0.02, 1.001)
 N <- 100
 y0 <- 1
-y <- RandomARMod_nlin1(N, theta, y0)
+y <- RandomARMod_nlin1(nobs = N, arp = theta[1], power = theta[2], y0)
 
 res <- resARMod_nlin1(theta, y)
-par(mfrow=c(2, 1))
+par(mfrow=c(1, 2))
 plot(res)
 hist(res)
 

@@ -41,7 +41,6 @@ Kustosz, Christoph
 \examples{
 g <- seq(-2, 2, 0.1)
 sigma <- sigmaMat(g)
-
 Y <- simulateGP(g, sigma)
 plot(Y$Y1)
 lines(Y$Y2)

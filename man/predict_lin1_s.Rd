@@ -64,3 +64,23 @@ Kustosz, Christoph
 
 \seealso{
  \code{\link{draw_from_depth}}}
+ 
+ \examples{
+y <- RandomARMod_lin2(nobs = 300, intercept = 0, arp = 1.015, start = 15, cont = "0")
+plot(y, type = "l",ylim=c(0, 200), xlim = c(0, 300))
+\dontrun{
+p1 <- predict_lin1_s(y = y[1:150], CritLen = y[150], CritTime = 280, 
+NSim = 1000, alpha = 0.05, restrict = TRUE, start = y[20])
+for(i in 1:10)
+{
+ lines(seq(20, length(p1$simulations[,1])-130,1),
+ p1$simulations[150:length(p1$simulations[, 1]),i],col=i)
+}
+
+abline(h = c(p1$med_CT, p1$confintCT) , col = c(2, 2, 2), lty = c(1, 2, 2))
+abline(v = c(p1$med_CL, p1$confintCL) - 130 , col = c(3, 3, 3), lty = c(1, 2, 2))
+abline(h = y[150], lty = 3)
+abline(v = 150, lty = 3)
+lines(y, lwd = 2)
+}
+}

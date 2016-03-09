@@ -10,8 +10,8 @@ predict_lin1 <- function(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, ep
   }
   if(!restrict)
   {
-    theta_min < -min(cands)
-    theta_max < -max(cands)
+    theta_min <- min(cands)
+    theta_max <- max(cands)
   }  
   ResMat <- matrix(nrow = (length(y) + simL_fac * length(y)), ncol = NSim)
   for(i in 1:NSim)

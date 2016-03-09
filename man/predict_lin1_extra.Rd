@@ -73,3 +73,23 @@ Kustosz, Christoph
 
 \seealso{
  \code{\link{draw_from_depth}}}
+ 
+ 
+ \examples{
+y <- RandomARMod_lin2(nobs = 300, intercept = 0, arp = 1.01, start = 15, cont = "1")
+plot(y, type = "l",ylim=c(0, 400), xlim = c(0, 300))
+\dontrun{
+p1 <- predict_lin1_extra(y = y[1:150], CritLen = y[170], CritTime = 170, NSim = 1000, alpha = 0.05,
+restrict = FALSE, start = y[150], res_rescale = 1.2, lambda_j = 0.2, dmax_neu = 1.02)
+for(i in 1:10)
+{
+  lines(p1$simulations[,i],col=i)
+}
+
+abline(h = c(p1$med_CT, p1$confintCT), col = c(2, 2, 2), lty = c(1, 2, 2))
+abline(v = c(p1$med_CL, p1$confintCL), col = c(3, 3, 3), lty = c(1, 2, 2))
+abline(h = y[170], lty = 3)
+abline(v = 170, lty = 3)
+lines(y, lwd = 2)
+}
+}

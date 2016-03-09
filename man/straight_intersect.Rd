@@ -50,10 +50,17 @@ Kustosz, Christoph
  \code{\link{lin2_CI}},\code{\link{lin2_CI_cl}}
 }
 \examples{
+par(mfrow = c(1, 2))
 a <- straight_intersect(c(1, 1), c(4, 4), c(4, 3), c(-1, 1))
+plot(0, 0, xlim = c(-1, 5), ylim =c (0, 5), type = "n")
+segments(1, 1, 4, 4)
+segments(4, 3, -1, 1)
 a
 
 a <- straight_intersect(c(1, 1), c(2, 1), c(1, 2), c(2, 2))
+plot(0, 0, xlim = c(-1, 5), ylim =c (0, 5), type = "n")
+segments(1, 1, 2, 1)
+segments(1, 2, 2, 2)
 a
 }
 
