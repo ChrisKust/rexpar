@@ -90,6 +90,7 @@ RandomARMod_lin2 <- function(nobs, intercept = 0, arp, start = 0, cont = "0", sd
         {
           y[i] <- arp * y[i - 1] + intercept
         }
+        y
       },
       stop("Insert a valid notion!")
   )
