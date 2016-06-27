@@ -6,7 +6,7 @@ Ramdom linear AR(2) Series
 \description{
 The function generates an random linear AR(2) process with given autoregression parameters and starting
 value. Further the errors can be specified by 4 predefined examples. The main equation 
-is given by \deqn{Y_n = \theta_1 * Y_{n-1} + \theta_2 * Y_{n-2} + E_n,}, whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
+is given by \deqn{Y_n = \theta_1 * Y_{n-1} + \theta_2 * Y_{n-2} + E_n,} whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
 }
 \usage{
 RandomARMod_linar2(nobs, arp1, arp2, start, cont = "0")
