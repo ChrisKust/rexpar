@@ -4,7 +4,7 @@
 }
 \description{
 The function allows a prediction of a linear AR(1) model without intercept based
-on simplicial depth and residual bootstrapping. The method is introduced in Kustosz (2016) and applies the simplical depth for AR(1) processes without intercept to generate estimates and confidence sets. 
+on simplicial depth and residual bootstrapping. The method is introduced in Kustosz (2016) and applies the simplical depth for AR(1) processes without intercept to generate estiamtes and confidence sets. 
 }
 \usage{
 predict_lin1(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, eps = 1e-9)
@@ -14,10 +14,10 @@ predict_lin1(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, eps = 1e-9)
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
 }
   \item{CritLen}{
-A value for a critical length for which the time of arrival then can be predicted by the function.
+A value for a critical lenght for which the time of arrival then can be predicted by the function.
 }
   \item{CritTime}{
-  A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
+  A value for a critivcal time (as index of the process), exceeding the size of y, for which the process value is predicted.
 }
   \item{NSim}{
   Number of simulations used in the bootstrap simulations of the continued process.
@@ -26,7 +26,7 @@ A value for a critical length for which the time of arrival then can be predicte
 A level which defines  the \eqn{1-\alpha} prediction intervals.
 }
   \item{restrict}{
-A switch, which allows to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activatet (TRUE) 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off (FALSE), the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
+A switch, which allow to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activatet (TRUE) 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off (FALSE) the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
 }
 \item{eps}{
 Parameter to shift candidates to differ from the roots of the residuals.

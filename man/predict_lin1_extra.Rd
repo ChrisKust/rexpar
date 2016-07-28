@@ -16,10 +16,10 @@ restrict = FALSE, start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
 }
   \item{CritLen}{
-A value for a critical length for which the time of arrival then can be predicted by the function.
+A value for a critical lenght for which the time of arrival then can be predicted by the function.
 }
   \item{CritTime}{
-  A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
+  A value for a critivcal time (as index of the process), exceeding the size of y, for which the process value is predicted.
 }
   \item{NSim}{
   Number of simulations used for the bootstrap simulations of the continued process.
@@ -28,7 +28,7 @@ A value for a critical length for which the time of arrival then can be predicte
 A level for the \eqn{1-\alpha} prediction intervals.
 }
   \item{restrict}{
-A switch, which allows to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activated \code{restrict = TRUE} 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off \code{restrict = FALSE} the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
+A switch, which allow to activate a restriction for parameter simulations used in the bootstrap procedure. If restrict is activated \code{restrict = TRUE} 1-alpha confidence intervals are used to generate simulated paremeters based on the empirical simplicial depth. If restrict is off \code{restrict = FALSE} the complete candidate set is used for simulations. Thereby the probabilities of the candidates rely on the empirical simplicial depth. 
 }
 \item{start}{
 Here a starting value for the simulated processes can be specified

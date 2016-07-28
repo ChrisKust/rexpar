@@ -6,7 +6,7 @@ Ramdom non-linear AR(1) Series with three paramters
 \description{
 The function generates an random non-linear AR(1) process with given power, autoregression and starting
 value. Further the errors can be specified by 4 predefined examples. The main equation 
-is given by \deqn{Y_n = Y_{n-1} + \theta_1 * Y_{n-1}^{\theta_2} + \theta_0 + E_n,} whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
+is given by \deqn{Y_n = Y_{n-1} + \theta_1 * Y_{n-1}^{\theta_2} + \theta_0 + E_n,}, whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
 }
 \usage{
 RandomARMod_nlin2(nobs, intercept = 0, arp, power, start = 0, cont = "0", sd = 0.1)

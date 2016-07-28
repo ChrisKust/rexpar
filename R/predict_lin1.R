@@ -1,11 +1,6 @@
 predict_lin1 <- function(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, eps = 1e-9)
 {
-  N <- length(y)
-  if (missing(CritLen)) {
-    simL_fac <- (CritTime - N)/N
-  } else {
-    simL_fac <- 30
-  }
+  simL_fac <- 30
   cands <- lin1_theta_eps(y, eps)$t1
   depth <- unlist(lapply(cands, rexpar::dS_lin1, y = y))
   if(restrict)
@@ -18,7 +13,7 @@ predict_lin1 <- function(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, ep
     theta_min <- min(cands)
     theta_max <- max(cands)
   }  
-  ResMat <- matrix(nrow = (length(y) + ceiling(simL_fac * length(y))), ncol = NSim)
+  ResMat <- matrix(nrow = (length(y) + simL_fac * length(y)), ncol = NSim)
   for(i in 1:NSim)
   {
     y_t <- numeric(length(y) + simL_fac * length(y))
@@ -40,20 +35,13 @@ predict_lin1 <- function(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, ep
   mean_est_CT <- mean(ResMat[CritTime, ])
   median_est_CT <- median(ResMat[CritTime, ])
   CI_CT <- quantile(ResMat[CritTime, ], prob = c(alpha / 2, 1 - alpha / 2))
-  if (!missing(CritLen)) {
-    TimeInd <- seq(1, length(y_t))
-    T_est <- apply(ResMat, 2, function(x) min(TimeInd[x >= CritLen]))
-    mean_est_CL <- mean(T_est)
-    median_est_CL <- median(T_est)
-    CI_CL <- quantile(T_est, prob = c(alpha / 2, 1 - alpha / 2))
-    
-    return(list(estimation_time = CritTime, mean_CT = mean_est_CT, med_CT = median_est_CT, confintCT = CI_CT, 
-                alpha = alpha, estimation_lenght = CritLen, mean_CL = mean_est_CL, med_CL = median_est_CL, 
-                confintCL = CI_CL, simulations = ResMat))
-  } else {
-    return(list(estimation_time = CritTime, mean_CT = mean_est_CT, med_CT = median_est_CT, confintCT = CI_CT, 
-                alpha = alpha, simulations = ResMat))
-  }
+  TimeInd <- seq(1, length(y_t))
+  T_est <- apply(ResMat, 2, function(x) min(TimeInd[x >= CritLen]))
+  mean_est_CL <- mean(T_est)
+  median_est_CL <- median(T_est)
+  CI_CL <- quantile(T_est, prob = c(alpha / 2, 1 - alpha / 2))
+  
+  list(estimation_time = CritTime, mean_CT = mean_est_CT, med_CT = median_est_CT, confintCT = CI_CT, alpha = alpha, estimation_lenght = CritLen, mean_CL = mean_est_CL, med_CL = median_est_CL, confintCL = CI_CL, simulations = ResMat)
 }
 
 

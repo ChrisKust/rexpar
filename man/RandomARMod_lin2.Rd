@@ -6,7 +6,7 @@ Ramdom AR(1) Series with Intercept
 \description{
 The function generates an random AR(1) process with given intercept, slope and starting
 value. Further the errors can be specified by 4 predefined examples. The main equation 
-is given by \deqn{Y_n = \theta_1 \cdot Y_{n-1} + \theta_0 + E_n,} whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
+is given by \deqn{Y_n = \theta_1 \cdot Y_{n-1} + \theta_0 + E_n,}, whereby \eqn{E_n} are i.i.d with \eqn{med(E_n)=0} and \eqn{y_0} is fixed and known.
 }
 \usage{
 RandomARMod_lin2(nobs, intercept = 0, arp, start = 0, cont = "0", sd = 0.2)
