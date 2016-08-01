@@ -1,11 +1,11 @@
-predict_lin1_extra <- function(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, 
+predict_lin1_extra <- function(y, CritLen, simL_fac = 30, CritTime, NSim, alpha, restrict = FALSE, 
                                start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
 {
   N <- length(y)
   if (missing(CritLen)) {
     simL_fac <- (CritTime - N)/N
   } else {
-    simL_fac <- 30
+    simL_fac <- simL_fac
   }
   predLength <- ceiling(simL_fac * N)
   
