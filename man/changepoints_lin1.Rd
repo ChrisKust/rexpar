@@ -23,7 +23,6 @@ A bandwidth, defining the sample size for sub-samples which are evaluated in the
 \item{sw}{
 A step-width to reduce the candidate points in which the change points are evaluated.
 }
-\item{plots}{A switch, activating plots while the calculations are preformed. The plots show the confidence regions for the actually considered windows.}
 \item{method}{
 This parameter determines the method to detect change points. If \code{method = "m1"} is selected a candidate is marked as change, if the confidence intervals do not overlap. For \code{method = "m2"} the change point is marked, if the estimates are not inside of the non respective confidence intervals.
 }

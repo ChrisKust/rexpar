@@ -16,7 +16,7 @@ predict_lin1_s(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, start, eps =
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
 }
   \item{CritLen}{
-A value for a critical length for which the time of arrival then can be predicted by the function.
+A value for a critical length for which the time of arrival then can be predicted by the function. This argument is optional.
 }
   \item{CritTime}{
   A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
@@ -58,7 +58,7 @@ autoregressive processes with application. Ph. D. thesis. TU Dortmund.\cr
 \cr
 }
 \author{
-Kustosz, Christoph
+Kustosz, Christoph and Szugat, Sebastian
 }
 
 

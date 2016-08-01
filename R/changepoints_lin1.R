@@ -1,4 +1,4 @@
-changepoints_lin1 <- function(y, level, bw, sw, plots = FALSE, method = "m1", mincper = 1, mincp = 1)
+changepoints_lin1 <- function(y, level, bw, sw, method = "m1", mincper = 1, mincp = 1)
 {
   alpha <- (1 - level)
   cands <- seq(bw + 1, length(y) - bw, sw)
