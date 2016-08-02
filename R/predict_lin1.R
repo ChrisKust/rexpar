@@ -52,6 +52,8 @@ predict_lin1 <- function(y, CritLen, simL_fac = 30, CritTime, NSim, alpha, restr
         return(NA)
       }
     })
+    warning(paste0(sum(is.na(T_est)), " out of ", NSim, " simulations did not reach the critical length ", round(CritLen,2), 
+                   ". \n You might consider a value for simL_fac larger than ", simL_fac, "."))
     mean_est_CL <- mean(T_est, na.rm = TRUE)
     median_est_CL <- median(T_est, na.rm = TRUE)
     CI_CL <- quantile(T_est, prob = c(alpha / 2, 1 - alpha / 2), na.rm = TRUE)

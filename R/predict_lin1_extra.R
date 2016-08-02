@@ -50,10 +50,19 @@ predict_lin1_extra <- function(y, CritLen, simL_fac = 30, CritTime, NSim, alpha,
   CI_CT <- quantile(ResMat[CritTime, ], prob = c(alpha / 2, 1 - alpha / 2))
   if (!missing(CritLen)) {
     TimeInd <- seq(1,length(y_t))
-    T_est <- apply(ResMat, 2, function(x) min(TimeInd[x >= CritLen]))
-    mean_est_CL <- mean(T_est)
-    median_est_CL <- median(T_est)
-    CI_CL <- quantile(T_est, prob = c(alpha / 2, 1 - alpha / 2))
+    T_est <- apply(ResMat, 2, function(x) {
+      tmp <- TimeInd[x >= CritLen]
+      if(length(tmp) > 0) {
+        return(min(TimeInd[x >= CritLen]))
+      } else {
+        return(NA)
+      }
+    })
+    warning(paste0(sum(is.na(T_est)), " out of ", NSim, " simulations did not reach the critical length ", round(CritLen,2), 
+                   ". \n You might consider a value for simL_fac larger than ", simL_fac, "."))
+    mean_est_CL <- mean(T_est, na.rm = TRUE)
+    median_est_CL <- median(T_est, na.rm = TRUE)
+    CI_CL <- quantile(T_est, prob = c(alpha / 2, 1 - alpha / 2), na.rm = TRUE)
     
     return(list(estimation_time = CritTime, mean_CT = mean_est_CT, med_CT = median_est_CT, 
                 confintCT = CI_CT, alpha = alpha, estimation_lenght = CritLen, mean_CL = mean_est_CL, 
