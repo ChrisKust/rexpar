@@ -9,17 +9,12 @@ processes, when overlapping residuals are evaluated. Thereby
 the parameter \eqn{\theta} and the process y are fixed. The assumed model given by the model defined by the model parameter.
 }
 \usage{
-dS3_lin2(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1",
-"linAR2", "linARc"), cpow = 1)
+dS3_lin2(theta, y, model = c("linAR1", "linAR1woI", "nlinAR1",
+"linAR2", "linARc"), cpow = 1, resy)
 }
 \arguments{
   \item{theta}{
 \eqn{\theta}, parameter vector to evaluate dS3 in.
-}
-
-  \item{res}{
-Here the evaluated residuals can be inserted, instead of a parameter theta and data y. Then the statistic 
-is evaluated based on these residuals by calculation of their signs.
 }
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS3 in. 
@@ -35,6 +30,10 @@ models are available\cr
 }
 \item{cpow}{
 Fixed and known power parameter for the \eqn{Y_n = \theta_1*Y_{n-1}^{cpow} + \theta_0} model.
+}
+\item{resy}{
+Here the evaluated residuals can be inserted, instead of a parameter theta and data y. Then the statistic 
+is evaluated based on these residuals by calculation of their signs.
 }
 }
 \details{

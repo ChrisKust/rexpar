@@ -11,7 +11,7 @@ the parameter theta and the process y are fixed. The assumed model is given by
 whereby \eqn{E_n} i.i.d. errors with \eqn{med(E_n) = 0}.
 }
 \usage{
-dS3_nlin2(theta, y)
+dS3_nlin2(theta, y, resy)
 }
 \arguments{
   \item{theta}{
@@ -19,6 +19,10 @@ dS3_nlin2(theta, y)
 }
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in. 
+}
+\item{resy}{
+Here the evaluated residuals can be inserted, instead of a parameter theta and data y. Then the statistic 
+is evaluated based on these residuals by calculation of their signs.
 }
 }
 \details{

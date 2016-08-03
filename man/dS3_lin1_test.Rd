@@ -6,9 +6,13 @@
   The function evaluates the asymptotic test based on \eqn{d_S^3} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS3_lin1_test(thetaN, alpha, y, exact)
+  dS3_lin1_test(dS3, thetaN, alpha, y, exact)
 }
 \arguments{
+  \item{dS3}{
+Instead of parameters to calculate depth, here the dS3 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
+}
   \item{thetaN}{
     Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = \theta_1^0}  is as defined by the model. 
   }
