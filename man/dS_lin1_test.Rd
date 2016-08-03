@@ -23,7 +23,10 @@ Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be exe
   \item{mod}{
 Switch to enable full tangential depth derivative (multiplication with \eqn{y_{n-1}}) in the test statistic, if \code{mod= TRUE}.
 }
-
+\item{dS}{
+Here an evaluated depth statistic dS can be defined, instead of evaluation of data y, to calculate the test
+statistic for dS directly.
+}
 
 }
 \details{

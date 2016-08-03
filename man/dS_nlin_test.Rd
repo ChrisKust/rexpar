@@ -23,7 +23,10 @@ Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be exe
   \item{ncores}{
 Defines the number of cores to use for parallel computation of the simplicial depth statistic. If no value is definied the standard value of 1 is passed and no parallel methods are applied.
 }
-
+\item{dS}{
+Here an evaluated depth statistic dS can be defined, instead of evaluation of data y, to calculate the test
+statistic for dS directly.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Leucht and Mueller (2016) and in Kustosz, Mueller and Wendler (2016). The computational 

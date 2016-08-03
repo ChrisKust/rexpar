@@ -1,9 +1,11 @@
-dS_lin2_loop <- function(theta, y)
+dS_lin2_loop <- function(theta, resy, y)
 {
   sd <- 0
   y1 <- y[2:length(y)]
   y0 <- y[1:(length(y) - 1)]
-  resy <- y1 - theta[1] - theta[2] * y0
+  if (missing(resy)) {
+    resy <- y1 - theta[1] - theta[2] * y0
+  }
   for(ki in 1:(length(resy) - 2))
   {
     for(kii in ki:(length(resy) - 1))

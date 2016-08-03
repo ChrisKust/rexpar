@@ -13,6 +13,9 @@ dS_lin2_loop(theta, y)
   \item{theta}{
 Parameter \eqn{\theta} in which dS is evaluated.
 }
+  \item{resy}{
+Here residuals of an arbitrary model with two parameter can be inserted, instead of defining a parameter theta and y, to evaluate depth directly on the signs of these residuals.
+}
   \item{y}{
 Observed data \eqn{y = (y_0,...,y_N)} for which dS is evaluated. 
 }

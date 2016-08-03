@@ -12,6 +12,9 @@ dS_lin1(theta, y, mod = FALSE)
   \item{theta}{
 Parameter \eqn{\theta} for which simplicial depth has to be evaluated. 
 }
+  \item{resy}{
+Here residuals of an arbitrary model with two parameter can be inserted, instead of defining a parameter theta and y, to evaluate depth directly on the signs of these residuals.
+}
   \item{y}{
 Observed proces \eqn{y=(y_0,...,y_N)} for which simplicial depth has to be evaluated.
 }
