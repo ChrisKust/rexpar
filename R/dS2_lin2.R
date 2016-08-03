@@ -1,4 +1,4 @@
-dS2_lin2 <- function(theta, resy, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"), cpow = 1) 
+dS2_lin2 <- function(theta, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"), cpow = 1, resy) 
   {
   model <- match.arg(model)
   

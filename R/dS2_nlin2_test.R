@@ -1,4 +1,4 @@
-dS2_nlin2_test <- function(dS2, thetaN, alpha, y, exact = FALSE) {
+dS2_nlin2_test <- function(thetaN, alpha, y, exact = FALSE, dS2) {
   if (missing(dS2)) {
     dS2 <- rexpar::dS2_nlin2(theta = thetaN, y = y)
   }

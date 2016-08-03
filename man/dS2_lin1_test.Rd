@@ -1,12 +1,12 @@
 \name{dS2_lin1_test}
 \alias{dS2_lin1_test}
-\title{Test based on dS1 for explosive AR(1) processes without intercept
+\title{Test based on dS2 for explosive AR(1) processes without intercept
 }
 \description{
   The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS2_lin1_test(thetaN, alpha, y, exact)
+  dS2_lin1_test(thetaN, alpha, y, exact, dS2)
 }
 \arguments{
   \item{thetaN}{
@@ -23,7 +23,10 @@
       \item{exact}{
     Switch to decide, weather the exact distribution \code{exact=TRUE} or the approximate normal distribution \code{exact=FALSE} should be used for the calculation of critical values. 
   }
-  
+  \item{dS2}{
+Instead of parameters to calculate depth, here the dS2 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016) and Kustosz and Mueller (2014). The computational details are in Kustosz (2016).
