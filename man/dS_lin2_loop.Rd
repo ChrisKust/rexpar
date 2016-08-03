@@ -7,7 +7,7 @@ Straightforward calculation of simplicial depth for AR(1) processes with interce
 The function calculates simplicial depth for AR(1) processes with intercept as discussed in Leucht, Mueller and Kustosz (2014) by nested loops. The default model thereby is defined by \deqn{Y_n= \theta_0+\theta_1 Y_{n-1} + E_n} and \eqn{med(E_n)=0}. However, other models are selectable.
 }
 \usage{
-dS_lin2_loop(theta, y)
+dS_lin2_loop(theta, resy, y)
 }
 \arguments{
   \item{theta}{

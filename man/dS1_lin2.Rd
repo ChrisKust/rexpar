@@ -9,11 +9,14 @@ processes, when non overlapping residuals in sequences of 3 are evaluated. There
 the parameter \eqn{\theta_1} and the process y are fixed. The assumed model given by the argument of the parameter model. 
 }
 \usage{
-dS1_lin2(theta, y, model, cpow = 1)
+dS1_lin2(theta, resy, y, model, cpow = 1)
 }
 \arguments{
   \item{theta}{
 \eqn{\theta}, parameter (vector) to evaluate dS1 in.
+}
+	\item{resy}{
+	Instead of a model and a parameter \eqn{\theta}, residuals can be plugged in directly. Then just the sign changes are calculated and the statistic is evaluated.
 }
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in. 

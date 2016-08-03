@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS1_nlin2_test(thetaN, alpha, y, exact = FALSE)
+dS1_nlin2_test(thetaN, alpha, y, exact = FALSE, dS1)
 }
 \arguments{
 \item{thetaN}{
@@ -23,7 +23,10 @@ Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be exe
 \item{exact}{
 This switch allows the usage of an exact distribition of the test statistics using the sample size. 
 }
-
+  \item{dS1}{
+Instead of parameters to calculate depth, here the dS1 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 

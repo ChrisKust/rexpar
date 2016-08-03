@@ -11,11 +11,14 @@ the parameter \eqn{\theta} and the process y are fixed. The assumed model is giv
 whreby \eqn{E_n} i.i.d. errors with \eqn{med(E_n) = 0}.
 }
 \usage{
-dS1_nlin2(theta, y)
+dS1_nlin2(theta, resy, y)
 }
 \arguments{
   \item{theta}{
 \eqn{\theta = (\theta_1,\theta_2,\theta_0)}, parameter vector to evaluate dS1 in.
+}
+\item{resy}{
+Instead of a model and a parameter \eqn{\theta}, residuals can be plugged in directly. Then just the sign changes are calculated and the statistic is evaluated.
 }
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in.

@@ -6,7 +6,7 @@
 This function calculates simplicial depth for explosive AR(1) processes as defined in Kustosz and Mueller (2014). The basic model is defined by \deqn{Y_n = \theta_1 Y_ {n-1}+E_n}, with \eqn{Y_n} being an increasing process and \eqn{E_n} satisfying \eqn{med(E_n) = 0}.
 }
 \usage{
-dS_lin1(theta, y, mod = FALSE)
+dS_lin1(theta, resy, y, mod = FALSE)
 }
 \arguments{
   \item{theta}{

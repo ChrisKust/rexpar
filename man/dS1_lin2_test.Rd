@@ -6,7 +6,7 @@
 The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS1_lin2_test(thetaN, alpha, y, exact = FALSE, cpow = 1)
+dS1_lin2_test(thetaN, alpha, y, exact = FALSE, cpow = 1, dS1)
 }
 \arguments{
   \item{thetaN}{
@@ -26,7 +26,10 @@ This switch allows the usage of an exact distribition of the test statistics usi
 \item{cpow}{
 Fixed and known power parameter for the \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^{cpow} + E_n} model.
 }
-
+  \item{dS1}{
+Instead of parameters to calculate depth, here the dS1 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 

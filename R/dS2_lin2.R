@@ -1,13 +1,13 @@
-dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"), cpow = 1) 
+dS2_lin2 <- function(theta, resy, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linAR2", "linARc"), cpow = 1) 
   {
   model <- match.arg(model)
   
   if (model == "linAR1woI") {
-    if (missing(res)) {
-      res <- rexpar::resARMod_lin2(c(0, theta), y)
+    if (missing(resy)) {
+      resy <- rexpar::resARMod_lin2(c(0, theta), y)
     }
-    r1 <- res[seq(1, floor(length(res) / 2), 1)]
-    r2 <- res[seq(floor(length(res) / 2) + 1, length(res), 1)]
+    r1 <- resy[seq(1, floor(length(res) / 2), 1)]
+    r2 <- resy[seq(floor(length(res) / 2) + 1, length(res), 1)]
     m <- min(c(length(r1), length(r2)))
     r1 <- r1[1:m]
     r2 <- r2[m:1]
@@ -16,9 +16,9 @@ dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", 
     return(depth)
   } 
   else {
-    if (missing(res)) 
+    if (missing(resy)) 
       {
-      res <- switch(model, 
+      resy <- switch(model, 
         "linAR1" = 
           {  
           rexpar::resARMod_lin2(c(theta[1], theta[2]), y)
@@ -35,14 +35,14 @@ dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", 
         {
         y1 <- y[-length(y)]
         y2 <- y[-1]
-        res <- y2 - theta[1] - theta[2] * y1^cpow
+        resy <- y2 - theta[1] - theta[2] * y1^cpow
         },
         stop("Enter a valid model!")
       )
       }
-    r1 <- res[seq(1, floor((length(res) - 1) / 2), 1)]
-    r2 <- rep(res[floor((length(res) + 1) / 2)], floor((length(res) - 1) / 2))
-    r3 <- res[seq((length(res) - floor((length(res) - 1) / 2) + 1), length(res), 1)]
+    r1 <- resy[seq(1, floor((length(resy) - 1) / 2), 1)]
+    r2 <- rep(resy[floor((length(resy) + 1) / 2)], floor((length(resy) - 1) / 2))
+    r3 <- resy[seq((length(resy) - floor((length(resy) - 1) / 2) + 1), length(resy), 1)]
     m <- min(c(length(r1), length(r2), length(r3)))
     r1 <- r1[1:m]
     r2 <- r2[1:m]
@@ -51,5 +51,4 @@ dS2_lin2 <- function(theta, res, y, model = c("linAR1", "linAR1woI", "nlinAR1", 
     depth <- 1 / (m) * sum(InD)
     return(depth)
     }
-
 }

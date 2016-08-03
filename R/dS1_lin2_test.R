@@ -1,17 +1,19 @@
-dS1_lin2_test <- function(thetaN, alpha, y, exact = FALSE, cpow = 1)
+dS1_lin2_test <- function(thetaN, alpha, y, exact = FALSE, cpow = 1, dS1)
 {
   if(!is.numeric(cpow))
   {
     stop("Power must be a numeric value!")
   }
-  if(cpow == 1)
-  {
-  dS1 <- rexpar::dS1_lin2(theta = thetaN, y = y)
+  if (missing(dS1)) {
+    if(cpow == 1)
+    {
+    dS1 <- rexpar::dS1_lin2(theta = thetaN, y = y)
+    }
+    if(cpow != 1)
+    {
+    dS1 <- rexpar::dS1_lin2(theta = thetaN, y = y, cpow = cpow, model = "linARc")
+    }
   }
-  if(cpow != 1)
-  {
-  dS1 <- rexpar::dS1_lin2(theta = thetaN, y = y, cpow = cpow, model = "linARc")
-  } 
   NdS1 <- sqrt(floor((length(y) - 1) / 3)) * (dS1 - 1 / 4) / sqrt(3 / 16)
   if(exact)
   {
