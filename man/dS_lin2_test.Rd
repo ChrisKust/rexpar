@@ -6,10 +6,10 @@
 The function evaluates the asymptotic test based on dS proposed in Kustosz, Leucht and Mueller (2016). It returns the test statistic and the decision. The default model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1}^{cpow} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS_lin2_test(thetaN, alpha, y, ncores = 1, cpow = 1, dS)
+dS_lin2_test(theta, alpha, y, ncores = 1, cpow = 1, dS)
 }
 \arguments{
-  \item{thetaN}{
+  \item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta} is defined by the model. 
 }
 
@@ -62,8 +62,8 @@ Note, that the evaluation depends on the simulated results of the limit process,
 }
 \examples{
 y <- RandomARMod_lin2(100, 0.2, 1.01, 15, "0")
-dS_lin2_test(thetaN = c(0.2, 1.01), alpha =  0.05, y = y)
-dS_lin2_test(thetaN = c(0.1, 1.11), alpha = 0.05, y = y)
+dS_lin2_test(theta = c(0.2, 1.01), alpha =  0.05, y = y)
+dS_lin2_test(theta = c(0.1, 1.11), alpha = 0.05, y = y)
 
 }
 

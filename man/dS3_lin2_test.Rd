@@ -6,14 +6,14 @@
 The function evaluates the asymptotic test based on dS3 proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
 }
 \usage{
-dS3_lin2_test(dS3, thetaN, alpha, y, exact = FALSE, cpow = 1)
+dS3_lin2_test(dS3, theta, alpha, y, exact = FALSE, cpow = 1)
 }
 \arguments{
   \item{dS3}{
 Instead of parameters to calculate depth, here the dS3 statistic can be insterted directly. Then just the
 decision function is evaluated, instad of a complete depth calculation.
 }
-  \item{thetaN}{
+  \item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0} is defined by the model. 
 }
 
@@ -62,7 +62,7 @@ Christoph Kustosz and Sebastian Szugat
 
 \examples{
 y  <- RandomARMod_lin2(1000, 0.2, 1.01, 15, "0")
-dS3_lin2_test(thetaN = c(0.2, 1.01), alpha = 0.05, y = y)
-dS3_lin2_test(thetaN = c(0.1, 1.01), alpha = 0.05, y = y)
+dS3_lin2_test(theta = c(0.2, 1.01), alpha = 0.05, y = y)
+dS3_lin2_test(theta = c(0.1, 1.01), alpha = 0.05, y = y)
 }
 

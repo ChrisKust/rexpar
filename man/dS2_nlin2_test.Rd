@@ -6,13 +6,13 @@
 The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_nlin2_test(dS2, thetaN, alpha, y, exact = FALSE)
+dS2_nlin2_test(dS2, theta, alpha, y, exact = FALSE)
 }
 \arguments{
 \item{dS2}{
 Here the user can pass a pre-calculated depth statistic dS3 instead of a parameter thetaN and an observation vector y to apply the test directly.
 }
-\item{thetaN}{
+\item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0,\theta_0^0)} as defined by the model. 
 }
 
@@ -55,7 +55,7 @@ Christoph Kustosz and Sebastian Szugat
 }
 \examples{
 y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
-dS2_nlin2_test(thetaN = c(0.2, 1.01, 0), alpha=0.05, y=y)
-dS2_nlin2_test(thetaN = c(0.2, 1.01, 1), alpha=0.05, y=y)
+dS2_nlin2_test(theta = c(0.2, 1.01, 0), alpha=0.05, y=y)
+dS2_nlin2_test(theta = c(0.2, 1.01, 1), alpha=0.05, y=y)
 }
 

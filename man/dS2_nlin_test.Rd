@@ -6,10 +6,10 @@
 The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_nlin_test(thetaN, alpha, y, exact = FALSE)
+dS2_nlin_test(theta, alpha, y, exact = FALSE)
 }
 \arguments{
-  \item{thetaN}{
+  \item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0)} as defined by the model. 
 }
 

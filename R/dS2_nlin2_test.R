@@ -1,6 +1,6 @@
-dS2_nlin2_test <- function(thetaN, alpha, y, exact = FALSE, dS2) {
+dS2_nlin2_test <- function(theta, alpha, y, exact = FALSE, dS2) {
   if (missing(dS2)) {
-    dS2 <- rexpar::dS2_nlin2(theta = thetaN, y = y)
+    dS2 <- rexpar::dS2_nlin2(theta = theta, y = y)
   }
   NdS2 <- sqrt(floor((length(y) - 1) / 4) - 1) * (dS2 - 1 / 8) / sqrt(7 / 64)
   if (exact) {

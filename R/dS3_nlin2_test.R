@@ -1,6 +1,6 @@
-dS3_nlin2_test <- function(dS3, thetaN, alpha, y, exact = FALSE) {
+dS3_nlin2_test <- function(dS3, theta, alpha, y, exact = FALSE) {
   if (missing(dS3)) {
-    dS3 <- rexpar::dS3_nlin2(thetaN, y)
+    dS3 <- rexpar::dS3_nlin2(theta, y)
   }
   NdS3 <- sqrt((length(y) - 1) - 3) * (dS3 - 1 / 8) / sqrt(15 / 64)
   if (exact) {

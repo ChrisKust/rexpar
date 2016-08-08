@@ -6,10 +6,10 @@
   The function evaluates the asymptotic test based on \eqn{d_S^1} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS1_lin1_test(thetaN, alpha, y, exact, dS1)
+  dS1_lin1_test(theta, alpha, y, exact, dS1)
 }
 \arguments{
-  \item{thetaN}{
+  \item{theta}{
     Parameter defining the Null hypothesis \eqn{H0: theta_1 = theta^0}.
   }
   
@@ -54,7 +54,7 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
   }
 \examples{
   y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
-  dS1_lin1_test(thetaN = 1.01, alpha = 0.05, y = y)
-  dS1_lin1_test(thetaN = 1.11, alpha = 0.05, y = y)
+  dS1_lin1_test(theta = 1.01, alpha = 0.05, y = y)
+  dS1_lin1_test(theta = 1.11, alpha = 0.05, y = y)
 }
 
