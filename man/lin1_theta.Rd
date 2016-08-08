@@ -4,7 +4,7 @@
 Candidate point evaluation for simplicial depth in the linear model without intercept
 }
 \description{
-This function precalculates parameters on which depth changes to restirict the
+This function precalculates parameters on which depth changes to restrict the
 region on which the depht statistic has to be evaluated on as described in Kustosz and Mueller(2014).
 }
 \usage{
