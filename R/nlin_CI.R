@@ -61,9 +61,9 @@ nlin_CI <- function(y, level, plots = FALSE, notion = "dS1", ncoresC = 1, addPar
   
   inCIs <- as.vector(TS[seq(2, length(TS), 2)])
   
-  if(plots && requireNamespace("alphahull", character.only = TRUE))
+  if(plots && requireNamespace("alphahull"))
   {
-    requireNamespace("alphahull", character.only = TRUE)
+    requireNamespace("alphahull")
     a <- which(inCIs == 0)
     points(cands[a, ], col = 2)
     ah <- alphahull::ashape(cands[a, 1], cands[a, 2], alpha = spar)
