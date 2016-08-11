@@ -5,8 +5,8 @@ dS1_lin2 <- function(theta, resy, y, model = "linAR1", cpow = 1)
     if (missing(resy)) {
       resy <- resARMod_lin2(c(0, theta), y)
     }
-    r1 <- res[seq(1, length(res), 2)]
-    r2 <- res[seq(2, length(res), 2)]
+    r1 <- resy[seq(1, length(resy), 2)]
+    r2 <- resy[seq(2, length(resy), 2)]
     m <- min(c(length(r1), length(r2)))
     r1 <- r1[1:m]
     r2 <- r2[1:m]
@@ -38,9 +38,9 @@ dS1_lin2 <- function(theta, resy, y, model = "linAR1", cpow = 1)
       stop("Enter valid model!")
       )
     }
-  r1 <- resy[seq(1, length(res), 3)]
-  r2 <- resy[seq(2, length(res), 3)]
-  r3 <- resy[seq(3, length(res), 3)]
+  r1 <- resy[seq(1, length(resy), 3)]
+  r2 <- resy[seq(2, length(resy), 3)]
+  r3 <- resy[seq(3, length(resy), 3)]
   m <- min(c(length(r1), length(r2), length(r3)))
   r1 <- r1[1:m]
   r2 <- r2[1:m]
