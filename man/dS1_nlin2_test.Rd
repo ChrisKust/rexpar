@@ -55,6 +55,6 @@ Kustosz, Christoph
 \examples{
 y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
 theta <- c(0.2,1.01,0) # (arp, power, intercept)
-dS1_nlin2_test(theta, 0.05, y)
-dS1_nlin2_test(theta + c(0, 0, 0.5), 0.05, y)
+dS1_nlin2_test(theta = theta, alpha = 0.05, y = y)
+dS1_nlin2_test(theta = theta + c(0, 0, 0.5), alpha = 0.05, y = y)
 }

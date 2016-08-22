@@ -57,7 +57,7 @@ Kustosz, Christoph
 }
 \examples{
 y <- RandomARMod_lin2(1000, 0.2, 1.01, 15, "0")
-dS1_lin2_test(c(0.2, 1.01), 0.05, y)
-dS1_lin2_test(c(0.1, 1.11), 0.05, y)
+dS1_lin2_test(theta = c(0.2, 1.01), alpha = 0.05, y = y)
+dS1_lin2_test(theta = c(0.1, 1.11), alpha = 0.05, y = y)
 }
 

@@ -7,7 +7,7 @@ dS2_lin2 <- function(theta, y, model = c("linAR1", "linAR1woI", "nlinAR1", "linA
       resy <- rexpar::resARMod_lin2(c(0, theta), y)
     }
     r1 <- resy[seq(1, floor(length(resy) / 2), 1)]
-    r2 <- resy[seq(floor(length(resy) / 2) + 1, length(res), 1)]
+    r2 <- resy[seq(floor(length(resy) / 2) + 1, length(resy), 1)]
     m <- min(c(length(r1), length(r2)))
     r1 <- r1[1:m]
     r2 <- r2[m:1]

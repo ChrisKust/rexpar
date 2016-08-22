@@ -54,6 +54,6 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 \examples{
 y <- RandomARMod_nlin2(nobs = 100, intercept = 0, arp = 0.2, power = 1.01, start = 15, cont = "0")
 theta <- c(0.2, 1.01, 0)
-dS2_nlin2(theta, y)
-dS2_nlin2(theta+0.1, y)
+dS2_nlin2(theta = theta, y = y)
+dS2_nlin2(theta = theta+0.1, y = y)
 }

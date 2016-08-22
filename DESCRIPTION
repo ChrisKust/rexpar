@@ -2,7 +2,7 @@ Package: rexpar
 Type: Package
 Title: Simplicial Depth for Explosive Autoregressive Processes
 Version: 1.1
-Date: 2016-02-17
+Date: 2016-08-22
 Author: Kustosz, Christoph; Szugat, Sebastian
 Maintainer: "Szugat, Sebastian" <szugat@statistik.tu-dortmund.de>
 Description: We introduce simplicial depth statistics for explosive AR(1)

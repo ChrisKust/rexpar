@@ -7,7 +7,8 @@ The function allows a prediction of a linear AR(1) model without intercept based
 on simplicial depth and residual bootstrapping. The method is introduced in Kustosz (2016) and applies the simplical depth for AR(1) processes without intercept to generate estimates and confidence sets. 
 }
 \usage{
-predict_lin1(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, eps = 1e-9)
+predict_lin1(y, CritTime, NSim, CritLen, simL_fac = 30, 
+alpha, restrict = FALSE, eps = 1e-9)
 }
 \arguments{
   \item{y}{

@@ -22,8 +22,8 @@ changepoints_lin1 <- function(y, level, bw, sw, method = "m1", mincper = 1, minc
       E1 <- est_lin1(y[(cands[i]-bw):cands[i]], notion = "dS")$estimate
       E2 <- est_lin1(y[cands[i]:(cands[i] + bw)], notion = "dS")$estimate
       
-      T1 <- dS_lin1_test(E1, (alpha), y[cands[i]:(cands[i] + bw)])$phi
-      T2 <- dS_lin1_test(E2, (alpha), y[(cands[i] - bw):cands[i]])$phi
+      T1 <- dS_lin1_test(theta = E1, alpha = alpha, y = y[cands[i]:(cands[i] + bw)])$phi
+      T2 <- dS_lin1_test(theta = E2, alpha = alpha, y = y[(cands[i] - bw):cands[i]])$phi
       changeind[i] <- T1 * T2
     }
     unlist(changeind)

@@ -1,4 +1,4 @@
-dS3_lin1_test <- function(dS3, theta, alpha, y, exact = FALSE)
+dS3_lin1_test <- function(theta, alpha, y, exact = FALSE, dS3)
 {
   if (missing(dS3)) {
     dS3 <- rexpar::dS3_lin2(theta = theta, y = y, model = "linAR1woI")

@@ -6,13 +6,9 @@
   The function evaluates the asymptotic test based on \eqn{d_S^3} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1} + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-  dS3_lin1_test(dS3, theta, alpha, y, exact)
+  dS3_lin1_test(theta, alpha, y, exact, dS3)
 }
 \arguments{
-  \item{dS3}{
-Instead of parameters to calculate depth, here the dS3 statistic can be insterted directly. Then just the
-decision function is evaluated, instad of a complete depth calculation.
-}
   \item{theta}{
     Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = \theta_1^0}  is as defined by the model. 
   }
@@ -27,7 +23,10 @@ decision function is evaluated, instad of a complete depth calculation.
       \item{exact}{
     Switch to decide, weather the exact distribution \code{exact=TRUE} for the approximate normal distribution \code{exact=FALSE} should be used for the calculation of critical values. 
   }
-  
+    \item{dS3}{
+Instead of parameters to calculate depth, here the dS3 statistic can be insterted directly. Then just the
+decision function is evaluated, instad of a complete depth calculation.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 
@@ -55,7 +54,7 @@ Autoregressive Growth Processes. Journal of Statistical Planning and Inference. 
   }
 \examples{
   y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
-  dS3_lin1_test(1.01, 0.05, y)
-  dS3_lin1_test(1.11, 0.05, y)
+  dS3_lin1_test(theta = 1.01, alpha = 0.05, y = y)
+  dS3_lin1_test(theta = 1.11, alpha = 0.05, y = y)
 }
 

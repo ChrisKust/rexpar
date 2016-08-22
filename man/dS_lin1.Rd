@@ -48,6 +48,6 @@ Kustosz, Christoph
 \examples{
 y <- RandomARMod_lin2(100, 0, 1.01, 15, "0")
 theta <- 1.01
-dS_lin1(theta, y)
+dS_lin1(theta = theta, y = y)
 }
 

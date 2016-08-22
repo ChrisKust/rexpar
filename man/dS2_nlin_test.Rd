@@ -53,6 +53,6 @@ Kustosz, Christoph
 }
 \examples{
 y <- RandomARMod_nlin1(200, 0.02, 1.01, 15, "0")
-dS2_nlin_test(c(0.02, 1.01), 0.05, y)
-dS2_nlin_test(c(0.1, 1.11), 0.05, y)
+dS2_nlin_test(theta = c(0.02, 1.01), alpha = 0.05, y = y)
+dS2_nlin_test(theta = c(0.1, 1.11), alpha = 0.05, y = y)
 }

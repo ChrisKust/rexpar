@@ -63,9 +63,9 @@ y1 <- RandomARMod_lin2(50, int1, arp1, 15, "3")
 y2 <- RandomARMod_lin2(50, int2, arp2, y1[length(y1)], "3")
 y <- c(y1, y2)
 
-CP1 <- changepoints_lin1(y, 0.99, 25, 5, method = "m1")
+CP1 <- changepoints_lin1(y = y, level = 0.99, bw = 25, sw = 5, method = "m1")
 
-CP2 <- changepoints_lin1(y, 0.99, 25, 5, method = "m2")
+CP2 <- changepoints_lin1(y = y, level = 0.99, bw = 25, sw = 5, method = "m2")
 
 
 par(mfrow=c(2,1))

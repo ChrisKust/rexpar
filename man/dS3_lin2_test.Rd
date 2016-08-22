@@ -6,13 +6,9 @@
 The function evaluates the asymptotic test based on dS3 proposed in Kustosz, Mueller and Wendler (2016). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_0 + \theta_1 Y_{n-1} + E_n .}
 }
 \usage{
-dS3_lin2_test(dS3, theta, alpha, y, exact = FALSE, cpow = 1)
+dS3_lin2_test(theta, alpha, y, exact = FALSE, cpow = 1, dS3)
 }
 \arguments{
-  \item{dS3}{
-Instead of parameters to calculate depth, here the dS3 statistic can be insterted directly. Then just the
-decision function is evaluated, instad of a complete depth calculation.
-}
   \item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0} is defined by the model. 
 }
@@ -25,7 +21,7 @@ Value in (0,1) defining the level of the test.
 Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be executed. 
 }
 \item{exact}{
-This switch allows the usage of an exact distribition of the test statistics using the sample size. 
+This switch allows the usage of an exact distribution of the test statistics using the sample size. 
 }
 \item{cpow}{
 fixed and known power parameter for the \eqn{Y_n = \theta_1*Y_{n-1}^{cpow} + \theta_0} model

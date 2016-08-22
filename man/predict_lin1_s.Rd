@@ -9,7 +9,8 @@ adjusted by additional arguments, to allow an extrapolation of future values. Th
 the simulated processes can be specified.
 }
 \usage{
-predict_lin1_s(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, start, eps = 1e-9)
+predict_lin1_s(y, CritTime, NSim, CritLen, simL_fac = 30, 
+alpha, restrict = FALSE, start, eps = 1e-9)
 }
 \arguments{
   \item{y}{

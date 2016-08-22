@@ -1,8 +1,8 @@
 dS_lin1 <- function(theta, resy, y , mod = FALSE)
 {
-  y1 <- y[2:length(y)]
-  y0 <- y[1:(length(y) - 1)]
   if (missing(resy)) {
+    y1 <- y[2:length(y)]
+    y0 <- y[1:(length(y) - 1)]
     if(!mod)
     {
     resy <- (y1 - theta * y0)

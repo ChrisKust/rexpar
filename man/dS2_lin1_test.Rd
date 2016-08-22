@@ -56,7 +56,7 @@ Papers 55, 125-140.
   }
 \examples{
   y <- RandomARMod_lin2(1000, 0, 1.01, 15, "0")
-  dS2_lin1_test(1.01, 0.05, y)
-  dS2_lin1_test(1.1, 0.05, y)
+  dS2_lin1_test(theta = 1.01, alpha = 0.05, y = y)
+  dS2_lin1_test(theta = 1.1, alpha = 0.05, y = y)
 }
 

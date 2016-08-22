@@ -54,7 +54,7 @@ This expression is a simplification of dS, which is the full simplicial depth fo
 y <- RandomARMod_nlin2(nobs = 200, intercept = 0.1, arp = 0.02, power = 1.01,
 start = 15, cont = "1")
 theta <- c(0.02, 1.01, 0.1)  # (arp, power, intercept)
-dS1_nlin2(theta, y)
-dS1_nlin2(theta+0.1, y)
+dS1_nlin2(theta = theta, y = y)
+dS1_nlin2(theta = theta+0.1, y = y)
 }
 

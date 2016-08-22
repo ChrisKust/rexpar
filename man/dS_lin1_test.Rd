@@ -59,6 +59,6 @@ Kustosz, Christoph
 \examples{
 y <- RandomARMod_lin2(100, 0, 1.01, 15, "0")
 theta <- 1.01
-dS_lin1_test(thetaN = theta, alpha = 0.05, y = y)
-dS_lin1_test(thetaN = theta + 0.1, alpha = 0.05, y = y)
+dS_lin1_test(theta = theta, alpha = 0.05, y = y)
+dS_lin1_test(theta = theta + 0.1, alpha = 0.05, y = y)
 }

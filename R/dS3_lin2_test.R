@@ -1,4 +1,4 @@
-dS3_lin2_test <- function(dS3, theta, alpha, y, exact = FALSE, cpow = 1) {
+dS3_lin2_test <- function(theta, alpha, y, exact = FALSE, cpow = 1, dS3) {
   if (missing(dS3)) {
     if(!is.numeric(cpow))
     {
