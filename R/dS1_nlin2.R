@@ -5,10 +5,10 @@ dS1_nlin2 <- function(theta, resy, y)
       y2 <- y[-1]
       resy <- (y2 - y1 - theta[3] - theta[1] * y1^theta[2])
     }
-    r1 <- resy[seq(1, length(res), 4)]
-    r2 <- resy[seq(2, length(res), 4)]
-    r3 <- resy[seq(3, length(res), 4)]
-    r4 <- resy[seq(4, length(res), 4)]
+    r1 <- resy[seq(1, length(resy), 4)]
+    r2 <- resy[seq(2, length(resy), 4)]
+    r3 <- resy[seq(3, length(resy), 4)]
+    r4 <- resy[seq(4, length(resy), 4)]
     m <- min(c(length(r1), length(r2), length(r3), length(r4)))
     r1 <- r1[1:m]
     r2 <- r2[1:m]

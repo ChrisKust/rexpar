@@ -1,4 +1,4 @@
-predict_lin1_s <- function(y, CritLen, simL_fac = 30, CritTime, NSim, alpha, restrict = FALSE, start, eps = 1e-9)
+predict_lin1_s <- function(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, start, eps = 1e-9)
 {
   N <- length(y)
   if (missing(CritLen)) {

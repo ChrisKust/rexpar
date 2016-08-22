@@ -6,12 +6,9 @@
 The function evaluates the asymptotic test based on \eqn{d_S^2} proposed in Kustosz, Mueller and Wendler (2014). It returns the test statistic and the decision. The main model is given by \deqn{Y_n = \theta_1 Y_{n-1}^{\theta_2} + \theta_0 + E_n} with \eqn{med(E_n)=0}.
 }
 \usage{
-dS2_nlin2_test(dS2, theta, alpha, y, exact = FALSE)
+dS2_nlin2_test(theta, alpha, y, exact = FALSE, dS2)
 }
 \arguments{
-\item{dS2}{
-Here the user can pass a pre-calculated depth statistic dS3 instead of a parameter thetaN and an observation vector y to apply the test directly.
-}
 \item{theta}{
 Parameter defining the Null hypothesis \eqn{H0: \theta = \theta^0}. Thereby \eqn{\theta^0 = (\theta_1^0,\theta_2^0,\theta_0^0)} as defined by the model. 
 }
@@ -26,7 +23,9 @@ Observed series \eqn{y=(y_0,...,y_N)} for which the parameter test has to be exe
 \item{exact}{
 This switch allows the usage of an exact distribition of the test statistics using the sample size. 
 }
-
+\item{dS2}{
+Here the user can pass a pre-calculated depth statistic dS3 instead of a parameter theta and an observation vector y to apply the test directly.
+}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 

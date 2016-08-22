@@ -1,7 +1,7 @@
 dS1_nlin2_test_b <- function(ind, theta, alpha, y, exact = FALSE, dS1)
 {
   if (missing(dS1)) {
-    thetaN <- t(thetaNv[ind, ])
+    thetaN <- t(theta[ind, ])
     dS1 <- rexpar::dS1_nlin2(theta, y)
   }
   NdS1 <- sqrt(floor((length(y) - 1) / 4)) * (dS1 - 1 / 8) / sqrt(7 / 64)

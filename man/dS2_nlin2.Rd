@@ -11,7 +11,7 @@ the parameter theta and the process y are fixed. The assumed model is given by
 whereby \eqn{E_n} are i.i.d. errors with \eqn{med(E_n) = 0}.
 }
 \usage{
-dS2_nlin2(theta, y)
+dS2_nlin2(theta, y, resy)
 }
 \arguments{
   \item{theta}{
@@ -20,6 +20,9 @@ dS2_nlin2(theta, y)
   \item{y}{
 \eqn{y = (y_0,...,y_N)}, oberserved process to evaluate dS1 in. 
 }
+	\item{resy}{
+	Instead of a model and a parameter \eqn{\theta}, residuals can be plugged in directly. Then just the sign changes are calculated and the statistic is evaluated.
+	}
 }
 \details{
 The theoretical details can be found in Kustosz, Mueller and Wendler (2016). The computational 

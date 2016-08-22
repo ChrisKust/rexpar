@@ -8,21 +8,24 @@ on simplicial depth and residual bootstrapping. Thereby the jumps and depth shap
 adjusted by additional arguments, to allow an extrapolation of future values. The main idea is presended in Kustosz (2016).
 }
 \usage{
-predict_lin1_extra(y, CritLen, CritTime, NSim, alpha, 
-restrict = FALSE, start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
+predict_lin1_extra(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, 
+                               start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
 }
 \arguments{
   \item{y}{
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
 }
-  \item{CritLen}{
-A value for a critical length for which the time of arrival then can be predicted by the function. This argument is optional.
-}
   \item{CritTime}{
   A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
 }
-  \item{NSim}{
+\item{NSim}{
   Number of simulations used for the bootstrap simulations of the continued process.
+}
+  \item{CritLen}{
+A value for a critical length for which the time of arrival then can be predicted by the function. This argument is optional.
+}
+\item{simL_fac}{
+A factor specifying the sample size of the simulated processes by \code{simL_fac * length(y)}
 }
   \item{alpha}{
 A level for the \eqn{1-\alpha} prediction intervals.
@@ -37,10 +40,10 @@ Here a starting value for the simulated processes can be specified
 This value sets a new parameter value to shift the empirical depth shape for the simulations of the paramteters.
 }
 \item{res_rescale}{
-This parameter can be used to rescale the residuals by multiplication to allow an ajustment of the jump 
+This parameter can be used to rescale the residuals by multiplication to allow an adjustment of the jump 
 heights in the simulated series.}
 \item{lambda_j}{
-This parameetes sets the jump frequency modelled by a Poisson proces with parameter lambda_j to adjust the
+This argument sets the jump frequency modelled by a Poisson process with parameter lambda_j to adjust the
 number of jumps in the simulated series.}
 \item{eps}{
 Parameter to shift candidates to differ from the roots of the residuals.
@@ -48,14 +51,14 @@ Parameter to shift candidates to differ from the roots of the residuals.
 }
 
 \value{
-\item{estimation_time }{Estimated tome to arrive at the critical crack lenght.}
+\item{estimation_time }{Estimated tome to arrive at the critical crack length.}
 \item{estimation_lenght}{Estimated length at the critical time.}
-\item{mean_CT}{Mean estimate of the critical lenght of arrival at CritTime.}
-\item{med_CT}{Median estimate of the critical lenght of arrival at CritTime.}
-\item{mean_CL}{Mean estimate of the critival time length at CritLen.}
+\item{mean_CT}{Mean estimate of the critical length of arrival at CritTime.}
+\item{med_CT}{Median estimate of the critical length of arrival at CritTime.}
+\item{mean_CL}{Mean estimate of the critical time length at CritLen.}
 \item{med_CL}{Median estimate of the critical time at CritLen.}
 \item{confintCT}{1-alpha prediction interval for the estimate of the critical time.}
-\item{confintCL}{1-alpha prediction interval for the estimate of the citical length.}
+\item{confintCL}{1-alpha prediction interval for the estimate of the critical length.}
 \item{alpha}{1-Level of the confidence intervals.}
 \item{simulations}{A matrix including all simulated continuations of the process.}
 

@@ -9,20 +9,23 @@ adjusted by additional arguments, to allow an extrapolation of future values. Th
 the simulated processes can be specified.
 }
 \usage{
-predict_lin1_s(y, CritLen, CritTime, NSim, alpha, restrict = FALSE, start, eps = 1e-9)
+predict_lin1_s(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, start, eps = 1e-9)
 }
 \arguments{
   \item{y}{
 Observed series on which the parameter estimates are calculated. A prediction for future values of this series are produced. 
 }
+ \item{CritTime}{
+  A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
+}
+   \item{NSim}{
+  Number of simulations used in the bootstrap simulations of the continued process.
+}
   \item{CritLen}{
 A value for a critical length for which the time of arrival then can be predicted by the function. This argument is optional.
 }
-  \item{CritTime}{
-  A value for a critical time (as index of the process), exceeding the size of y, for which the process value is predicted.
-}
-  \item{NSim}{
-  Number of simulations used in the bootstrap simulations of the continued process.
+\item{simL_fac}{
+A factor specifying the sample size of the simulated processes by \code{simL_fac * length(y)}
 }
   \item{alpha}{
 A level which defines  the \eqn{1-\alpha} prediction intervals.
@@ -39,14 +42,14 @@ Parameter to shift candidates to differ from the roots of the residuals.
 }
 
 \value{
-\item{estimation_time }{Estimated tome to arrive at the critical crack lenght.}
+\item{estimation_time }{Estimated tome to arrive at the critical crack length.}
 \item{estimation_lenght}{Estimated length at the critical time.}
-\item{mean_CT}{Mean estimate of the critical lenght of arrival at CritTime.}
-\item{med_CT}{Median estimate of the critical lenght of arrival at CritTime.}
-\item{mean_CL}{Mean estimate of the critival time length at CritLen.}
+\item{mean_CT}{Mean estimate of the critical length of arrival at CritTime.}
+\item{med_CT}{Median estimate of the critical length of arrival at CritTime.}
+\item{mean_CL}{Mean estimate of the critical time length at CritLen.}
 \item{med_CL}{Median estimate of the critical time at CritLen.}
 \item{confintCT}{1-alpha prediction interval for the estimate of the critical time.}
-\item{confintCL}{1-alpha prediction interval for the estimate of the citical length.}
+\item{confintCL}{1-alpha prediction interval for the estimate of the critical length.}
 \item{alpha}{1-Level of the confidence intervals.}
 \item{simulations}{A matrix including all simulated continuations of the process.}
 

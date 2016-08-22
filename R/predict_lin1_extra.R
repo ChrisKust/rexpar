@@ -1,4 +1,4 @@
-predict_lin1_extra <- function(y, CritLen, simL_fac = 30, CritTime, NSim, alpha, restrict = FALSE, 
+predict_lin1_extra <- function(y, CritTime, NSim, CritLen, simL_fac = 30, alpha, restrict = FALSE, 
                                start, dmax_neu, res_rescale, lambda_j, eps = 1e-9)
 {
   N <- length(y)
